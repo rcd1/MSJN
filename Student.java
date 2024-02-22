@@ -14,7 +14,7 @@ public class Student extends User{
     private HashMap<Course, Grade> studentGrades;
 
     public Student(String firstName, String lastName, String email, String password, Major major, int year) {
-
+        super(firstName, lastName, email, password);
     }
 
     public void addCourse(Course course) {
@@ -37,7 +37,7 @@ public class Student extends User{
 
     }
 
-    public void viewNote(Student student, string note) {
+    public void viewNote(Student student, String note) {
 
     }
 
@@ -47,6 +47,12 @@ public class Student extends User{
 
     public void whatIf(Major major, ArrayList<Course> courses) {
         
+    }
+
+    @Override
+    protected void viewStudentProfile(Student student) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'viewStudentProfile'");
     }
     
 }
