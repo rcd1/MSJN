@@ -7,7 +7,7 @@ public class Course {
     private ArrayList<Keyword> keywords;
     private int preferredSemester;
 
-    public Course (String name, Stirng number, Requirement requirement, ArrayList<Keyword> keywords, int preferredSemester) {
-        
+    public Course (String name, String number, Requirement requirement, ArrayList<Keyword> keywords, int preferredSemester) {
+
     }
 }
