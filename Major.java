@@ -24,6 +24,15 @@ protected boolean changeApplicationID(int choice){
     return true;    
 }
 
+/**
+ * Used by MajorList, checks if there is a Major that matches the parameters
+ * @param majorName the name of the Major
+ * @return true if the Major contains the specified name, false otherwise
+ */
+public boolean checkMajor(String majorName) {
+    return this.majorName.equalsIgnoreCase(majorName);
+}
+
 }
 
 

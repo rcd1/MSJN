@@ -7,13 +7,17 @@ public class DataLoader {
 
     }
 
-    public ArrayList<Student> getStudents(){
+    public static ArrayList<Student> getStudents(){
         return new ArrayList<>();
     }
-    public ArrayList<User> getUsers(){
+    public static ArrayList<Advisor> getAdvisors(){
         return new ArrayList<>();
     }
-    public ArrayList<Course> getCourses(){
+    public static ArrayList<Course> getCourses(){
+        return new ArrayList<>();
+    }
+
+    public static ArrayList<Major> getMajors() {
         return new ArrayList<>();
     }
 }
