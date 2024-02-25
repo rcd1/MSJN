@@ -1,5 +1,7 @@
+import java.util.UUID;
+import java.util.ArrayList;
 public class Course {
-    private UUID designator;
+    private UUID courseID;
     private Designator designator;
     private int number;
     private int hours;
