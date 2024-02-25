@@ -1,11 +1,14 @@
 public class DataWriter {
-    public void saveUsers(){
+    public static void saveUsers(){
 
     }
-    public void saveStudents(){
+    public static void saveStudents(){
 
     }
-    public void saveCourses(){
+    public static void saveCourses(){
+
+    }
+    public static void saveMajors() {
 
     }
 }

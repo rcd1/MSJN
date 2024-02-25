@@ -1,28 +1,36 @@
-public class Administrator {
+import java.util.ArrayList;
+public class Administrator extends User{
     private ArrayList<Student> students;
     private ArrayList<Advisor> advisors;
     
-    public Administrator (String firstName, String lastName, String email) {
+    public Administrator (String firstName, String lastName, String email, String password) {
+        super(firstName, lastName, email, password);
+    }
+
+    private boolean addCourse(Course course) {
+        return true;
+    }
+
+    private boolean removeCourse(Course course) {
+        return true;
+    }
+
+    private boolean addStudentCourse(Student student, Course course) {
+        return true;
+    }
+
+    private boolean addStudentGrade(Student student, Course course, Grade grade) {
+        return true;
 
     }
 
-    private addCourse(Course course) {
-
+    private boolean updateStudentGrade(Student student, Course course, Grade grade) {
+        return true;
     }
 
-    private removeCourse(Course course) {
-
-    }
-
-    private addStudentCourse(Student student, Course course) {
-
-    }
-
-    private addStudentGrade(Student student, Course course, Grade grade) {
-
-    }
-
-    private updateStudentGrade(Student student, Course course, Grade grade) {
-        
+    @Override
+    protected void viewStudentProfile(Student student) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'viewStudentProfile'");
     }
 }

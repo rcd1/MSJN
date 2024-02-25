@@ -2,7 +2,7 @@
     {
         "id":"8a95b1f5-bad4-4d02-9378-71a1c7f67930",
         "designator":"CSCE",
-        "number":145,
+        "number":"145",
         "hours":4,
         "requirements":[
             {
@@ -22,7 +22,7 @@
     {
         "id":"46377177-718d-413a-ad47-21fd93c13ca8",
         "designator":"MATH",
-        "number":115,
+        "number":"115",
         "hours":4,
         "requirements": [
             {
@@ -37,7 +37,7 @@
     {
         "id":"c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b",
         "designator":"MATH",
-        "number":111,
+        "number":"111",
         "hours":4,
         "requirements":[],
         "keywords":"PR",
@@ -46,7 +46,7 @@
     {
         "id":"59433eb0-5545-4604-b1c2-2caf08148906",
         "designator":"ENGL",
-        "number":101,
+        "number":"101",
         "hours":3,
         "requirements":[],
         "keywords":"CMW",
@@ -56,7 +56,7 @@
     {
         "id":"07c57fa7-6f98-4e6f-8cda-8ce6d6b525b5",
         "designator":"ENGL",
-        "number":102,
+        "number":"102",
         "hours":3,
         "requirements":[
             {

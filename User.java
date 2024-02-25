@@ -17,4 +17,16 @@ public abstract class User {
     }
 
     protected abstract void viewStudentProfile(Student student);
+
+
+    /**
+     * Used by UserList, checks if any user has these parameters
+     * @param firstName User's first name
+     * @param lastName User's last name
+     * @param email User's email
+     * @return true if this User contains these values, false otherwise
+     */
+    protected boolean checkCredentials(String firstName, String lastName, String email) {
+        return this.firstName.equalsIgnoreCase(firstName) && this.lastName.equalsIgnoreCase(lastName) && this.email.equalsIgnoreCase(email);
+    }
 }
