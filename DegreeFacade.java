@@ -9,7 +9,7 @@ public class DegreeFacade {
     public DegreeFacade() {
         userList = UserList.getInstance();
         courseList = CourseList.getInstance();
-        majorList = new MajorList();
+        majorList = MajorList.getInstance();
     }
 
     public User login(String userName, String password) {
@@ -36,15 +36,15 @@ public class DegreeFacade {
     }
 
     public ArrayList<Course> getCourses() {
-
+        return courseList.getCourses();
     }
 
     public ArrayList<Course> findCourses() {
-
+        return courseList.getCourses();
     }
 
     public ArrayList<Course> findCourses(String keyword) {
-        
+    
     }
 }
 

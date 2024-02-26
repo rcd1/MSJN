@@ -14,6 +14,10 @@ public class CourseList {
         return courseList;
     }
 
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
+
     public Course getCourse(String name, String number, int hours) {
         for (Course course : courses) {
             if (course.checkCourse(name, number, hours))
