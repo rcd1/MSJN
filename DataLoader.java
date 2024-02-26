@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class DataLoader {
     
-
     public DataLoader() {
 
     }

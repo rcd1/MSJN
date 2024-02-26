@@ -32,6 +32,20 @@ public class UserList {
 
     }
 
+    public User getUser(String userName, String password) {
+        for (Student student : students) {
+            if (student.getUserName().equals(userName) && student.checkPassword(password)) {
+                return student;
+            }
+        }
+        for (Advisor advisor : advisors) {
+            if (advisor.getUserName().equals(userName) && advisor.checkPassword(password)) {
+                return advisor;
+            }
+        }
+        return null;
+    }
+
     public void addUser(User newUser) {
         if (newUser instanceof Student) {
             students.add((Student) newUser);

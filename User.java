@@ -2,6 +2,7 @@ import java.util.UUID;
 
 public abstract class User {
     protected String firstName, lastName, email, password;
+    protected String userName;
     protected UUID userID;
 
     public User(String firstName, String lastName, String email, String password) {
@@ -21,6 +22,11 @@ public abstract class User {
 
     protected abstract void viewStudentProfile(Student student);
 
+    /**
+     * Used by UserList in order to check for username
+     * @return
+     */
+    public abstract String getUserName();
 
     /**
      * Used by UserList, checks if any user has these parameters
