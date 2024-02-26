@@ -12,6 +12,7 @@ public abstract class User {
         this.password = password;
     }
 
+    // What is this method even for? It seems like UserList already handles logins for us
     public boolean login(String email, String password) {
         return false;
     }
