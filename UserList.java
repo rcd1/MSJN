@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class UserList {
     private static UserList userList;
-    private ArrayList<Student> students;
-    private ArrayList<Advisor> advisors;
+    private static ArrayList<Student> students;
+    private static ArrayList<Advisor> advisors;
 
     public UserList() {
         userList = this;
@@ -16,6 +16,7 @@ public class UserList {
         return userList;
     } 
 
+    // When is this version of getUser ever called?
     public User getUser(String firstName, String lastName, String email) {
         
         for (Student student : students) {
@@ -32,6 +33,7 @@ public class UserList {
 
     }
 
+    // Should we make a method for "checkUsername" or something along those lines?
     public User getUser(String userName, String password) {
         for (Student student : students) {
             if (student.getUserName().equals(userName) && student.checkPassword(password)) {

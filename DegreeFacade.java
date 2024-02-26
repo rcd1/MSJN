@@ -13,8 +13,7 @@ public class DegreeFacade {
     }
 
     public User login(String userName, String password) {
-        user = userList.getUser(userName, password);
-        return user;
+        return userList.getUser(userName, password);
     }
 
     public void logout() {
