@@ -30,6 +30,7 @@ public class ApplicationUI {
         scanner.close();
     }
 
+    //Display details
     private void displayMainMenu() {
         System.out.println("Welcome to DegreeWorks");
         System.out.println("Login");
@@ -42,7 +43,7 @@ public class ApplicationUI {
     private String getUserOption() {
         return scanner.nextLine();
     }
-
+    //Login
     private void login() {
         System.out.println("Enter username: ");
         String userName = scanner.nextLine();
@@ -56,7 +57,7 @@ public class ApplicationUI {
             System.out.println("Login failed. Please check your username and password.");
         }
     }
-
+    //Signup/CreateAcc
     private void createAccount() {
         System.out.println("Enter first name: ");
         String firstName = scanner.nextLine();
@@ -74,7 +75,7 @@ public class ApplicationUI {
             System.out.println("Failed to create account. Please check your information again");
         }
     }
-
+    //logout
     private void logout() {
         user = null;
         application.logout();
