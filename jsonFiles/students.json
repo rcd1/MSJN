@@ -32,8 +32,8 @@
             {"note":"Student advised to take CSCE 145, ENGL 101, MATH 115, and MATH 111 this semester"},
             {"note":"Dropped MATH 115, replaced with MATH 111L"}
         ],
-        "isHonors":1,
-        "hasScholarship":1,
+        "isHonors":true,
+        "hasScholarship":true,
         "studentGrades":[
             {
                 "courseId":"8a95b1f5-bad4-4d02-9378-71a1c7f67930",

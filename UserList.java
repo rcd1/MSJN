@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class UserList {
     private static UserList userList;
-    private ArrayList<Student> students;
-    private ArrayList<Advisor> advisors;
+    private static ArrayList<Student> students;
+    private static ArrayList<Advisor> advisors;
 
     public UserList() {
         userList = this;

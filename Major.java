@@ -8,8 +8,12 @@ public class Major {
  private ApplicationID applicationID;
 
 
-public Major(){
 
+public Major(UUID majorid, String majorName, RequirementSet requiredCourses, ApplicationID applicationID) {
+    this.majorid = majorid;
+    this.majorName = majorName;
+    this.requiredCourses = requiredCourses;
+    this.applicationID = applicationID;
 }
 
 protected void addCourse(Course course){
@@ -31,6 +35,22 @@ protected boolean changeApplicationID(int choice){
  */
 public boolean checkMajor(String majorName) {
     return this.majorName.equalsIgnoreCase(majorName);
+}
+
+public UUID getMajorid() {
+    return majorid;
+}
+
+public String getMajorName() {
+    return majorName;
+}
+
+public RequirementSet getRequiredCourses() {
+    return requiredCourses;
+}
+
+public ApplicationID getApplicationID() {
+    return applicationID;
 }
 
 }

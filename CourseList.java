@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class CourseList {
     private static CourseList courseList;
-    private ArrayList<Course> courses;
+    private static ArrayList<Course> courses;
 
     public CourseList() {
         courseList = this;
@@ -23,6 +24,19 @@ public class CourseList {
             if (course.checkCourse(name, number, hours))
             return course;
         }
+        return null;
+    }
+
+    /**
+     * Find a course with a specific UUID
+     * @param courseID the UUID of the course
+     * @return the course if found, null otherwise
+     */
+    public static Course getCourseByUUID(UUID courseID) {
+        for (Course i : courses) {
+            if (courseID.equals(i.getCourseID())) return i;
+        }
+        System.out.println("CourseList.java could not find course with UUID " + courseID);
         return null;
     }
 }
