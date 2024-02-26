@@ -18,7 +18,7 @@ public abstract class User {
     }
 
     protected boolean checkPassword(String userInput) {
-        return false;
+        return userInput.equals(password);
     }
 
     protected abstract void viewStudentProfile(Student student);
