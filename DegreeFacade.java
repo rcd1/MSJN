@@ -39,12 +39,12 @@ public class DegreeFacade {
         return courseList.getCourses();
     }
 
-    public ArrayList<Course> findCourses() {
+    public ArrayList<Course> findCourses() { //what is difference between this one and getCourses
         return courseList.getCourses();
     }
 
     public ArrayList<Course> findCourses(String keyword) {
-    
+        return courseList.findCourses(keyword);
     }
 }
 

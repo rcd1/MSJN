@@ -24,7 +24,6 @@ public abstract class User {
 
     /**
      * Used by UserList in order to check for username
-     * @return
      */
     public abstract String getUserName();
 
