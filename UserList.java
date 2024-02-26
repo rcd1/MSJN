@@ -5,7 +5,7 @@ public class UserList {
     private ArrayList<Student> students;
     private ArrayList<Advisor> advisors;
 
-    private UserList() {
+    public UserList() {
         userList = this;
         students = DataLoader.getStudents();
         advisors = DataLoader.getAdvisors();
@@ -29,6 +29,17 @@ public class UserList {
             }
         }
         return null;
+
+    }
+
+    public void addUser(User newUser) {
+        if (newUser instanceof Student) {
+            students.add((Student) newUser);
+        } else if (newUser instanceof Advisor) {
+            advisors.add((Advisor) newUser);
+        } else {
+            throw new IllegalArgumentException("Unsupported user type: " + newUser.getClass().getName());
+        }
 
     }
 }

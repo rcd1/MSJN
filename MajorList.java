@@ -4,7 +4,7 @@ public class MajorList {
     private static MajorList majorList;
     private ArrayList<Major> majors;
 
-    private MajorList() {
+    public MajorList() {
         majorList = this;
         majors = DataLoader.getMajors();
     }
