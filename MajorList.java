@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class MajorList {
     private static MajorList majorList;
-    private ArrayList<Major> majors;
+    private static ArrayList<Major> majors;
 
     public MajorList() {
         majorList = this;
@@ -20,5 +21,14 @@ public class MajorList {
             return major;
         }
         return null;
+    }
+
+    
+    public static Major getMajorByUUID(UUID majorID) {
+        for (Major i : majors) {
+            if (majorID.equals(i.getMajorid())) return i;
+    }
+    System.out.println("MajorList.java could not find Major with UUID " + majorID);
+    return null;
     }
 }
