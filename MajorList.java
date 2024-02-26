@@ -23,7 +23,11 @@ public class MajorList {
         return null;
     }
 
-    
+    /**
+     * Find a major with the specified UUID
+     * @param majorID UUID of the major
+     * @return the Major object if found, null otherwise
+     */
     public static Major getMajorByUUID(UUID majorID) {
         for (Major i : majors) {
             if (majorID.equals(i.getMajorid())) return i;
