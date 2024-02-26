@@ -20,12 +20,12 @@ public class DegreeFacade {
         user = null;
     }
 
-    public void addCourse(Course course) {
-
+    public void addCourse(Student student, Course course) {
+        student.addCourse(course);
     }
 
-    public void removeCourse() {
-
+    public void removeCourse(Student student, Course course) {
+        student.removeCourse(course);
     }
 
     public User createAccount(String firstName, String lastName, String email, String password) {

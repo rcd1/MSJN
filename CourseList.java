@@ -27,7 +27,6 @@ public class CourseList {
         return null;
     }
 
-<<<<<<< HEAD
     public ArrayList<Course> findCourses(String keyword) {
         ArrayList<Course> foundCourses = new ArrayList<>();
         for (Course course : courses) {
@@ -36,7 +35,8 @@ public class CourseList {
             }
         }
         return foundCourses;
-=======
+    }
+
     /**
      * Find a course with a specific UUID
      * @param courseID the UUID of the course
@@ -48,6 +48,5 @@ public class CourseList {
         }
         System.out.println("CourseList.java could not find course with UUID " + courseID);
         return null;
->>>>>>> aa156000f9fd3f21cf28b14481155adbb285d63e
     }
 }
