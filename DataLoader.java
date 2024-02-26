@@ -1,6 +1,11 @@
 import java.util.ArrayList;
+import java.util.UUID;
+import java.io.FileReader;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
-public class DataLoader {
+public class DataLoader extends DataConstants {
     
     public DataLoader() {
 

@@ -1,17 +1,19 @@
-public class DataWriter {
+import java.util.ArrayList;
+
+public class DataWriter extends DataConstants{
     //Do you mean saveAdvisors
     //was save user but i changed it let me know if this is wrong
     public static void saveUsers(){
     }
     
-    public static void saveAdvisors(Advisor advisor){
+    public static void saveAdvisor(Advisor advisor){
 
     }
     
-    public static void saveStudents(Student student){
+    public static void saveStudent(Student student){
 
     }
-    public static void saveAllStudents(List<Student> student){
+    public static void saveAllStudents(ArrayList<Student> students){
         if (students == null || students.isEmpty()) {
             return; // No students to save
         }
@@ -20,12 +22,12 @@ public class DataWriter {
             saveStudent(student);
         }
     }
-    public static void saveAllAdvisor(List<Advisor> advisor) {
-        if (advisor == null || advisors.isEmpty()) {
+    public static void saveAllAdvisor(ArrayList<Advisor> advisors) {
+        if (advisors == null || advisors.isEmpty()) {
             return; 
         }
 
-        for (Advisor advisor : advisor) {
+        for (Advisor advisor : advisors) {
             saveAdvisors(this.saveAdvisors(advisor)); 
         }
     }
