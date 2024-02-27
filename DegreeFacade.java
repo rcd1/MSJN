@@ -12,8 +12,8 @@ public class DegreeFacade {
         majorList = MajorList.getInstance();
     }
 
-    public User login(String userName, String password) {
-        return userList.getUser(userName, password);
+    public User login(String email, String password) {
+        return userList.getUser(email, password);
     }
 
     public void logout() {
@@ -38,12 +38,12 @@ public class DegreeFacade {
         return courseList.getCourses();
     }
 
-    public ArrayList<Course> findCourses() { //what is difference between this one and getCourses
-        return courseList.getCourses();
-    }
-
     public ArrayList<Course> findCourses(String keyword) {
         return courseList.findCourses(keyword);
+    }
+
+    public ArrayList<Major> getMajor(String majorName) {
+        return majorList.getMajor();
     }
 }
 
