@@ -17,8 +17,8 @@ public class DegreeFacade {
         majorList = MajorList.getInstance();
     }
 
-    public User login(String userName, String password) {
-        return userList.getUser(userName, password);
+    public User login(String email, String password) {
+        return userList.getUser(email, password);
     }
 
     /**
@@ -28,21 +28,20 @@ public class DegreeFacade {
         user = null;
     }
 
-<<<<<<< HEAD
-    public void addCourse(Course course) {
-        Administrator.addCourse;
+    public void addCourseToStudent(Administrator administrator, Course course) {
+        administrator.addCourseToStudent(course);
     }
 
-    public void removeCourse(Course course) {
-        Administrator.removeCourse;
-=======
+    public void removeCourseFromStudent(Administrator administrator, Course course) {
+        administrator.removeCourseFromStudent(course);
+    }
+    
     public void addCourse(Student student, Course course) {
         student.addCourse(course);
     }
 
     public void removeCourse(Student student, Course course) {
         student.removeCourse(course);
->>>>>>> eb8d44071fd7e9946acae3c823b63e6451579f86
     }
 
     public User createAccount(String firstName, String lastName, String email, String password) {
@@ -55,12 +54,12 @@ public class DegreeFacade {
         return courseList.getCourses();
     }
 
-    public ArrayList<Course> findCourses() { //what is difference between this one and getCourses
-        return courseList.getCourses();
-    }
-
     public ArrayList<Course> findCourses(String keyword) {
         return courseList.findCourses(keyword);
+    }
+
+    public ArrayList<Major> getMajor(String majorName) {
+        return majorList.getMajor();
     }
 }
 
