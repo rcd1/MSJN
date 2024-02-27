@@ -33,14 +33,14 @@ public class UserList {
 
     }
 
-    public User getUser(String userName, String password) {
+    public User getUser(String email, String password) {
         for (Student student : students) {
-            if (student.getUserName().equals(userName) && student.getPassword().equals(password)) {
+            if (student.getEmail().equals(email) && student.getPassword().equals(password)) {
                 return student;
             }
         }
         for (Advisor advisor : advisors) {
-            if (advisor.getUserName().equals(userName) && advisor.getPassword().equals(password)) {
+            if (advisor.getEmail().equals(email) && advisor.getPassword().equals(password)) {
                 return advisor;
             }
         }
