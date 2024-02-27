@@ -65,10 +65,14 @@ public class UserList {
     public User addUser(String firstName, String lastName, String email, String password, UserType type) {
         User user = null;
         UUID uuid = UUID.randomUUID();
-        if(type == UserType.STUDENT) {
-            user = new Student(firstName, lastName, email, password, uuid);
-        } else if(type == UserType.ADVISOR) {
-            user = new Advisor(firstName, lastName, email, password, uuid);
+
+        switch(type) {
+            case STUDENT: 
+                user = new Student(firstName, lastName, email, password, uuid);
+                break;
+            case ADVISOR:
+                user = new Advisor(firstName, lastName, email, password, uuid);
+                break;
         }
         return user;
     }
