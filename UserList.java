@@ -16,7 +16,7 @@ public class UserList {
         return userList;
     } 
 
-    // When is this version of getUser ever called?
+    // When is this version of getUser ever called? Might need to be removed
     public User getUser(String firstName, String lastName, String email) {
         
         for (Student student : students) {
@@ -33,15 +33,14 @@ public class UserList {
 
     }
 
-    // Should we make a method for "checkUsername" or something along those lines?
     public User getUser(String userName, String password) {
         for (Student student : students) {
-            if (student.getUserName().equals(userName) && student.checkPassword(password)) {
+            if (student.getUserName().equals(userName) && student.getPassword().equals(password)) {
                 return student;
             }
         }
         for (Advisor advisor : advisors) {
-            if (advisor.getUserName().equals(userName) && advisor.checkPassword(password)) {
+            if (advisor.getUserName().equals(userName) && advisor.getPassword().equals(password)) {
                 return advisor;
             }
         }
