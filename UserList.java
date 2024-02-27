@@ -55,6 +55,7 @@ public class UserList {
         } else {
             throw new IllegalArgumentException("Unsupported user type: " + newUser.getClass().getName());
         }
-
     }
+
+    public User addUser(String user)
 }
