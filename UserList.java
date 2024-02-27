@@ -48,6 +48,7 @@ public class UserList {
         return null;
     }
 
+    // To be removed
     public void addUser(User newUser) {
         
         if (newUser instanceof Student) {
