@@ -7,11 +7,11 @@ public class Administrator extends User{
         super(firstName, lastName, email, password);
     }
 
-    public boolean addCourseToStudent(Course course) {
+    public boolean addCourseToStudent(Student student, Course course) {
         return true;
     }
 
-    public boolean removeCourseFromStudent(Course course) {
+    public boolean removeCourseFromStudent(Student student, Course course) {
         return true;
     }
 

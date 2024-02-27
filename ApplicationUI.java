@@ -94,8 +94,8 @@ public class ApplicationUI {
                 System.out.println("Failed to create account. Please check your information again");
             }
         }
+    }
 
-        
     //logout
     private void logout() {
         user = null;
