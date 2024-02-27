@@ -8,11 +8,11 @@ public class DataWriter extends DataConstants{
     public static void saveUsers(){
     }
     
-    public static void saveAdvisor(Advisor advisor){
+    public static void saveAdvisors(Advisor advisor){
 
     }
     
-    public static void saveStudent(Student student){
+    public static void saveStudents(Student student){
 
     }
     
@@ -22,7 +22,7 @@ public class DataWriter extends DataConstants{
         }
 
         for (Student student : students) {
-            saveStudent(student);
+            saveStudents(student);
         }
     }
     public static void saveAllAdvisor(ArrayList<Advisor> advisors) {
