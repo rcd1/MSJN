@@ -20,10 +20,6 @@ public abstract class User {
         return password;
     }
 
-    protected boolean checkPassword(String userInput) {
-        return userInput.equals(password);
-    }
-
     protected abstract void viewStudentProfile(Student student);
 
     /**
