@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class UserList {
     private static UserList userList;
@@ -16,7 +17,7 @@ public class UserList {
         return userList;
     } 
 
-    // When is this version of getUser ever called?
+    // When is this version of getUser ever called? Might need to be removed
     public User getUser(String firstName, String lastName, String email) {
         
         for (Student student : students) {
@@ -33,22 +34,23 @@ public class UserList {
 
     }
 
-    // Should we make a method for "checkUsername" or something along those lines?
-    public User getUser(String userName, String password) {
+    public User getUser(String email, String password) {
         for (Student student : students) {
-            if (student.getUserName().equals(userName) && student.checkPassword(password)) {
+            if (student.getEmail().equals(email) && student.getPassword().equals(password)) {
                 return student;
             }
         }
         for (Advisor advisor : advisors) {
-            if (advisor.getUserName().equals(userName) && advisor.checkPassword(password)) {
+            if (advisor.getEmail().equals(email) && advisor.getPassword().equals(password)) {
                 return advisor;
             }
         }
         return null;
     }
 
+    // To be removed
     public void addUser(User newUser) {
+        
         if (newUser instanceof Student) {
             students.add((Student) newUser);
         } else if (newUser instanceof Advisor) {
@@ -56,6 +58,24 @@ public class UserList {
         } else {
             throw new IllegalArgumentException("Unsupported user type: " + newUser.getClass().getName());
         }
+    }
 
+    //Could be improved by using methods inside the enum like in state design pattern
+    //Need to add new overloaded constructor for the following two classes
+    public User addUser(String firstName, String lastName, String email, String password, UserType type) {
+        User user = null;
+        UUID uuid = UUID.randomUUID();
+
+        switch(type) {
+            case STUDENT: 
+                user = new Student(firstName, lastName, email, password, uuid);
+                students.add((Student) user);
+                break;
+            case ADVISOR:
+                user = new Advisor(firstName, lastName, email, password, uuid);
+                advisors.add((Advisor) user);
+                break;
+        }
+        return user;
     }
 }
