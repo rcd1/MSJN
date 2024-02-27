@@ -48,6 +48,7 @@ public class UserList {
     }
 
     public void addUser(User newUser) {
+        
         if (newUser instanceof Student) {
             students.add((Student) newUser);
         } else if (newUser instanceof Advisor) {
@@ -55,5 +56,9 @@ public class UserList {
         } else {
             throw new IllegalArgumentException("Unsupported user type: " + newUser.getClass().getName());
         }
+    }
+
+    public User addUser(String firstName, String lastName, String email, String password) {
+        return null;
     }
 }
