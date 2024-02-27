@@ -28,12 +28,21 @@ public class DegreeFacade {
         user = null;
     }
 
+<<<<<<< HEAD
     public void addCourse(Course course) {
         Administrator.addCourse;
     }
 
     public void removeCourse(Course course) {
         Administrator.removeCourse;
+=======
+    public void addCourse(Student student, Course course) {
+        student.addCourse(course);
+    }
+
+    public void removeCourse(Student student, Course course) {
+        student.removeCourse(course);
+>>>>>>> eb8d44071fd7e9946acae3c823b63e6451579f86
     }
 
     public User createAccount(String firstName, String lastName, String email, String password) {
@@ -46,12 +55,12 @@ public class DegreeFacade {
         return courseList.getCourses();
     }
 
-    public ArrayList<Course> findCourses() {
+    public ArrayList<Course> findCourses() { //what is difference between this one and getCourses
         return courseList.getCourses();
     }
 
     public ArrayList<Course> findCourses(String keyword) {
-    
+        return courseList.findCourses(keyword);
     }
 }
 

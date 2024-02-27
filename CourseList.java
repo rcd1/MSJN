@@ -27,6 +27,16 @@ public class CourseList {
         return null;
     }
 
+    public ArrayList<Course> findCourses(String keyword) {
+        ArrayList<Course> foundCourses = new ArrayList<>();
+        for (Course course : courses) {
+            if (course.getKeywords().contains(keyword)) {
+                foundCourses.add(course);
+            }
+        }
+        return foundCourses;
+    }
+
     /**
      * Find a course with a specific UUID
      * @param courseID the UUID of the course
