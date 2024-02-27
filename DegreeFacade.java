@@ -1,4 +1,9 @@
 import java.util.ArrayList;
+/**
+ * This facade class can be considered the central hub of the program
+ * 
+ */
+
 
 public class DegreeFacade {
     private UserList userList;
@@ -16,16 +21,28 @@ public class DegreeFacade {
         return userList.getUser(userName, password);
     }
 
+    /**
+     * The user will become null once they log out of the system
+     */
     public void logout() {
         user = null;
     }
 
+<<<<<<< HEAD
+    public void addCourse(Course course) {
+        Administrator.addCourse;
+    }
+
+    public void removeCourse(Course course) {
+        Administrator.removeCourse;
+=======
     public void addCourse(Student student, Course course) {
         student.addCourse(course);
     }
 
     public void removeCourse(Student student, Course course) {
         student.removeCourse(course);
+>>>>>>> eb8d44071fd7e9946acae3c823b63e6451579f86
     }
 
     public User createAccount(String firstName, String lastName, String email, String password) {
