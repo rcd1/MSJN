@@ -71,7 +71,7 @@ public class ApplicationUI {
             System.out.println("Enter your password: ");
             String password = scanner.nextLine();
 
-            user = application.createStudentAccount(firstName, lastName, email, password);
+            user = application.createAccount(firstName, lastName, email, password);
             if (user != null) {
                 System.out.println("Account successfully made.");
             } else {
@@ -87,7 +87,7 @@ public class ApplicationUI {
             System.out.println("Enter your password: ");
             String password = scanner.nextLine();
 
-            user = application.createAdvisorAccount(firstName, lastName, email, password);
+            user = application.createAccount(firstName, lastName, email, password);
             if (user != null) {
                 System.out.println("Account successfully made.");
             } else {

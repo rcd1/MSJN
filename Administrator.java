@@ -7,19 +7,15 @@ public class Administrator extends User{
         super(firstName, lastName, email, password);
     }
 
-    private boolean addCourse(Course course) {
+    public boolean addCourseToStudent(Course course) {
         return true;
     }
 
-    private boolean removeCourse(Course course) {
+    public boolean removeCourseFromStudent(Course course) {
         return true;
     }
 
-    private boolean addStudentCourse(Student student, Course course) {
-        return true;
-    }
-
-    private boolean addStudentGrade(Student student, Course course, Grade grade) {
+    public boolean addStudentGrade(Student student, Course course, Grade grade) {
         return true;
 
     }
@@ -32,5 +28,11 @@ public class Administrator extends User{
     protected void viewStudentProfile(Student student) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'viewStudentProfile'");
+    }
+
+    @Override
+    public String getUserName() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getUserName'");
     }
 }
