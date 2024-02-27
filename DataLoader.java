@@ -47,14 +47,66 @@ public class DataLoader extends DataConstants {
     }
 
 
+    private static Major rebuildMajor(JSONObject jsonObject) {
+        
+    }
+
+/*----------------------------------------------------------------------------*/
+
     public static ArrayList<Advisor> getAdvisors(){
         return new ArrayList<>();
     }
+
+/*----------------------------------------------------------------------------*/
+
     public static ArrayList<Course> getCourses(){
-        return new ArrayList<>();
+        ArrayList<Course> courses = new ArrayList<>();
+
+        try {
+            FileReader reader = new FileReader(COURSE_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray coursesJSON = (JSONArray)new JSONParser().parse(reader);
+            for (Object i : coursesJSON) {
+                JSONObject courseJSONObject = (JSONObject)i;
+                UUID courseId = UUID.fromString((String)courseJSONObject.get(COURSE_ID));
+                Designator designator = Designator.valueOf((String)courseJSONObject.get(COURSE_DESIGNATOR));
+                String number = (String)courseJSONObject.get(COURSE_NUMBER);
+                int hours = ((Long)courseJSONObject.get(COURSE_HOURS)).intValue();
+                ArrayList<Requirement> requirements = rebuildRequirements((JSONArray)courseJSONObject.get(COURSE_REQUIREMENTS));
+                ArrayList<Keyword> keywords = rebuildKeywords((JSONArray)courseJSONObject.get(COURSE_KEYWORDS));
+                int preferredSemester = ((Long)courseJSONObject.get(COURSE_PREFERRED_SEMESTER)).intValue();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return courses;
     }
 
+
+    private static Keyword rebuildKeyword(JSONObject keywordJSONObject) {
+        return Keyword.valueOf((String)keywordJSONObject.get(KEYWORD_NAME));
+    }
+
+
+
+    private static ArrayList<Keyword> rebuildKeywords(JSONArray jsonArray) {
+        ArrayList<Keyword> keywords = new ArrayList<>();
+        for (Object object : jsonArray) {
+            JSONObject keywordJSONObject = (JSONObject)object;
+            keywords.add(rebuildKeyword(keywordJSONObject));
+        }
+         return keywords;
+    }
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
     public static ArrayList<Major> getMajors() {
+        
         return new ArrayList<>();
     }
 }

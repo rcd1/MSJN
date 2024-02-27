@@ -16,7 +16,7 @@
                 "mode":"pc"
             }
         ],
-        "keywords":"PR",
+        "keywords":[{"keyword":"PR"}],
         "preferredSemester":1
     },
     {
@@ -31,7 +31,7 @@
                 "mode":"pc"
             }
         ],
-        "keywords":"PR",
+        "keywords":[{"keyword":"PR"}],
         "preferredSemester":1
     },
     {
@@ -40,7 +40,7 @@
         "number":"111",
         "hours":4,
         "requirements":[],
-        "keywords":"PR",
+        "keywords":[{"keyword":"PR"}],
         "preferredSemester":1
     },
     {
@@ -49,7 +49,7 @@
         "number":"101",
         "hours":3,
         "requirements":[],
-        "keywords":"CMW",
+        "keywords":[{"keyword":"PR"}],
         "preferredSemester":1
 
     },
@@ -65,7 +65,7 @@
                 "mode":"p"
             }
         ],
-        "keywords":"CMW",
+        "keywords":[{"keyword":"PR"}],
         "preferredSemester":2
     }
 ]

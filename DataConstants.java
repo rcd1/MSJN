@@ -19,6 +19,38 @@ public abstract class DataConstants {
     protected static final String STUDENT_HAS_SCHOLARSHIP = "hasScholarship";
     protected static final String STUDENT_GRADES = "studentGrades";
     /*-------------------------Advisor-------------------------*/
-    protected static final String ADVISORS_FILE_NAME = "jsonFiles/advisors";
+    protected static final String ADVISORS_FILE_NAME = "jsonFiles/advisors.json";
     protected static final String ADVISOR_STUDENTS = "students";
+
+    /*--------------------------Major--------------------------*/
+    protected static final String MAJOR_FILE_NAME = "jsonFiles/majors.json";
+    protected static final String Major_ID = "majorId";
+    protected static final String MAJOR_Name = "majorName";
+    protected static final String MAJOR_REQUIRED_COURSES = "requiredCourses";
+    protected static final String MAJOR_APPLICATION_ID = "applicationID";
+
+    /*--------------------------RequirementSet--------------------------*/
+    protected static final String REQUIREMENT_SET_TITLE = "title";
+    protected static final String REQUIREMENT_SET_REQUIREMENTS = "requirements";
+    protected static final String REQUIREMENT_SET_MINHOURS = "minHours";
+    protected static final String REQUIREMENT_SET_MAXHOURS = "maxHours";    
+
+    /*--------------------------Requirements--------------------------*/
+    protected static final String REQUIREMENT_COURSE_ID = "courseId";
+    protected static final String REQUIREMENT_GRADE = "grade";
+    protected static final String REQUIREMENT_MODE = "mode";
+
+    /*-----------------------------Course-----------------------------*/
+    protected static final String COURSE_FILE_NAME = "jsonFiles/courses.json";
+    protected static final String COURSE_ID = "id";
+    protected static final String COURSE_DESIGNATOR = "designator";
+    protected static final String COURSE_NUMBER = "number";
+    protected static final String COURSE_HOURS = "hours";
+    protected static final String COURSE_REQUIREMENTS = "requirements";
+    protected static final String COURSE_KEYWORDS = "keywords";
+    protected static final String COURSE_PREFERRED_SEMESTER = "prefferedSemester";
+    /*-----------------------------Keywords-----------------------------*/
+    protected static final String KEYWORD_NAME = "keyword";
+
+
 }
