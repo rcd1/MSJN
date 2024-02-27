@@ -17,16 +17,19 @@ public abstract class User {
         return false;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     protected boolean checkPassword(String userInput) {
         return userInput.equals(password);
     }
 
     protected abstract void viewStudentProfile(Student student);
-
-    /**
-     * Used by UserList in order to check for username
-     */
-    public abstract String getUserName();
 
     /**
      * Used by UserList, checks if any user has these parameters
