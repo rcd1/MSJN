@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class UserList {
     private static UserList userList;
@@ -58,7 +59,16 @@ public class UserList {
         }
     }
 
-    public User addUser(String firstName, String lastName, String email, String password) {
-        return null;
+    //Could be improved by using methods inside the enum like in state design pattern
+    //Need to add new overloaded constructor for the following two classes
+    public User addUser(String firstName, String lastName, String email, String password, UserType type) {
+        User user = null;
+        UUID uuid = UUID.randomUUID();
+        if(type == UserType.STUDENT) {
+            user = new Student(firstName, lastName, email, password, uuid);
+        } else if(type == UserType.ADVISOR) {
+            user = new Advisor(firstName, lastName, email, password, uuid);
+        }
+        return user;
     }
 }
