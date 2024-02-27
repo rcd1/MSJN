@@ -69,9 +69,11 @@ public class UserList {
         switch(type) {
             case STUDENT: 
                 user = new Student(firstName, lastName, email, password, uuid);
+                students.add((Student) user);
                 break;
             case ADVISOR:
                 user = new Advisor(firstName, lastName, email, password, uuid);
+                advisors.add((Advisor) user);
                 break;
         }
         return user;
