@@ -2,7 +2,6 @@ import java.util.UUID;
 
 public abstract class User {
     protected String firstName, lastName, email, password;
-    protected String userName;
     protected UUID userID;
 
     public User(String firstName, String lastName, String email, String password, UUID userID) {
@@ -13,8 +12,8 @@ public abstract class User {
         this.userID = userID;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getEmail() {
+        return email;
     }
 
     public String getPassword() {
