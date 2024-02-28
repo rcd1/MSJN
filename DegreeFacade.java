@@ -18,7 +18,7 @@ public class DegreeFacade {
     }
 
     public User login(String email, String password) {
-        return userList.getUser(email, password);
+        return user = userList.getUser(email, password);
     }
 
     /**
@@ -47,6 +47,7 @@ public class DegreeFacade {
     public User createAccount(String firstName, String lastName, String email, String password) {
         User newUser = new User(firstName, lastName, email, password); //need to find a way to create new user, cant use abstract User class
         userList.addUser(newUser);
+        user = newUser;
         return newUser;
     }
 
