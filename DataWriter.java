@@ -50,6 +50,13 @@ public class DataWriter extends DataConstants{
                 jsonStudents.add(getStudentJSON(Student.get(i)));
             }
 
+            try (FileWriter file = new FileWriter(STUDENT_FILE_NAME)) { 
+                file.write(jsonCourses.toJSONString());
+                file.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
 
         }
 
