@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.UUID;
 public class Advisor extends User {
     private ArrayList<Student> students;
 
-    public Advisor(String firstName, String lastName, String email, String password){
-        super(firstName, lastName, email, password);
+    public Advisor(String firstName, String lastName, String email, String password, UUID userID){
+        super(firstName, lastName, email, password, userID);
     }
     public boolean addStudent(Student student){
         return true;
