@@ -44,11 +44,8 @@ public class DegreeFacade {
         student.removeCourse(course);
     }
 
-    public User createAccount(String firstName, String lastName, String email, String password) {
-        User newUser = new User(firstName, lastName, email, password); //need to find a way to create new user, cant use abstract User class
-        userList.addUser(newUser);
-        user = newUser;
-        return newUser;
+    public User createAccount(String firstName, String lastName, String email, String password, UserType type) {
+        return user = userList.addUser(firstName, lastName, email, password, type);
     }
 
     public ArrayList<Course> getCourses() {
