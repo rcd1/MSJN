@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class Student extends User{
     private Major major;
@@ -15,10 +16,10 @@ public class Student extends User{
 
     
 
-    public Student(String firstName, String lastName, String email, String password, Major major, int year, double gpa,
+    public Student(String firstName, String lastName, String email, String password, UUID userID, Major major, int year, double gpa,
             ArrayList<SemesterPlan> semesterPlans, ArrayList<LegalGuardian> legalGuardians, Advisor advisor,
             ArrayList<String> notes, boolean isHonors, boolean hasScholarship, HashMap<Course, Grade> studentGrades) {
-        super(firstName, lastName, email, password);
+        super(firstName, lastName, email, password, userID);
         this.major = major;
         this.year = year;
         this.gpa = gpa;
@@ -61,11 +62,6 @@ public class Student extends User{
 
     public void whatIf(Major major, ArrayList<Course> courses) {
         
-    }
-
-    @Override
-    public String getUserName() {
-        return userName;
     }
 
     @Override
