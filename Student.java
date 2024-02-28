@@ -32,6 +32,11 @@ public class Student extends User{
         this.studentGrades = studentGrades;
     }
 
+    // Doesn't initialize other members. Might need a bunch of setters. This is for when a new account is created
+    public Student(String firstName, String lastName, String email, String password, UUID userID) {
+        super(firstName, lastName, email, password, userID);
+    }
+
     public void addCourse(Course course) {
 
     }
