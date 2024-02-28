@@ -20,11 +20,6 @@ public class Advisor extends User {
     }
 
     @Override
-    public String getUserName() {
-        return userName;
-    }
-
-    @Override
     protected void viewStudentProfile(Student student) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'viewStudentProfile'");
