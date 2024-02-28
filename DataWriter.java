@@ -56,7 +56,12 @@ public class DataWriter extends DataConstants{
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+        }
+        
+        
+        public static JSONObject getStudentJSON(Student student){
+            JSONObject studentDetails = new JSONObject();
+            studentDetails.put(STUDENT_ADVISOR, student.getStudentAdvisor());
 
         }
 
