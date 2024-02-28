@@ -1,44 +1,57 @@
 import java.util.ArrayList;
-/**
- * This class saves the user's data
- */
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class DataWriter extends DataConstants{
-    //Do you mean saveAdvisors
-    //was save user but i changed it let me know if this is wrong
+
+    //puts user list into JSON files
     public static void saveUsers(){
-    }
-    
-    public static void saveAdvisors(Advisor advisor){
+        UserList users = UserList.getInstance();
+        ArrayList<User> userList= users.getUser();
 
-    }
-    
-    public static void saveStudents(Student student){
+        JSONArray jsonUsers= new JSONArray();
 
-    }
-    
-    public static void saveAllStudents(ArrayList<Student> students){
-        if (students == null || students.isEmpty()) {
-            return; // No students to save
+        for(int i=0; i< userList.size();i++){
+            jsonUsers.add(getUserJSON(userList.get(i)));
+
         }
+        try (FileWriter File = new FileWriter(USER_FILE_NAME)){
+            file.write(jsonUsers.toJSONString());
+            file.flush();
 
-        for (Student student : students) {
-            saveStudents(student);
-        }
-    }
-    public static void saveAllAdvisor(ArrayList<Advisor> advisors) {
-        if (advisors == null || advisors.isEmpty()) {
-            return; 
-        }
-
-        for (Advisor advisor : advisors) {
-            saveAdvisors(this.saveAdvisors(advisor)); 
+        } catch (IOException e){
+            e.printStackTrace();
         }
     }
 
-    public static void saveCourses(){
+        public static JSONObject getUserJSON(User user){
+            JSONObject userDetails = new JSONObject();
+
+            userDetails.put(USER_EMAIL, user.getEmail());
+            userDetails.put(USER_FIRST_NAME, user.getFirstName());
+            userDetails.put(USER_ID, user.getID().toString());
+            userDetails.put(USER_LAST_NAME, user.getLastName());
+            userDetails.put(USER_PASSWORD, user.getPassword());
+            userDetails.put(USER_USER_NAME, user.getUserName());
+
+            return userDetails;
+        }
+
+        public static void saveAllStudents(){
+            Student students =Student.getInstance();
+            ArrayList<Student> Student = students.getStudents();
+            JSONArray jsonStudents = new JSONArray();
+
+            for(int i=0;i< Student.size();i++){
+                jsonStudents.add(getStudentJSON(Student.get(i)));
+            }
+
+
+        }
 
     }
-    public static void saveMajors() {
-
-    }
-}
+﻿
