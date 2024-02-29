@@ -10,7 +10,7 @@ public class LegalGuardian extends User{
     }
     
     public void removeStudent(Student student) {
-
+        
     }
 
     @Override

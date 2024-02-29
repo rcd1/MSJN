@@ -1,5 +1,5 @@
 public enum ApplicationID{
-    Cybersecurity(), 
+    Cybersecurity, 
     Linguistics, 
     ArtifiicalIntelligence;
 }
