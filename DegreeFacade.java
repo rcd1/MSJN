@@ -57,7 +57,7 @@ public class DegreeFacade {
         return courseList.findCourses(keyword);
     }
 
-    public ArrayList<Course> getCourseByCode(UUID courseID) {
+    public ArrayList<Course> getCourseByUUID(UUID courseID) {
         return getCourseByUUID(courseID);
     }
 
