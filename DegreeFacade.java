@@ -58,7 +58,7 @@ public class DegreeFacade {
     }
 
     public ArrayList<Course> getCourseByCode(UUID courseID) {
-        return getCourseByCode(courseID);
+        return getCourseByUUID(courseID);
     }
 
     public ArrayList<Major> getMajor(String majorName) {

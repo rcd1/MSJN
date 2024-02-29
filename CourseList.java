@@ -46,7 +46,7 @@ public class CourseList {
      * @param courseID the UUID of the course
      * @return the course if found, null otherwise
      */
-    public static Course getCourseByCode(UUID courseID) {
+    public static Course getCourseByUUID(UUID courseID) {
         for (Course i : courses) {
             if (courseID.equals(i.getCourseID())) return i;
         }
