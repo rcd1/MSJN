@@ -2,8 +2,9 @@ import java.util.ArrayList;
 public class Advisor extends User {
     private ArrayList<Student> students;
 
-    public Advisor(String firstName, String lastName, String email, String password){
-        super(firstName, lastName, email, password);
+    public Advisor(String firstName, String lastName, String email, String password, UUID userID){
+        super(firstName, lastName, email, password, userID);
+        students = new ArrayList<>();
     }
     public boolean addStudent(Student student){
         return true;
@@ -20,7 +21,7 @@ public class Advisor extends User {
 
     @Override
     public String getUserName() {
-        return userName;
+        return firstName + " " + lastName;
     }
 
     @Override
