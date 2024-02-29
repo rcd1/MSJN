@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class LegalGuardian extends User{
     
     private ArrayList<Student> students;
 
-    public LegalGuardian(String firstName, String lastName, String email, String password) {
-        super(firstName, lastName, email, password);
+    public LegalGuardian(String firstName, String lastName, String email, String password, UUID userID) {
+        super(firstName, lastName, email, password, userID);
     }
     
     public void removeStudent(Student student) {
