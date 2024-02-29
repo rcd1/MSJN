@@ -8,6 +8,10 @@ public class CourseList {
     public CourseList() {
         courseList = this;
         courses = DataLoader.getCourses();
+        // After loading courses, we can properly add the requirements
+        for (Course course : courses) {
+            course.reloadCourseRequirements();
+        }
     }
 
     public static CourseList getInstance() {
@@ -15,7 +19,7 @@ public class CourseList {
         return courseList;
     }
 
-    public ArrayList<Course> getCourses() {
+    public ArrayList<Course> getAllCourses() {
         return courses;
     }
 
