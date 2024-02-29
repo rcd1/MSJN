@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.UUID;
 public class Administrator extends User{
     private ArrayList<Student> students;
     private ArrayList<Advisor> advisors;
     
-    public Administrator (String firstName, String lastName, String email, String password) {
-        super(firstName, lastName, email, password);
+    public Administrator (String firstName, String lastName, String email, String password, UUID userID) {
+        super(firstName, lastName, email, password, userID);
     }
 
     public boolean addCourseToStudent(Student student, Course course) {

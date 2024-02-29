@@ -18,7 +18,7 @@ public class DegreeFacade {
     }
 
     public User login(String email, String password) {
-        return userList.getUser(email, password);
+        return user = userList.getUser(email, password);
     }
 
     /**
@@ -44,10 +44,8 @@ public class DegreeFacade {
         student.removeCourse(course);
     }
 
-    public User createAccount(String firstName, String lastName, String email, String password) {
-        User newUser = new User(firstName, lastName, email, password); //need to find a way to create new user, cant use abstract User class
-        userList.addUser(newUser);
-        return newUser;
+    public User createAccount(String firstName, String lastName, String email, String password, UserType type) {
+        return user = userList.addUser(firstName, lastName, email, password, type);
     }
 
     public ArrayList<Course> getCourses() {
