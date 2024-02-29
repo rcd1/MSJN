@@ -133,10 +133,12 @@ public class Course {
     public boolean checkCourse(String name, String number, int hours) {
         return this.designator.toString().equalsIgnoreCase(name) && this.number.equalsIgnoreCase(number) && this.hours == hours;
     }
-
+    /**
+     * Used by CourseList to add the CourseRequirements after the Courses have been loaded
+     */
     public void reloadCourseRequirements() {
         for (CourseRequisite requirement : requirements) {
-            
+            requirement.course = CourseList.getCourseByUUID(requirement.course.courseID);
         }
     }
     

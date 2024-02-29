@@ -54,6 +54,7 @@ public class DataLoader extends DataConstants {
 /*----------------------------------------------------------------------------*/
 
     public static ArrayList<Advisor> getAdvisors(){
+        
         return new ArrayList<>();
     }
 
@@ -71,15 +72,14 @@ public class DataLoader extends DataConstants {
                 UUID courseId = UUID.fromString((String)courseJSONObject.get(COURSE_ID));
                 Designator designator = Designator.valueOf((String)courseJSONObject.get(COURSE_DESIGNATOR));
                 String number = (String)courseJSONObject.get(COURSE_NUMBER);
-                int hours = ((Long)courseJSONObject.get(COURSE_HOURS)).intValue();
+                Long hoursTemp = ((Long)courseJSONObject.get(COURSE_HOURS));
+                int hours = hoursTemp.intValue();
                 ArrayList<CourseRequisite> requirements = rebuildCourseRequirements((JSONArray)courseJSONObject.get(COURSE_REQUIREMENTS));
                 ArrayList<Keyword> keywords = rebuildKeywords((JSONArray)courseJSONObject.get(COURSE_KEYWORDS));
-                int preferredSemester = ((Long)courseJSONObject.get(COURSE_PREFERRED_SEMESTER)).intValue();
+                Long preferredSemesterTemp = ((Long)courseJSONObject.get(COURSE_PREFERRED_SEMESTER));
+                int preferredSemester = preferredSemesterTemp.intValue();
 
                 courses.add(new Course(courseId, designator, number, hours, requirements, keywords, preferredSemester));
-            }
-            for (Course course : courses) {
-                course.reloadCourseRequirements();
             }
         } catch (Exception e) {
             e.printStackTrace();
