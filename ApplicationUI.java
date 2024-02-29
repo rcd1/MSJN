@@ -60,39 +60,31 @@ public class ApplicationUI {
     //Signup/CreateAcc
     private void createAccount() {
         System.out.println("Are you a student or advisor?");
-        String userOption = scanner.nextLine().toLowerCase();
-        if ("student".equals(userOption)) {
-            System.out.println("Enter first name: ");
-            String firstName = scanner.nextLine();
-            System.out.println("Enter last name: ");
-            String lastName = scanner.nextLine();
-            System.out.println("Enter your email: ");
-            String email = scanner.nextLine();
-            System.out.println("Enter your password: ");
-            String password = scanner.nextLine();
-
-            user = application.createAccount(firstName, lastName, email, password);
-            if (user != null) {
-                System.out.println("Account successfully made.");
-            } else {
-                System.out.println("Failed to create account. Please check your information again");
+        boolean isValid = false;
+        UserType type = null;
+        do {
+            String typeInput = scanner.nextLine();
+            if (typeInput.equalsIgnoreCase(UserType.STUDENT.getPhrase())) {
+                type = UserType.STUDENT;
+                isValid = true;
+            } else if(typeInput.equalsIgnoreCase(UserType.ADVISOR.getPhrase())) {
+                type = UserType.ADVISOR;
+                isValid = true;
             }
-        } else if ("advisor".equals(userOption)) {
-            System.out.println("Enter first name: ");
-            String firstName = scanner.nextLine();
-            System.out.println("Enter last name: ");
-            String lastName = scanner.nextLine();
-            System.out.println("Enter your email: ");
-            String email = scanner.nextLine();
-            System.out.println("Enter your password: ");
-            String password = scanner.nextLine();
-
-            user = application.createAccount(firstName, lastName, email, password);
-            if (user != null) {
-                System.out.println("Account successfully made.");
-            } else {
-                System.out.println("Failed to create account. Please check your information again");
-            }
+        } while (!isValid);
+        System.out.println("Enter first name: ");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter last name: ");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter your email: ");
+        String email = scanner.nextLine();
+        System.out.println("Enter your password: ");
+        String password = scanner.nextLine();
+        user = application.createAccount(firstName, lastName, email, password, type);
+        if (user != null) {
+            System.out.println("Account successfully made.");
+        } else {
+            System.out.println("Failed to create account. Please check your information again");
         }
     }
 

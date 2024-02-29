@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 /**
  * This facade class can be considered the central hub of the program
  * 
@@ -29,11 +30,11 @@ public class DegreeFacade {
     }
 
     public void addCourseToStudent(Administrator administrator, Course course) {
-        administrator.addCourseToStudent(course);
+        administrator.addCourseToStudent(administrator, course);
     }
 
     public void removeCourseFromStudent(Administrator administrator, Course course) {
-        administrator.removeCourseFromStudent(course);
+        administrator.removeCourseFromStudent(administrator, course);
     }
     
     public void addCourse(Student student, Course course) {
@@ -48,12 +49,16 @@ public class DegreeFacade {
         return user = userList.addUser(firstName, lastName, email, password, type);
     }
 
-    public ArrayList<Course> getCourses() {
-        return courseList.getCourses();
+    public ArrayList<Course> getAllCourses() {
+        return courseList.getAllCourses();
     }
 
     public ArrayList<Course> findCourses(String keyword) {
         return courseList.findCourses(keyword);
+    }
+
+    public ArrayList<Course> getCourseByCode(UUID courseID) {
+        return getCourseByCode(courseID);
     }
 
     public ArrayList<Major> getMajor(String majorName) {

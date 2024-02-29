@@ -15,7 +15,7 @@ public class CourseList {
         return courseList;
     }
 
-    public ArrayList<Course> getCourses() {
+    public ArrayList<Course> getAllCourses() {
         return courses;
     }
 
@@ -42,7 +42,7 @@ public class CourseList {
      * @param courseID the UUID of the course
      * @return the course if found, null otherwise
      */
-    public static Course getCourseByUUID(UUID courseID) {
+    public static Course getCourseByCode(UUID courseID) {
         for (Course i : courses) {
             if (courseID.equals(i.getCourseID())) return i;
         }

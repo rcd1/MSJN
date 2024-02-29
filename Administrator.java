@@ -30,10 +30,4 @@ public class Administrator extends User{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'viewStudentProfile'");
     }
-
-    @Override
-    public String getUserName() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUserName'");
-    }
 }
