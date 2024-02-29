@@ -19,6 +19,12 @@ public class MajorList {
         return majors;
     }
 
+    /**
+     * An accessor method for the student's major
+     * It will search for the student majors and then return it
+     * @param majorName the name of student's major (i.e. CS, CIS)
+     * @return the major of the student
+     */
     public Major getMajor(String majorName) {
         for (Major major : majors) {
             if (major.checkMajor(majorName))

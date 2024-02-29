@@ -1,5 +1,5 @@
 /**
- * An Enum representing the 
+ * An Enum representing the grades of the student 
  */
 public enum Grade {
     A("A",4.0),
