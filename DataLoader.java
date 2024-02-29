@@ -65,22 +65,50 @@ public class DataLoader extends DataConstants {
         try {
             FileReader reader = new FileReader(COURSE_FILE_NAME);
             JSONParser parser = new JSONParser();
-            JSONArray coursesJSON = (JSONArray)new JSONParser().parse(reader);
+            JSONArray coursesJSON = (JSONArray)parser.parse(reader);
             for (Object i : coursesJSON) {
                 JSONObject courseJSONObject = (JSONObject)i;
                 UUID courseId = UUID.fromString((String)courseJSONObject.get(COURSE_ID));
                 Designator designator = Designator.valueOf((String)courseJSONObject.get(COURSE_DESIGNATOR));
                 String number = (String)courseJSONObject.get(COURSE_NUMBER);
                 int hours = ((Long)courseJSONObject.get(COURSE_HOURS)).intValue();
-                ArrayList<Requirement> requirements = rebuildRequirements((JSONArray)courseJSONObject.get(COURSE_REQUIREMENTS));
+                ArrayList<CourseRequisite> requirements = rebuildCourseRequirements((JSONArray)courseJSONObject.get(COURSE_REQUIREMENTS));
                 ArrayList<Keyword> keywords = rebuildKeywords((JSONArray)courseJSONObject.get(COURSE_KEYWORDS));
                 int preferredSemester = ((Long)courseJSONObject.get(COURSE_PREFERRED_SEMESTER)).intValue();
 
+                courses.add(new Course(courseId, designator, number, hours, requirements, keywords, preferredSemester));
+            }
+            for (Course course : courses) {
+                course.reloadCourseRequirements();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return courses;
+    }
+
+
+    private static ArrayList<CourseRequisite> rebuildCourseRequirements(JSONArray jsonArray) {
+        ArrayList<CourseRequisite> requirements = new ArrayList<>();
+        for (Object i : jsonArray) {
+            JSONObject requirementJsonObject = (JSONObject)i;
+            CourseType mode = CourseType.valueOf((String)requirementJsonObject.get(REQUIREMENT_MODE));
+            Course course = new Course(UUID.fromString((String)requirementJsonObject.get(REQUIREMENT_COURSE_ID)));
+            Grade grade = Grade.valueOf((String)requirementJsonObject.get(REQUIREMENT_GRADE));
+            switch (mode) {
+                case c:
+                requirements.add(new Corequisite(course, grade));
+                break;
+                case p:
+                requirements.add(new Prerequisite(course, grade));
+                break;
+                case pc:
+                requirements.add(new Prerequisite(course, grade));
+                requirements.add(new Corequisite(course, grade));
+                break;
+            }
+        }
+        return requirements;
     }
 
 
@@ -106,7 +134,7 @@ public class DataLoader extends DataConstants {
 
 
     public static ArrayList<Major> getMajors() {
-        
+        ArrayList<Major> majors = new ArrayList<>();
         return new ArrayList<>();
     }
 }

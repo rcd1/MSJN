@@ -21,5 +21,9 @@ public abstract class CourseRequisite implements Requirement {
 
     
     public abstract boolean SatisfiesRequirement(Student student);
+
+    public void reloadCourse() {
+        course = CourseList.getCourseByUUID(course.getCourseID());
+    }
     
 }

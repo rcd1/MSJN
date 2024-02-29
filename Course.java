@@ -8,9 +8,19 @@ public class Course {
     private Designator designator;
     private String number;
     private int hours;
-    private ArrayList<Requirement> requirements;
+    private ArrayList<CourseRequisite> requirements;
     private ArrayList<Keyword> keywords;
     private int preferredSemester;
+
+    
+    /**
+     * For DataLoader, I won't be able to fully create requirements the same passthrough I create the courses, so we get a dummy course to fill in
+     * @param courseID
+     */
+    public Course(UUID courseID) {
+        this.courseID = courseID;
+    }
+
 
     /**
      * A Mutator method for the parameters setted up in the Course class 
@@ -22,7 +32,7 @@ public class Course {
      * @param keywords The Carolina Core and Honors
      * @param preferredSemester The semester that course is recommended by the major map
      */
-    public Course(UUID courseID, Designator designator, String number, int hours, ArrayList<Requirement> requirements,
+    public Course(UUID courseID, Designator designator, String number, int hours, ArrayList<CourseRequisite> requirements,
             ArrayList<Keyword> keywords, int preferredSemester) {
         this.courseID = courseID;
         this.designator = designator;
@@ -74,12 +84,12 @@ public class Course {
     }
 
 
-    public ArrayList<Requirement> getRequirements() {
+    public ArrayList<CourseRequisite> getRequirements() {
         return requirements;
     }
 
 
-    public void setRequirements(ArrayList<Requirement> requirements) {
+    public void setRequirements(ArrayList<CourseRequisite> requirements) {
         this.requirements = requirements;
     }
 
@@ -123,6 +133,11 @@ public class Course {
     public boolean checkCourse(String name, String number, int hours) {
         return this.designator.toString().equalsIgnoreCase(name) && this.number.equalsIgnoreCase(number) && this.hours == hours;
     }
-    
+
+    public void reloadCourseRequirements() {
+        for (CourseRequisite requirement : requirements) {
+            
+        }
+    }
     
 }
