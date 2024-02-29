@@ -61,7 +61,6 @@ public class UserList {
     }
 
     //Could be improved by using methods inside the enum like in state design pattern
-    //Need to add new overloaded constructor for the following two classes
     public User addUser(String firstName, String lastName, String email, String password, UserType type) {
         User user = null;
         UUID uuid = UUID.randomUUID();
