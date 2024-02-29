@@ -54,11 +54,45 @@ public class DataLoader extends DataConstants {
 /*----------------------------------------------------------------------------*/
 
     public static ArrayList<Advisor> getAdvisors(){
-        
-        return new ArrayList<>();
+        ArrayList<Advisor> advisors = new ArrayList<>();
+        try {
+            FileReader reader = new FileReader(ADVISORS_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray advisorsJSON = (JSONArray)parser.parse(reader);
+            for (Object i : advisorsJSON) {
+                JSONObject advisorJsonObject = (JSONObject)i;
+                UUID advisorID = UUID.fromString((String)advisorJsonObject.get(USER_ID));
+                String firstName = (String)advisorJsonObject.get(USER_FIRST_NAME);
+                String lastName = (String)advisorJsonObject.get(USER_LAST_NAME);
+                String email = (String)advisorJsonObject.get(USER_EMAIL);
+                String password = (String)advisorJsonObject.get(USER_PASSWORD);
+                ArrayList<Student> students = rebuildStudents((JSONArray)advisorJsonObject.get(ADVISOR_STUDENTS));
+                advisors.add(new Advisor(firstName, lastName, email, password, advisorID, students));
+            }
+            return advisors;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
+
+    private static ArrayList<Student> rebuildStudents(JSONArray jsonArray) {
+        ArrayList<Student> students = new ArrayList<>();
+        for (Object i : jsonArray) {
+            JSONObject studentJSON = (JSONObject)i;
+            UUID studentID = UUID.fromString((String)studentJSON.get(ADVISOR_STUDENT_ID));
+            students.add(new Student(studentID));
+        }
+        return students;
+    }
+
+
+
 /*----------------------------------------------------------------------------*/
+
+  
+
 
     public static ArrayList<Course> getCourses(){
         ArrayList<Course> courses = new ArrayList<>();

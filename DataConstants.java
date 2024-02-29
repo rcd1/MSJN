@@ -21,6 +21,7 @@ public abstract class DataConstants {
     /*-------------------------Advisor-------------------------*/
     protected static final String ADVISORS_FILE_NAME = "jsonFiles/advisors.json";
     protected static final String ADVISOR_STUDENTS = "students";
+    protected static final String ADVISOR_STUDENT_ID = "studentId";
 
     /*--------------------------Major--------------------------*/
     protected static final String MAJOR_FILE_NAME = "jsonFiles/majors.json";

@@ -4,6 +4,10 @@ public abstract class User {
     protected String firstName, lastName, email, password;
     protected UUID userID;
 
+    public User(UUID userID) {
+        this.userID = userID;
+    }
+
     public User(String firstName, String lastName, String email, String password, UUID userID) {
         this.firstName = firstName;
         this.lastName = lastName;

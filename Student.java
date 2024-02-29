@@ -14,7 +14,10 @@ public class Student extends User{
     private boolean hasScholarship;
     private HashMap<Course, Grade> studentGrades;
 
-    
+    public Student(UUID studentID) {
+        super(studentID);
+    }
+
 
     public Student(String firstName, String lastName, String email, String password, UUID userID, Major major, int year, double gpa,
             ArrayList<SemesterPlan> semesterPlans, ArrayList<LegalGuardian> legalGuardians, Advisor advisor,
