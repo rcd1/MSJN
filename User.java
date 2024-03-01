@@ -16,6 +16,19 @@ public abstract class User {
         this.userID = userID;
     }
 
+    
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public UUID getUserID() {
+        return userID;
+    }
+
     public String getEmail() {
         return email;
     }

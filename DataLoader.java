@@ -37,7 +37,7 @@ public class DataLoader extends DataConstants {
                 boolean isHonors = ((boolean)studentJSONObject.get(STUDENT_IS_HONORS));
                 boolean hasScholarship = ((boolean)studentJSONObject.get(STUDENT_HAS_SCHOLARSHIP));
                 HashMap<Course,Grade> studentGrades = rebuildStudentGrades((JSONArray)studentJSONObject.get(STUDENT_GRADES));
-                students.add(new Student(firstName, lastName, email, password, major, year, gpa, semesterPlans, legalGuardians, advisor, notes, isHonors, hasScholarship, studentGrades));
+                students.add(new Student(firstName, lastName, email, password, userID, major, year, gpa, semesterPlans, legalGuardians, advisor, notes, isHonors, hasScholarship, studentGrades));
             }
             return students;
         } catch (Exception e) {
@@ -169,6 +169,11 @@ public class DataLoader extends DataConstants {
 
     public static ArrayList<Major> getMajors() {
         ArrayList<Major> majors = new ArrayList<>();
-        return new ArrayList<>();
+        try {
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return majors;
     }
 }

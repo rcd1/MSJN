@@ -7,15 +7,28 @@ public class Advisor extends User {
         super(firstName, lastName, email, password, userID);
         this.students = students;
     }
+
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+
     public boolean addStudent(Student student){
         return true;
     }
+
+
     public boolean removeStudent(Student student){
         return true;
     }
+
+
     public void addNote(Student student, String note){
 
     }
+
+
     public void addAdvisor(Student student){
         
     }
@@ -25,4 +38,6 @@ public class Advisor extends User {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'viewStudentProfile'");
     }
+
+
 }
