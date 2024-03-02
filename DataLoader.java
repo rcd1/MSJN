@@ -27,7 +27,7 @@ public class DataLoader extends DataConstants {
                 String lastName = (String)studentJSONObject.get(USER_LAST_NAME);
                 String email = (String)studentJSONObject.get(USER_EMAIL);
                 String password = (String)studentJSONObject.get(USER_PASSWORD);
-                Major major = rebuildMajor((JSONObject)studentJSONObject.get("majorId"));
+                Major major = rebuildMajor((JSONObject)studentJSONObject.get(STUDENT_MAJOR));
                 int year = ((Long)studentJSONObject.get(STUDENT_YEAR)).intValue();
                 double gpa = ((double)studentJSONObject.get(STUDENT_GPA));
                 ArrayList<SemesterPlan> semesterPlans = rebuildSemesterPlans((JSONArray)studentJSONObject.get(STUDENT_SEMESTER_PLANS));
@@ -47,8 +47,16 @@ public class DataLoader extends DataConstants {
     }
 
 
+    private static ArrayList<SemesterPlan> rebuildSemesterPlans(JSONArray jsonArray) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'rebuildSemesterPlans'");
+    }
+
+
     private static Major rebuildMajor(JSONObject jsonObject) {
-        
+        MajorList majorList = MajorList.getInstance();
+        UUID majorID = UUID.fromString((String)jsonObject.get(STUDENT_MAJOR));
+        return majorList.getMajorByUUID(majorID);
     }
 
 /*----------------------------------------------------------------------------*/
@@ -170,10 +178,52 @@ public class DataLoader extends DataConstants {
     public static ArrayList<Major> getMajors() {
         ArrayList<Major> majors = new ArrayList<>();
         try {
-            
+            FileReader reader = new FileReader(MAJOR_FILE_NAME);
+            JSONParser parser = new JSONParser();
+            JSONArray majorsJSON = (JSONArray)parser.parse(reader);
+            for (Object i : majorsJSON) {
+                JSONObject majorObject = (JSONObject)i;
+                UUID majorid = UUID.fromString((String)majorObject.get(Major_ID));
+                String majorName = (String)majorObject.get(MAJOR_NAME);
+                RequirementSet requiredCourses = rebuildRequirementSet((JSONObject)majorObject.get(MAJOR_REQUIRED_COURSES));
+                ApplicationID applicationID = ApplicationID.valueOf((String)majorObject.get(MAJOR_APPLICATION_ID));
+                majors.add(new Major(majorid, majorName, requiredCourses, applicationID));
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return majors;
+    }
+
+
+    private static AndRequirement rebuildRequirementSet(JSONObject jsonObject) {
+            JSONObject requirementSetObject = (JSONObject)jsonObject;
+            String title = (String)requirementSetObject.get(REQUIREMENT_SET_TITLE);
+            ArrayList<Requirement> requirements = rebuildMajorRequirements((JSONArray)requirementSetObject.get(REQUIREMENT_SET_REQUIREMENTS));
+            Long minHoursTemp = (Long)requirementSetObject.get(REQUIREMENT_SET_MINHOURS);
+            int minHours = minHoursTemp.intValue();
+            Long maxHoursTemp = (Long)requirementSetObject.get(REQUIREMENT_SET_MAXHOURS);
+            int maxHours = maxHoursTemp.intValue();
+            return new AndRequirement(title, requirements, minHours, maxHours);
+
+        }
+
+
+    private static ArrayList<Requirement> rebuildMajorRequirements(JSONArray jsonArray) {
+        ArrayList<Requirement> requirements = new ArrayList<>();
+        CourseList courseList = CourseList.getInstance();
+        for (Object i : jsonArray) {
+            JSONObject majorRequirementObject = (JSONObject)i;
+            UUID courseID = UUID.fromString((String)majorRequirementObject.get(REQUIREMENT_COURSE_ID));
+            Course course = courseList.getCourseByUUID(courseID);
+            Grade grade = Grade.valueOf((String)majorRequirementObject.get(REQUIREMENT_GRADE));
+            MajorRequirementType mode = MajorRequirementType.valueOf((String)majorRequirementObject.get(REQUIREMENT_MODE));
+            
+            switch(mode) {
+                case a:
+                requirements.add(new AndRequirement(REQUIREMENT_SET_TITLE, requirements, 0, 0))
+            }
+
+        }
     }
 }

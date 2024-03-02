@@ -1,5 +1,4 @@
 import java.util.UUID;
-import java.util.ArrayList;
 
 public class Major {
  private UUID majorid;
