@@ -36,7 +36,6 @@ public class DataWriter extends DataConstants{
             userDetails.put(USER_ID, user.getID().toString());
             userDetails.put(USER_LAST_NAME, user.getLastName());
             userDetails.put(USER_PASSWORD, user.getPassword());
-            userDetails.put(USER_USER_NAME, user.getUserName());
 
             return userDetails;
         }
@@ -59,11 +58,72 @@ public class DataWriter extends DataConstants{
         }
         
         
+        //unfinished
+        //Student details/info
         public static JSONObject getStudentJSON(Student student){
             JSONObject studentDetails = new JSONObject();
             studentDetails.put(STUDENT_ADVISOR, student.getStudentAdvisor());
+            studentDetails.put(STUDENT_FILE_NAME, student.getStudentFileName());
+            studentDetails.put(STUDENT_GPA, student.getStudentGPA());
+            studentDetails.put(STUDENT_GRADES,student.getStudentGrades());
+            studentDetails.put(STUDENT_HAS_SCHOLARSHIP, student.getStudentHasScholarship());
+            studentDetails.put(STUDENT_IS_HONORS, student.getStudentIsHonors());
+            studentDetails.put(STUDENT_LEGAL_GUARDIANS,student.getStudentLegalGuardian());
+            studentDetails.put(STUDENT_MAJOR,student.getStudentMajor());
+            studentDetails.put(STUDENT_NOTES,student.getStudentNotes());
+
+            JSONArray studentArray = new JSONArray();
+            for(Student s : sp.getStudent)
+                studentDetails.put(STUDENT_ADVISOR, s.getStudentAdvisor());
+
+            
+
+        }
+        //Course Details/Info
+        public static void saveCourses(){
+            CourseList courses = CourseList.getInstance();
+            ArrayList<Course> courseList = courses.getCourses();
+            JSONArray jsonCourses = new JSONArray();
+
+            for(int i=0; i< courseList.size(); i++){
+                jsonCourses.add(getCourseJSON(courseList.get(i)));
+            }
+
+            try(FileWriter file = new FileWriter(COURSE_FILE_NAME)){
+                file.write(jsonCourses.toJSONString());
+                file.flush();
+            } catch(IOException e){
+                e.printStackTrace();
+            }
+        }
+
+        /**
+     * Creates a JSONObject from the given Course object.
+     *
+     * @param course the Course object to create the JSONObject from
+     * @return the JSONObject created from the Course object
+     */
+
+        public static JSONObject getCourseJSON(Course course){
+            JSONObject courseDetails = new JSONObject();
+            courseDetails.put(COURSE_ID, course.getCourseID().toString());
+            courseDetails.put(COURSE_DESIGNATOR, course.getDesignator());
+            courseDetails.put(COURSE_NUMBER, course.getCourseNumber());
+            courseDetails.put(COURSE_HOURS, course.getCourseHours());
+            courseDetails.put(COURSE_REQUIREMENTS, course.getRequirements());
+            courseDetails.p
+
+        }
+
+        public static void saveMajors(){
+
+        }
+
+        public static void saveAllAdvisors(){
 
         }
 
     }
+
+    
 

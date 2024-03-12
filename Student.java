@@ -40,25 +40,47 @@ public class Student extends User{
         super(firstName, lastName, email, password, userID);
     }
 
-    
-
-    public void addCourse(Course course) {
-
-    }
-
-    public void removeCourse(Course course) {
-
-    }
-
-    private void resetPassword(String newPassword) {
-
+    public Advisor getStudentAdvisor() {
+        return advisor;
     }
 
     public double calculateGPA() {
         return -1.0;
     }
 
-    public void removeLegalGuardian(LegalGuardian legalGuardian) {
+    public double getStudentGPA() {
+        return gpa;
+    }
+
+    public HashMap<Course, Grade> getStudentGrades() {
+        return studentGrades;
+    }
+    
+    public boolean getStudentHasScholarship() {
+        return hasScholarship;
+    }
+
+    public boolean getStudentIsHonors() {
+        return isHonors;
+    }
+
+    public ArrayList<LegalGuardian> getStudentLegalGuardian() {
+        return legalGuardians;
+    }
+
+    public Major getStudentMajor() {
+        return major;
+    }
+
+    public ArrayList<String> getStudentNotes() {
+        return notes;
+    }
+
+    public void addCourse(Course course) {
+
+    }
+
+    public void removeCourse(Course course) {
 
     }
 
