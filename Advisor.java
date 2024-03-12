@@ -3,6 +3,13 @@ import java.util.UUID;
 public class Advisor extends User {
     private ArrayList<Student> students;
 
+    
+    
+    public Advisor(String firstName, String lastName, String email, String password, UUID userID) {
+        super(firstName, lastName, email, password, userID);
+    }
+
+
     public Advisor(String firstName, String lastName, String email, String password, UUID userID, ArrayList<Student> students){
         super(firstName, lastName, email, password, userID);
         this.students = students;

@@ -5,16 +5,13 @@ import java.util.ArrayList;
  * the entire requirement
  */
 public class OrRequirement extends RequirementSet {
-    /**
-     * Create an OrRequirement
-     * @param title The name of the OrRequirement
-     * @param requirements all of the requirements that will satisfy the OrRequirement
-     * @param minHours the minimum credit hours this OrRequirement can be completed in
-     * @param maxHours the maximum credit hours this OrRequirement can be completed in
-     */
-    public OrRequirement(String title, ArrayList<Requirement> requirements, int minHours, int maxHours) {
-        super(title, requirements, minHours, maxHours);
-        
+    
+
+    
+    
+    public OrRequirement(String title, ArrayList<Course> courses, Grade requiredGrade) {
+        super(title, courses, requiredGrade);
+        //TODO Auto-generated constructor stub
     }
 
     @Override

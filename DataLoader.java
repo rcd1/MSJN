@@ -174,7 +174,14 @@ public class DataLoader extends DataConstants {
 
 /*----------------------------------------------------------------------------*/
 
-
+    /**
+     * Imagine the Requirements like a Book. Books are broken into three objects: Book, 
+     * Chapter, and Page. Rather than a Book being an ArrayList<Page> we make the Book 
+     * an ArrayList<Chapter> and Chapter an ArrayList<Page>, otherwise there would 
+     * be no easy way to differentiate between Books and Chapters, we'd be lost in recursion.
+     * 📕
+     * @return nothing good I'm sure
+     */
     public static ArrayList<Major> getMajors() {
         ArrayList<Major> majors = new ArrayList<>();
         try {
@@ -183,11 +190,12 @@ public class DataLoader extends DataConstants {
             JSONArray majorsJSON = (JSONArray)parser.parse(reader);
             for (Object i : majorsJSON) {
                 JSONObject majorObject = (JSONObject)i;
-                UUID majorid = UUID.fromString((String)majorObject.get(Major_ID));
+                UUID majorid = UUID.fromString((String)majorObject.get(MAJOR_ID));
                 String majorName = (String)majorObject.get(MAJOR_NAME);
-                AndRequirement requiredCourses = rebuildAndRequirement(majorObject.get(MAJOR_REQUIRED_COURSES));
-                ApplicationID applicationID = ApplicationID.valueOf((String)majorObject.get(MAJOR_APPLICATION_ID));
-                majors.add(new Major(majorid, majorName, requiredCourses, applicationID));
+                ArrayList<MajorRequirement> majorRequirements = rebuildMajorRequirements((JSONArray)majorObject.get(MAJOR_REQUIREMENTS));
+                Long ApplicationIDNumber = ((Long)majorObject.get(MAJOR_APPLICATION_ID));
+                ApplicationID applicationID = ApplicationID.getApplicationIDByNumber(ApplicationIDNumber.intValue());
+                majors.add(new Major(majorid, majorName, majorRequirements, applicationID));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -196,56 +204,53 @@ public class DataLoader extends DataConstants {
     }
 
 
-    private static AndRequirement rebuildAndRequirement(Object jsonObject) {
-            JSONObject requirementSetObject = (JSONObject)jsonObject;
-            String title = (String)requirementSetObject.get(REQUIREMENT_SET_TITLE);
-            ArrayList<Requirement> requirements = rebuildMajorRequirements((JSONArray)requirementSetObject.get(REQUIREMENT_SET_REQUIREMENTS));
-            Long minHoursTemp = (Long)requirementSetObject.get(REQUIREMENT_SET_MINHOURS);
-            int minHours = minHoursTemp.intValue();
-            Long maxHoursTemp = (Long)requirementSetObject.get(REQUIREMENT_SET_MAXHOURS);
-            int maxHours = maxHoursTemp.intValue();
-            return new AndRequirement(title, requirements, minHours, maxHours);
-
+    private static ArrayList<MajorRequirement> rebuildMajorRequirements(JSONArray jsonArray) {
+        ArrayList<MajorRequirement> majorRequirements = new ArrayList<>();
+        for (Object i : jsonArray) {
+            if (i != null) {
+            JSONObject requirementJSON = (JSONObject)i;
+            String title = (String)requirementJSON.get(MAJOR_REQUIREMENT_TITLE);
+            Long minTemp = ((Long)requirementJSON.get(MAJOR_REQUIREMENT_MINHOURS));
+            int minHours = minTemp.intValue();
+            Long maxTemp = ((Long)requirementJSON.get(MAJOR_REQUIREMENT_MAXHOURS));
+            int maxHours = maxTemp.intValue();
+            ArrayList<RequirementSet> acceptableCourseSets = rebuildRequirementSets((JSONArray)requirementJSON.get(MAJOR_REQUIREMENT_ACCEPTABLE_COURSE_SETS));
+            majorRequirements.add(new MajorRequirement(title, minHours, maxHours, acceptableCourseSets));
+            }
         }
-
-    private static OrRequirement rebuildOrRequirement(JSONObject jsonObject) {
-        JSONObject requirementSetObject = (JSONObject)jsonObject;
-        String title = (String)requirementSetObject.get(REQUIREMENT_SET_TITLE);
-        ArrayList<Requirement> requirements = rebuildMajorRequirements((JSONArray)requirementSetObject.get(REQUIREMENT_SET_REQUIREMENTS));
-        Long minHoursTemp = (Long)requirementSetObject.get(REQUIREMENT_SET_MINHOURS);
-        int minHours = minHoursTemp.intValue();
-        Long maxHoursTemp = (Long)requirementSetObject.get(REQUIREMENT_SET_MAXHOURS);
-        int maxHours = maxHoursTemp.intValue();
-        return new OrRequirement(title, requirements, minHours, maxHours);
-
+        return majorRequirements;
     }
 
 
-    private static ArrayList<Requirement> rebuildMajorRequirements(JSONArray jsonArray) {
-        ArrayList<Requirement> majorRequirements = new ArrayList<>();
+    private static ArrayList<RequirementSet> rebuildRequirementSets(JSONArray jsonArray) {
+        ArrayList<RequirementSet> acceptableCourseSets = new ArrayList<>();
+        for (Object i : jsonArray) {
+            JSONObject setJSON = (JSONObject)i;
+            String title = (String) setJSON.get(REQUIREMENT_SET_TITLE);
+            ArrayList<Course> requiredCourses = rebuildCoursesByUUIDs((JSONArray)setJSON.get(REQUIREMENT_SET_COURSES));
+            Grade requiredGrade = Grade.valueOf((String)setJSON.get(REQUIREMENT_SET_GRADE));
+            String mode = (String)setJSON.get(REQUIREMENT_SET_MODE);
+            switch(mode) {
+                case "a":
+                acceptableCourseSets.add(new AndRequirement(title, requiredCourses, requiredGrade));
+                break;
+                case "o":
+                acceptableCourseSets.add(new OrRequirement(title, requiredCourses, requiredGrade));
+                break;
+            }             
+        }
+        return acceptableCourseSets;
+    }
+
+
+    private static ArrayList<Course> rebuildCoursesByUUIDs(JSONArray jsonArray) {
+        ArrayList<Course> requiredCourses = new ArrayList<>();
         CourseList courseList = CourseList.getInstance();
         for (Object i : jsonArray) {
-            
-            JSONObject majorRequirementObject = (JSONObject)i;
-            MajorRequirementType mode = MajorRequirementType.valueOf((String)majorRequirementObject.get(REQUIREMENT_MODE));
-            // We have a box of boxes here and little understanding of the horrors we so carelessly give life
-            if (mode == null) mode = MajorRequirementType.n;
-            switch (mode) {
-                case a:
-                majorRequirements.add(rebuildAndRequirement(majorRequirementObject));
-                break;
-                case o:
-                majorRequirements.add(rebuildOrRequirement(majorRequirementObject));
-                break;
-                default:
-                UUID courseID = UUID.fromString((String)majorRequirementObject.get(REQUIREMENT_COURSE_ID));
-                Course course = courseList.getCourseByUUID(courseID);
-                Grade grade = Grade.valueOf((String)majorRequirementObject.get(REQUIREMENT_GRADE));
-                majorRequirements.add(new MajorRequirement(course, grade));
-                break;
-            }
-            
+            JSONObject courseJSON = (JSONObject)i;
+            UUID courseID = UUID.fromString((String)courseJSON.get(REQUIREMENT_SET_COURSE_ID));
+            requiredCourses.add(courseList.getCourseByUUID(courseID));
         }
-        return majorRequirements;
+        return requiredCourses;
     }
 }

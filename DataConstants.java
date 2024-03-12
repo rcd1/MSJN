@@ -25,21 +25,29 @@ public abstract class DataConstants {
 
     /*--------------------------Major--------------------------*/
     protected static final String MAJOR_FILE_NAME = "jsonFiles/majors.json";
-    protected static final String Major_ID = "majorId";
+    protected static final String MAJOR_ID = "majorID";
     protected static final String MAJOR_NAME = "majorName";
-    protected static final String MAJOR_REQUIRED_COURSES = "requiredCourses";
+    protected static final String MAJOR_REQUIREMENTS = "majorRequirements";
     protected static final String MAJOR_APPLICATION_ID = "applicationID";
+
+    /*--------------------------MajorRequirement--------------------------*/
+    protected static final String MAJOR_REQUIREMENT_TITLE = "title";
+    protected static final String MAJOR_REQUIREMENT_MINHOURS = "minHours";
+    protected static final String MAJOR_REQUIREMENT_MAXHOURS = "maxHours";
+    protected static final String MAJOR_REQUIREMENT_ACCEPTABLE_COURSE_SETS = "acceptableCourseSets";
 
     /*--------------------------RequirementSet--------------------------*/
     protected static final String REQUIREMENT_SET_TITLE = "title";
-    protected static final String REQUIREMENT_SET_REQUIREMENTS = "requirements";
-    protected static final String REQUIREMENT_SET_MINHOURS = "minHours";
-    protected static final String REQUIREMENT_SET_MAXHOURS = "maxHours";    
+    protected static final String REQUIREMENT_SET_COURSES = "requiredCourses";
+    protected static final String REQUIREMENT_SET_GRADE = "requiredGrade";
+    protected static final String REQUIREMENT_SET_MODE = "mode";   
+    protected static final String REQUIREMENT_SET_COURSE_ID = "courseID";
 
     /*--------------------------Requirements--------------------------*/
     protected static final String REQUIREMENT_COURSE_ID = "courseId";
     protected static final String REQUIREMENT_GRADE = "grade";
-    protected static final String REQUIREMENT_MODE = "mode";
+    protected static final String REQUIREMENT_MODE = "mode"; 
+    
 
     /*-----------------------------Course-----------------------------*/
     protected static final String COURSE_FILE_NAME = "jsonFiles/courses.json";

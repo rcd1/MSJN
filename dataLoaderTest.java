@@ -6,7 +6,15 @@ public class dataLoaderTest {
         for (Major major : test) {
             System.out.println(major.getMajorName() + "\n" 
             + major.getMajorid() + "\n" 
-            + major.getRequiredCourses());
+            + major.getApplicationID());
+            for (MajorRequirement requirement : major.getMajorRequirements()) {
+                System.out.println(requirement.getTitle() + "\n"
+                + requirement.getMinHours());
+                for (RequirementSet req : requirement.getAcceptableCourseSets()) {
+                    System.out.println(req.getTitle() + "\n"
+                    + req.getRequiredGrade());
+                }
+            }
         }
         
     }
