@@ -123,18 +123,6 @@ public class DataWriter extends DataConstants{
 
         }
 
-        public static JSONObject getCourseJSON(Course course){
-            JSONObject courseDetails = new JSONObject();
-            courseDetails.put(COURSE_ID, course.getId().toString());
-            courseDetails.put(COURSE_DESIGNATOR , course.getDesignator());
-            courseDetails.put(COURSE_NUMBER, course.getNumber());
-            courseDetails.put(COURSE_HOURS, course.gethour());
-            courseDetails.put(COURSE_REQUIREMENTS, course.getRequirements());
-            courseDetails.put(COURSE_KEYWORDS, course.getKeywords());
-            courseDetails.put(COURSE_PREFERRED_SEMESTER, course.getPreferredSemester()); 
-        }
-    }
-
 <<<<<<< HEAD
 //The one with the less dependencies is courses
 =======
