@@ -17,23 +17,6 @@ public class UserList {
         return userList;
     } 
 
-    // When is this version of getUser ever called? Might need to be removed
-    public User getUser(String firstName, String lastName, String email) {
-        
-        for (Student student : students) {
-            if (student.checkCredentials(firstName, lastName, email)) {
-                return student;
-            }
-        }
-        for (Advisor advisor : advisors) {
-            if (advisor.checkCredentials(firstName, lastName, email)) {
-                return advisor;
-            }
-        }
-        return null;
-
-    }
-
     public User getUser(String email, String password) {
         for (Student student : students) {
             if (student.getEmail().equals(email) && student.getPassword().equals(password)) {

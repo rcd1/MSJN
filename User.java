@@ -44,6 +44,10 @@ public abstract class User {
         return password;
     }
 
+    private void resetPassword(String newPassword) {
+        
+    }
+
     protected abstract void viewStudentProfile(Student student);
 
     /**
