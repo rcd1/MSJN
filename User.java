@@ -7,20 +7,10 @@ public abstract class User {
     protected String firstName, lastName, email, password;
     protected UUID userID;
 
-    
-
     public User(UUID userID) {
         this.userID = userID;
     }
 
-    /**
-     * 
-     * @param firstName The first name of user 
-     * @param lastName The last name of user
-     * @param email The email of user 
-     * @param password The password of user
-     * @param userID The ID for the user 
-     */
     public User(String firstName, String lastName, String email, String password, UUID userID) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,10 +19,19 @@ public abstract class User {
         this.userID = userID;
     }
 
-    /**
-     * An accessor method for the user's email
-     * @return the email of the user
-     */
+    
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public UUID getUserID() {
+        return userID;
+    }
+
     public String getEmail() {
         return email;
     }

@@ -1,18 +1,19 @@
-import java.util.UUID;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Major {
  private UUID majorid;
  private String majorName;
- private RequirementSet requiredCourses;
+ private ArrayList<MajorRequirement> majorRequirements;
  private ApplicationID applicationID;
 
 
 
-public Major(UUID majorid, String majorName, RequirementSet requiredCourses, ApplicationID applicationID) {
+public Major(UUID majorid, String majorName, ArrayList<MajorRequirement> majorRequirements,
+        ApplicationID applicationID) {
     this.majorid = majorid;
     this.majorName = majorName;
-    this.requiredCourses = requiredCourses;
+    this.majorRequirements = majorRequirements;
     this.applicationID = applicationID;
 }
 
@@ -45,13 +46,15 @@ public String getMajorName() {
     return majorName;
 }
 
-public RequirementSet getRequiredCourses() {
-    return requiredCourses;
+public ArrayList<MajorRequirement> getMajorRequirements() {
+    return majorRequirements;
 }
 
 public ApplicationID getApplicationID() {
     return applicationID;
 }
+
+
 
 }
 

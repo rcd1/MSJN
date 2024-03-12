@@ -4,15 +4,11 @@ import java.util.ArrayList;
  * courses in the list of courses must be completed to satisfiy the requirement
  */
 public class AndRequirement extends RequirementSet{
-    /**
-     * Create an AndRequirement
-     @param title The name of the AndRequirement
-     * @param requirements all of the requirements that will satisfy the AndRequirement
-     * @param minHours the minimum credit hours this AndRequirement can be completed in
-     * @param maxHours the maximum credit hours this AndRequirement can be completed in
-     */
-    public AndRequirement(String title, ArrayList<Requirement> requirements, int minHours, int maxHours) {
-        super(title, requirements, minHours, maxHours);
+    
+    
+
+    public AndRequirement(String title, ArrayList<Course> courses, Grade requiredGrade) {
+        super(title, courses, requiredGrade);
         //TODO Auto-generated constructor stub
     }
 

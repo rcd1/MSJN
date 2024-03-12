@@ -18,6 +18,7 @@ public class Student extends User{
         super(studentID);
     }
 
+
     public Student(String firstName, String lastName, String email, String password, UUID userID, Major major, int year, double gpa,
             ArrayList<SemesterPlan> semesterPlans, ArrayList<LegalGuardian> legalGuardians, Advisor advisor,
             ArrayList<String> notes, boolean isHonors, boolean hasScholarship, HashMap<Course, Grade> studentGrades) {
@@ -38,6 +39,8 @@ public class Student extends User{
     public Student(String firstName, String lastName, String email, String password, UUID userID) {
         super(firstName, lastName, email, password, userID);
     }
+
+    
 
     public void addCourse(Course course) {
 

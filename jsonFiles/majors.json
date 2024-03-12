@@ -1,31 +1,27 @@
 [
    {
-      "majorId":"5ded2f1a-0d27-4b1e-8d70-cb779bc16bde",
+      "majorID":"5ded2f1a-0d27-4b1e-8d70-cb779bc16bde",
       "majorName":"Computer Science",
-      "requiredCourses": [
+      "majorRequirements": [
          {
             "title":"Carolina Core",
-            "requirements":[
+            "minHours": 35,
+            "maxHours": 41,
+            "acceptableCourseSets":[
                {
                   "title": "CMW",
-                  "requirements":[
+                  "requiredCourses":[
                      {
-                        "courseId": "59433eb0-5545-4604-b1c2-2caf08148906",
-                        "grade":"C",
-                        "mode":"a"
+                        "courseID": "59433eb0-5545-4604-b1c2-2caf08148906"
                      },
                      {
-                        "courseId":"07c57fa7-6f98-4e6f-8cda-8ce6d6b525b5",
-                        "grade":"C",
-                        "mode":"a"
+                        "courseID":"07c57fa7-6f98-4e6f-8cda-8ce6d6b525b5"   
                      }
                   ],
-                  "minHours":6,
-                  "maxHours":6
+                  "requiredGrade": "C",
+                  "mode":"a"
                }
-            ],
-         "minHours": 35,
-         "maxHours": 41
+            ]
          }
       ],
     "applicationID" : 1

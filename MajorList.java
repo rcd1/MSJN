@@ -15,7 +15,7 @@ public class MajorList {
         return majorList;
     }
 
-    public ArrayList<Major> getMajor() {
+    public ArrayList<Major> getMajors() {
         return majors;
     }
 
