@@ -29,13 +29,14 @@ public class DegreeFacade {
         user = null;
     }
 
-    public void addCourseToStudent(User user, Course course) {
+    /*public void addCourseToStudent(User user, Course course) {
         user.addCourseToStudent(student, course);
     }
 
     public void removeCourseFromStudent(Administrator administrator, Course course) {
         administrator.removeCourseFromStudent(administrator, course);
     }
+    */
     
     public void addCourse(Student student, Course course) {
         student.addCourse(course);
@@ -61,8 +62,9 @@ public class DegreeFacade {
         return getCourseByUUID(courseID);
     }
 
-    public ArrayList<Major> getMajor(String majorName) {
-        return majorList.getMajor();
+    public Major getMajor(String majorName) {
+        return majorList.getMajor(majorName);
     }
+
 }
 

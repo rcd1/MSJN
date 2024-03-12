@@ -44,8 +44,5 @@ public class SemesterPlan {
     public boolean removeCourse(Course course) {
         return courses.remove(course);
     }
-
-    
-
     
 }
