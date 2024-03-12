@@ -1,23 +1,17 @@
 public class MajorRequirement implements Requirement {
-    private String title;
-    private Keyword keyword;
+    private Course course;
+    private Grade grade;
 
-    public MajorRequirement(String title, Keyword keyword) {
-        this.title = title;
-        this.keyword = keyword;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-
-
-    public Keyword getKeyword() {
-        return keyword;
+    
+    
+    public MajorRequirement(Course course, Grade grade) {
+        this.course = course;
+        this.grade = grade;
     }
 
     
+
+
     @Override
     public boolean SatisfiesRequirement(Student student) {
         return true;

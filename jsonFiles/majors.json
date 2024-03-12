@@ -11,21 +11,23 @@
                   "requirements":[
                      {
                         "courseId": "59433eb0-5545-4604-b1c2-2caf08148906",
-                        "grade":"C",
-                        "mode":"a"
+                        "grade":"C"
                      },
                      {
                         "courseId":"07c57fa7-6f98-4e6f-8cda-8ce6d6b525b5",
-                        "grade":"C",
-                        "mode":"a"
+                        "grade":"C"
                      }
                   ],
                   "minHours":6,
-                  "maxHours":6
+                  "maxHours":6,
+                  "mode":"a"
                }
             ],
          "minHours": 35,
          "maxHours": 41
+         },
+         {
+            
          }
       ],
     "applicationID" : 1
