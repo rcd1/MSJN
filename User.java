@@ -7,6 +7,12 @@ public abstract class User {
     protected String firstName, lastName, email, password;
     protected UUID userID;
 
+    
+
+    public User(UUID userID) {
+        this.userID = userID;
+    }
+
     /**
      * 
      * @param firstName The first name of user 

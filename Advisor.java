@@ -6,6 +6,15 @@ public class Advisor extends User {
     public Advisor(String firstName, String lastName, String email, String password, UUID userID){
         super(firstName, lastName, email, password, userID);
     }
+
+    
+    public Advisor(String firstName, String lastName, String email, String password, UUID userID,
+            ArrayList<Student> students) {
+        super(firstName, lastName, email, password, userID);
+        this.students = students;
+    }
+
+
     public boolean addStudent(Student student){
         return true;
     }
