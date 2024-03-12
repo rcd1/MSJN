@@ -29,8 +29,8 @@ public class DegreeFacade {
         user = null;
     }
 
-    public void addCourseToStudent(Administrator administrator, Course course) {
-        administrator.addCourseToStudent(administrator, course);
+    public void addCourseToStudent(User user, Course course) {
+        user.addCourseToStudent(student, course);
     }
 
     public void removeCourseFromStudent(Administrator administrator, Course course) {
