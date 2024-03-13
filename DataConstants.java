@@ -41,12 +41,7 @@ public abstract class DataConstants {
     protected static final String REQUIREMENT_SET_COURSES = "requiredCourses";
     protected static final String REQUIREMENT_SET_GRADE = "requiredGrade";
     protected static final String REQUIREMENT_SET_MODE = "mode";   
-    protected static final String REQUIREMENT_SET_COURSE_ID = "courseID";
 
-    /*--------------------------Requirements--------------------------*/
-    protected static final String REQUIREMENT_COURSE_ID = "courseId";
-    protected static final String REQUIREMENT_GRADE = "grade";
-    protected static final String REQUIREMENT_MODE = "mode"; 
     
 
     /*-----------------------------Course-----------------------------*/
@@ -59,8 +54,6 @@ public abstract class DataConstants {
     protected static final String COURSE_COREQUISITES = "corequisites";
     protected static final String COURSE_KEYWORDS = "keywords";
     protected static final String COURSE_PREFERRED_SEMESTER = "preferredSemester";
-    /*-----------------------------Keywords-----------------------------*/
-    protected static final String KEYWORD_NAME = "keyword";
 
 
 }

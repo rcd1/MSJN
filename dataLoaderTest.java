@@ -35,6 +35,9 @@ public class dataLoaderTest {
                 for (Course course2 : reqSet.getRequiredCourses()) {
                     System.out.println(course2.getDesignator() + " " +
                     course2.getNumber());
+                    for (Keyword keyword : course2.getKeywords()) {
+                        System.out.println(keyword);
+                    }
                 }
             }
         }

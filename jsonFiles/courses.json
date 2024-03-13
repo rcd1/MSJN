@@ -7,8 +7,8 @@
         "prerequisites":[
             {
                 "requiredCourses":[
-                    {"courseID":"46377177-718d-413a-ad47-21fd93c13ca8"},
-                    {"courseID":"c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b"}
+                    "46377177-718d-413a-ad47-21fd93c13ca8",
+                    "c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b"
                 ],
                 "requiredGrade":"C",
                 "mode":"o"
@@ -16,13 +16,13 @@
         ],
         "corequisites":[{
             "requiredCourses":[
-                {"courseID":"46377177-718d-413a-ad47-21fd93c13ca8"},
-                {"courseID":"c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b"}
+                "46377177-718d-413a-ad47-21fd93c13ca8",
+                "c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b"
             ],
             "requiredGrade":"C",
             "mode":"o"
         }],
-        "keywords":[{"keyword":"PR"}],
+        "keywords":["PR"],
         "preferredSemester":1
     },
     {
@@ -32,7 +32,7 @@
         "hours":4,
         "prerequisites":[],
         "corequisites":[],
-        "keywords":[{"keyword":"PR"}],
+        "keywords":["PR"],
         "preferredSemester":1
     },
     {
@@ -42,7 +42,7 @@
         "hours":4,
         "prerequisites":[],
         "corequisites":[],
-        "keywords":[{"keyword":"PR"}],
+        "keywords":["PR"],
         "preferredSemester":1
     },
     {
@@ -52,7 +52,7 @@
         "hours":3,
         "prerequisites":[],
         "corequisites":[],
-        "keywords":[{"keyword":"PR"}],
+        "keywords":["PR"],
         "preferredSemester":1
 
     },
@@ -63,13 +63,13 @@
         "hours":3,
         "prerequisites":[{
             "requiredCourses":[
-                {"courseID":"59433eb0-5545-4604-b1c2-2caf08148906"}
+                "59433eb0-5545-4604-b1c2-2caf08148906"
             ],
             "requiredGrade":"C",
             "mode":"a"
         }],
         "corequisites":[],
-        "keywords":[{"keyword":"PR"}],
+        "keywords":["PR"],
         "preferredSemester":2
     }
 ]

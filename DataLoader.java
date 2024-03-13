@@ -156,26 +156,20 @@ private static ArrayList<RequirementSet> rebuildCourseRequirements(JSONArray jso
 
 private static ArrayList<Course> fillWithBlankCourses(JSONArray jsonArray) {
     ArrayList<Course> courses = new ArrayList<>();
-        for (Object i : jsonArray) {
-            JSONObject jsonCourse  = (JSONObject)i;
-            UUID courseID = UUID.fromString((String)jsonCourse.get(REQUIREMENT_SET_COURSE_ID));
+        for (int i = 0; i < jsonArray.size(); i++) {
+            UUID courseID = UUID.fromString((String)jsonArray.get(i));
             courses.add(new Course(courseID));
         }
         return courses;
 }
 
 
-private static Keyword rebuildKeyword(JSONObject keywordJSONObject) {
-    return Keyword.valueOf((String)keywordJSONObject.get(KEYWORD_NAME));
-}
-
 
 
 private static ArrayList<Keyword> rebuildKeywords(JSONArray jsonArray) {
     ArrayList<Keyword> keywords = new ArrayList<>();
-    for (Object object : jsonArray) {
-        JSONObject keywordJSONObject = (JSONObject)object;
-        keywords.add(rebuildKeyword(keywordJSONObject));
+    for (int i = 0; i < jsonArray.size(); i++) {
+        keywords.add(Keyword.valueOf((String)jsonArray.get(i)));
     }
      return keywords;
 }
@@ -257,9 +251,8 @@ private static ArrayList<Keyword> rebuildKeywords(JSONArray jsonArray) {
     private static ArrayList<Course> rebuildCoursesByUUIDs(JSONArray jsonArray) {
         ArrayList<Course> requiredCourses = new ArrayList<>();
         CourseList courseList = CourseList.getInstance();
-        for (Object i : jsonArray) {
-            JSONObject courseJSON = (JSONObject)i;
-            UUID courseID = UUID.fromString((String)courseJSON.get(REQUIREMENT_SET_COURSE_ID));
+        for (int i = 0; i < jsonArray.size(); i++) {
+            UUID courseID = UUID.fromString((String)jsonArray.get(i));
             requiredCourses.add(courseList.getCourseByUUID(courseID));
         }
         return requiredCourses;
