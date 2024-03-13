@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class Student extends User{
@@ -121,5 +122,17 @@ public class Student extends User{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'viewStudentProfile'");
     }
-    
+
+    // This could be renamed to something like "getGrade"
+    public Grade satisfiesPrerequisite(Course course) {
+        Grade[] returnGrade = new Grade[1];
+        returnGrade[1] = null;
+        studentGrades.forEach((key, value) -> {
+            if(course.getCourseID().equals(key.getCourseID())) {
+                returnGrade[1] = value;
+                return;
+            }
+        });
+        return returnGrade[1];
+    }
 }
