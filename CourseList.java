@@ -19,7 +19,7 @@ public class CourseList {
         return courseList;
     }
 
-    public ArrayList<Course> getAllCourses() {
+    public ArrayList<Course> getCourses() {
         return courses;
     }
 
@@ -52,5 +52,13 @@ public class CourseList {
         }
         System.out.println("CourseList.java could not find course with UUID " + courseID);
         return null;
+    }
+
+    public void AddCourse(Course course) {
+        courses.add(course);
+    }
+
+    public void logout() {
+        DataWriter.saveCourses();
     }
 }

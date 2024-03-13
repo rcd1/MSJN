@@ -19,7 +19,7 @@ public class dataLoaderTest {
         }
 
         CourseList courseList = CourseList.getInstance();
-        ArrayList<Course> courses = courseList.getAllCourses();
+        ArrayList<Course> courses = courseList.getCourses();
         for (Course course : courses) {
             System.out.println(course.getDesignator() + " " +
             course.getNumber() + ":");
