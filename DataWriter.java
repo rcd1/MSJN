@@ -63,6 +63,10 @@ public class DataWriter extends DataConstants{
             advisorDetails.put(ADVISOR_STUDENTS, advisor.getAdvisorStudent());
             advisorDetails.put(ADVISORS_FILE_NAME, advisor.getAdvisorFileName());
             advisorDetails.put(ADVISOR_STUDENT_ID, advisor.getAdvisorFileName());
+
+            JSONArray advisorArray = new JSONArray();
+
+            
         }
         public static void saveAllStudents(){
             Student students =Student.getInstance();
@@ -174,7 +178,6 @@ public class DataWriter extends DataConstants{
 
 
 <<<<<<< HEAD
-//The one with the less dependencies is courses
 =======
     
 
