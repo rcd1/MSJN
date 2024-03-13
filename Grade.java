@@ -3,11 +3,11 @@
  */
 public enum Grade {
     A("A",4.0),
-    B_Plus("B+",3.5),
+    B_PLUS("B+",3.5),
     B("B",3.0),
-    C_Plus("C+", 2.5),
+    C_PLUS("C+", 2.5),
     C("C",2.0),
-    D_Plus("D+",1.5),
+    D_PLUS("D+",1.5),
     D("D",1.0),
     F("F",0.0),
     W("W", 0.0),

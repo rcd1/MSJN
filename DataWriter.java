@@ -105,7 +105,7 @@ public class DataWriter extends DataConstants{
 
         }
         //Course Details/Info
-        public static void saveCourses(){
+        public static void saveCourses() {
             CourseList courses = CourseList.getInstance();
             ArrayList<Course> courseList = courses.getCourses();
             JSONArray jsonCourses = new JSONArray();
@@ -132,16 +132,55 @@ public class DataWriter extends DataConstants{
         public static JSONObject getCourseJSON(Course course){
             JSONObject courseDetails = new JSONObject();
             courseDetails.put(COURSE_ID, course.getCourseID().toString());
-            courseDetails.put(COURSE_DESIGNATOR, course.getDesignator());
-            courseDetails.put(COURSE_NUMBER, course.getCourseNumber());
-            courseDetails.put(COURSE_HOURS, course.getCourseHours());
-            courseDetails.put(COURSE_PREREQUISITES, course.getPrerequisites());
-            courseDetails.put(COURSE_COREQUISITES, course.getCorequisites());
-            courseDetails.put(COURSE_KEYWORDS,course.getKeywords());
-            courseDetails.put(COURSE_PREFERRED_SEMESTER,course.getPreferredSemester());
+            courseDetails.put(COURSE_DESIGNATOR, course.getDesignator().toString());
+            courseDetails.put(COURSE_NUMBER, course.getNumber());
+            courseDetails.put(COURSE_HOURS, course.getHours());
+            courseDetails.put(COURSE_PREREQUISITES, buildCourseRequisitesJSON(course.getPrerequisites()));
+            courseDetails.put(COURSE_COREQUISITES, buildCourseRequisitesJSON(course.getCorequisites()));
+            courseDetails.put(COURSE_KEYWORDS, buildKeywordsJSON(course.getKeywords()));
+            courseDetails.put(COURSE_PREFERRED_SEMESTER, course.getPreferredSemester());
+            return courseDetails;
+        }
 
+        private static Object buildKeywordsJSON(ArrayList<Keyword> keywords) {
+            JSONArray keywordsArray = new JSONArray();
+            for (Keyword keyword : keywords) {
+                keywordsArray.add(keyword.toString());
+            }
+            return keywordsArray;
+        }
+
+        private static JSONArray buildCourseRequisitesJSON(ArrayList<RequirementSet> prerequisites) {
+            JSONArray requisiteArray = new JSONArray();
+            for (RequirementSet requirementSet : prerequisites) {
+                JSONObject objectPrerequisite = new JSONObject();
+                objectPrerequisite.put(REQUIREMENT_SET_COURSES, buildCourseSetJSON(requirementSet.getRequiredCourses()));
+                objectPrerequisite.put(REQUIREMENT_SET_GRADE, requirementSet.getRequiredGrade().toString());
+                if (requirementSet instanceof AndRequirement) {
+                    objectPrerequisite.put(REQUIREMENT_SET_MODE, "a");
+                } else if (requirementSet instanceof OrRequirement) {
+                    objectPrerequisite.put(REQUIREMENT_SET_MODE, "o");
+                }
+                requisiteArray.add(objectPrerequisite);
+            }
+            return requisiteArray;
+        }
+        
+        private static JSONArray buildCourseSetJSON(ArrayList<Course> requiredCourses) {
+            JSONArray courseArray = new JSONArray();
+            for (Course course : requiredCourses) {
+                courseArray.add(course.getCourseID().toString());    
+            }
+            return courseArray;
 
         }
+
+        private static JSONArray buildCourseCorequisitesJSON(ArrayList<RequirementSet> corequisites) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'buildCourseCorequisiteJSON'");
+        }
+
+        
 
         
         public static void saveMajors(){

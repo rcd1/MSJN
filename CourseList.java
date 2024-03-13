@@ -19,7 +19,7 @@ public class CourseList {
         return courseList;
     }
 
-    public ArrayList<Course> getAllCourses() {
+    public ArrayList<Course> getCourses() {
         return courses;
     }
 
@@ -50,7 +50,11 @@ public class CourseList {
         for (Course i : courses) {
             if (courseID.equals(i.getCourseID())) return i;
         }
-        System.out.println("CourseList.java could not find course with UUID " + courseID);
+        //System.out.println("CourseList.java could not find course with UUID " + courseID);
         return null;
+    }
+
+    public static void logout() {
+        DataWriter.saveCourses();
     }
 }
