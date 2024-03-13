@@ -5,7 +5,10 @@ import java.util.ArrayList;
  */
 public class AndRequirement extends RequirementSet{
     
-    
+    public AndRequirement(ArrayList<Course> courses, Grade requiredGrade) {
+        super(courses, requiredGrade);
+        //TODO Auto-generated constructor stub
+    }
 
     public AndRequirement(String title, ArrayList<Course> courses, Grade requiredGrade) {
         super(title, courses, requiredGrade);

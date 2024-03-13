@@ -4,18 +4,24 @@
         "designator":"CSCE",
         "number":"145",
         "hours":4,
-        "requirements":[
+        "prerequisites":[
             {
-                "courseId":"46377177-718d-413a-ad47-21fd93c13ca8",
-                "grade":"C",
-                "mode":"pc"
-            },
-            {
-                "courseId":"c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b",
-                "grade":"C",
-                "mode":"pc"
+                "requiredCourses":[
+                    {"courseID":"46377177-718d-413a-ad47-21fd93c13ca8"},
+                    {"courseID":"c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b"}
+                ],
+                "requiredGrade":"C",
+                "mode":"o"
             }
         ],
+        "corequisites":[{
+            "requiredCourses":[
+                {"courseID":"46377177-718d-413a-ad47-21fd93c13ca8"},
+                {"courseID":"c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b"}
+            ],
+            "requiredGrade":"C",
+            "mode":"o"
+        }],
         "keywords":[{"keyword":"PR"}],
         "preferredSemester":1
     },
@@ -24,13 +30,8 @@
         "designator":"MATH",
         "number":"115",
         "hours":4,
-        "requirements": [
-            {
-                "courseId":"c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b",
-                "grade":"C",
-                "mode":"pc"
-            }
-        ],
+        "prerequisites":[],
+        "corequisites":[],
         "keywords":[{"keyword":"PR"}],
         "preferredSemester":1
     },
@@ -39,7 +40,8 @@
         "designator":"MATH",
         "number":"111",
         "hours":4,
-        "requirements":[],
+        "prerequisites":[],
+        "corequisites":[],
         "keywords":[{"keyword":"PR"}],
         "preferredSemester":1
     },
@@ -48,7 +50,8 @@
         "designator":"ENGL",
         "number":"101",
         "hours":3,
-        "requirements":[],
+        "prerequisites":[],
+        "corequisites":[],
         "keywords":[{"keyword":"PR"}],
         "preferredSemester":1
 
@@ -58,13 +61,14 @@
         "designator":"ENGL",
         "number":"102",
         "hours":3,
-        "requirements":[
-            {
-                "courseId":"59433eb0-5545-4604-b1c2-2caf08148906",
-                "grade":"C",
-                "mode":"p"
-            }
-        ],
+        "prerequisites":[{
+            "requiredCourses":[
+                {"courseID":"59433eb0-5545-4604-b1c2-2caf08148906"}
+            ],
+            "requiredGrade":"C",
+            "mode":"a"
+        }],
+        "corequisites":[],
         "keywords":[{"keyword":"PR"}],
         "preferredSemester":2
     }

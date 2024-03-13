@@ -7,7 +7,10 @@ import java.util.ArrayList;
 public class OrRequirement extends RequirementSet {
     
 
-    
+    public OrRequirement(ArrayList<Course> courses, Grade requiredGrade) {
+        super(courses, requiredGrade);
+        //TODO Auto-generated constructor stub
+    }
     
     public OrRequirement(String title, ArrayList<Course> courses, Grade requiredGrade) {
         super(title, courses, requiredGrade);

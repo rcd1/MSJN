@@ -119,12 +119,13 @@ public static ArrayList<Course> getCourses(){
             String number = (String)courseJSONObject.get(COURSE_NUMBER);
             Long hoursTemp = ((Long)courseJSONObject.get(COURSE_HOURS));
             int hours = hoursTemp.intValue();
-            ArrayList<CourseRequisite> requirements = rebuildCourseRequirements((JSONArray)courseJSONObject.get(COURSE_REQUIREMENTS));
+            ArrayList<RequirementSet> prerequisites = rebuildCourseRequirements((JSONArray)courseJSONObject.get(COURSE_PREREQUISITES));
+            ArrayList<RequirementSet> corequisites = rebuildCourseRequirements((JSONArray)courseJSONObject.get(COURSE_COREQUISITES));
             ArrayList<Keyword> keywords = rebuildKeywords((JSONArray)courseJSONObject.get(COURSE_KEYWORDS));
             Long preferredSemesterTemp = ((Long)courseJSONObject.get(COURSE_PREFERRED_SEMESTER));
             int preferredSemester = preferredSemesterTemp.intValue();
 
-            courses.add(new Course(courseId, designator, number, hours, requirements, keywords, preferredSemester));
+            courses.add(new Course(courseId, designator, number, hours, prerequisites, corequisites, keywords, preferredSemester));
         }
     } catch (Exception e) {
         e.printStackTrace();
@@ -133,27 +134,34 @@ public static ArrayList<Course> getCourses(){
 }
 
 
-private static ArrayList<CourseRequisite> rebuildCourseRequirements(JSONArray jsonArray) {
-    ArrayList<CourseRequisite> requirements = new ArrayList<>();
+private static ArrayList<RequirementSet> rebuildCourseRequirements(JSONArray jsonArray) {
+    ArrayList<RequirementSet> requirements = new ArrayList<>();
     for (Object i : jsonArray) {
         JSONObject requirementJsonObject = (JSONObject)i;
-        CourseType mode = CourseType.valueOf((String)requirementJsonObject.get(REQUIREMENT_MODE));
-        Course course = new Course(UUID.fromString((String)requirementJsonObject.get(REQUIREMENT_COURSE_ID)));
-        Grade grade = Grade.valueOf((String)requirementJsonObject.get(REQUIREMENT_GRADE));
+        String mode = (String)requirementJsonObject.get(REQUIREMENT_SET_MODE);
+        ArrayList<Course> requiredCourses = fillWithBlankCourses((JSONArray)requirementJsonObject.get(REQUIREMENT_SET_COURSES));
+        Grade grade = Grade.valueOf((String)requirementJsonObject.get(REQUIREMENT_SET_GRADE));
         switch (mode) {
-            case c:
-            requirements.add(new Corequisite(course, grade));
+            case "a":
+            requirements.add(new AndRequirement(requiredCourses, grade));
             break;
-            case p:
-            requirements.add(new Prerequisite(course, grade));
-            break;
-            case pc:
-            requirements.add(new Prerequisite(course, grade));
-            requirements.add(new Corequisite(course, grade));
+            case "o":
+            requirements.add(new OrRequirement(requiredCourses, grade));
             break;
         }
     }
     return requirements;
+}
+
+
+private static ArrayList<Course> fillWithBlankCourses(JSONArray jsonArray) {
+    ArrayList<Course> courses = new ArrayList<>();
+        for (Object i : jsonArray) {
+            JSONObject jsonCourse  = (JSONObject)i;
+            UUID courseID = UUID.fromString((String)jsonCourse.get(REQUIREMENT_SET_COURSE_ID));
+            courses.add(new Course(courseID));
+        }
+        return courses;
 }
 
 

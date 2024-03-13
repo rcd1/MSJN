@@ -8,7 +8,8 @@ public class Course {
     private Designator designator;
     private String number;
     private int hours;
-    private ArrayList<CourseRequisite> requirements;
+    private ArrayList<RequirementSet> prerequisites;
+    private ArrayList<RequirementSet> corequisites;
     private ArrayList<Keyword> keywords;
     private int preferredSemester;
 
@@ -22,26 +23,22 @@ public class Course {
     }
 
 
-    /**
-     * A Mutator method for the parameters setted up in the Course class 
-     * @param courseID 
-     * @param designator The type of course the student will be taking (e.g. CHEM, CSCE, MATH, etc)
-     * @param number digits meant tp imply the level of the course 
-     * @param hours The number of hours the student will be taking
-     * @param requirements the requistes that needs to be completed before or during taking the course
-     * @param keywords The Carolina Core and Honors
-     * @param preferredSemester The semester that course is recommended by the major map
-     */
-    public Course(UUID courseID, Designator designator, String number, int hours, ArrayList<CourseRequisite> requirements,
+    
+
+    public Course(UUID courseID, Designator designator, String number, int hours,
+            ArrayList<RequirementSet> prerequisites, ArrayList<RequirementSet> corequisites,
             ArrayList<Keyword> keywords, int preferredSemester) {
         this.courseID = courseID;
         this.designator = designator;
         this.number = number;
         this.hours = hours;
-        this.requirements = requirements;
+        this.prerequisites = prerequisites;
+        this.corequisites = corequisites;
         this.keywords = keywords;
         this.preferredSemester = preferredSemester;
     }
+
+
 
 
     public UUID getCourseID() {
@@ -84,14 +81,7 @@ public class Course {
     }
 
 
-    public ArrayList<CourseRequisite> getRequirements() {
-        return requirements;
-    }
-
-
-    public void setRequirements(ArrayList<CourseRequisite> requirements) {
-        this.requirements = requirements;
-    }
+    
 
 
     public ArrayList<Keyword> getKeywords() {
@@ -137,9 +127,34 @@ public class Course {
      * Used by CourseList to add the CourseRequirements after the Courses have been loaded
      */
     public void reloadCourseRequirements() {
-        for (CourseRequisite requirement : requirements) {
-            requirement.course = CourseList.getCourseByUUID(requirement.course.courseID);
+        for (RequirementSet requirementSet : prerequisites) {
+            ArrayList<Course> temp = new ArrayList<>();
+            for (Course course : requirementSet.getRequiredCourses()) {
+                temp.add(CourseList.getCourseByUUID(course.getCourseID()));
+            }
+            requirementSet.requiredCourses = temp;
         }
+        for (RequirementSet requirementSet : corequisites) {
+            ArrayList<Course> temp = new ArrayList<>();
+            for (Course course : requirementSet.getRequiredCourses()) {
+                temp.add(CourseList.getCourseByUUID(course.getCourseID()));
+            }
+            requirementSet.requiredCourses = temp;
+        }
+    }
+
+
+
+
+    public ArrayList<RequirementSet> getPrerequisites() {
+        return prerequisites;
+    }
+
+
+
+
+    public ArrayList<RequirementSet> getCorequisites() {
+        return corequisites;
     }
     
 }

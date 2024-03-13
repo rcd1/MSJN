@@ -10,7 +10,13 @@ public abstract class RequirementSet implements Requirement {
     protected ArrayList<Course> requiredCourses;
     protected Grade requiredGrade;
     
-    
+        
+
+    public RequirementSet(ArrayList<Course> requiredCourses, Grade requiredGrade) {
+        this.title = "";
+        this.requiredCourses = requiredCourses;
+        this.requiredGrade = requiredGrade;
+    }
 
     public RequirementSet(String title, ArrayList<Course> requiredCourses, Grade requiredGrade) {
         this.title = title;
