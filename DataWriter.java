@@ -100,9 +100,6 @@ public class DataWriter extends DataConstants{
             studentDetails.put(STUDENT_MAJOR,student.getStudentMajor());
             studentDetails.put(STUDENT_NOTES,student.getStudentNotes());
 
-            JSONArray studentArray = new JSONArray();
-            for(Student s : sp.getStudent)
-                studentDetails.put(STUDENT_ADVISOR, s.getStudentAdvisor());
 
             
 
@@ -138,8 +135,11 @@ public class DataWriter extends DataConstants{
             courseDetails.put(COURSE_DESIGNATOR, course.getDesignator());
             courseDetails.put(COURSE_NUMBER, course.getCourseNumber());
             courseDetails.put(COURSE_HOURS, course.getCourseHours());
-            courseDetails.put(COURSE_REQUIREMENTS, course.getRequirements());
-            courseDetails.p
+            courseDetails.put(COURSE_PREREQUISITES, course.getPrerequisites());
+            courseDetails.put(COURSE_COREQUISITES, course.getCorequisites());
+            courseDetails.put(COURSE_KEYWORDS,course.getKeywords());
+            courseDetails.put(COURSE_PREFERRED_SEMESTER,course.getPreferredSemester());
+
 
         }
 
@@ -175,10 +175,5 @@ public class DataWriter extends DataConstants{
 
             return majorDetails;
         }
+    }
 
-
-<<<<<<< HEAD
-=======
-    
-
->>>>>>> ab1b8d689724c8ce2a343a63f7aa3498e9b46d82
