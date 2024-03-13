@@ -40,6 +40,30 @@ public class DataWriter extends DataConstants{
             return userDetails;
         }
 
+        public static void saveAllAdvisors(){
+            Advisor advisors = Advisor.getInstance();
+            ArrayList<Advisor> Advisor = advisors.getStudentAdvisor();
+            JSONArray jsonMajors = new JSONArray();
+
+            for(int i =0; i< Advisor.size(); i++){
+                jsonAdvisors.add(getAdvisorJSON(Advisor.get(i)));
+
+            }
+            try (FileWriter file = new FileWriter(ADVISORS_FILE_NAME)) { 
+                file.write(jsonCourses.toJSONString());
+                file.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        public static JSONObject getAdvisorJSON(Advisor advisor){
+            JSONObject advisorDetails = newJSONObject();
+            advisorDetails.put(ADVISOR_STUDENTS, advisor.getAdvisorStudent());
+            advisorDetails.put(ADVISORS_FILE_NAME, advisor.getAdvisorFileName());
+            advisorDetails.put(ADVISOR_STUDENT_ID, advisor.getAdvisorFileName());
+        }
         public static void saveAllStudents(){
             Student students =Student.getInstance();
             ArrayList<Student> Student = students.getStudents();
@@ -97,13 +121,13 @@ public class DataWriter extends DataConstants{
             }
         }
 
+
         /**
      * Creates a JSONObject from the given Course object.
      *
      * @param course the Course object to create the JSONObject from
      * @return the JSONObject created from the Course object
      */
-
         public static JSONObject getCourseJSON(Course course){
             JSONObject courseDetails = new JSONObject();
             courseDetails.put(COURSE_ID, course.getCourseID().toString());
@@ -115,13 +139,39 @@ public class DataWriter extends DataConstants{
 
         }
 
+        
         public static void saveMajors(){
+            Major majors = Major.getInstance();
+            ArrayList<Major> majorList = majors.getMajors();
+            JSONArray jsonMajors = new JSONArray();
 
+            for(int i=0; i< majorListajorList.size(); i++){
+                jsonMajors.add(getMajorJSON(MajorList.get(i)));
+            }
+
+            try (FileWriter file = new FileWriter(MAJOR_FILE_NAME)) {
+                file.write(jsonMajors.toJSONString());
+                file.flush();
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        public static void saveAllAdvisors(){
+        
+        public static JSONObject getMajorJSON(Major major){
+            JSONObject majorDetails = new JSONObject();
+            majorDetails.put(MAJOR_ID, major.getMajorid().toString());
+            majorDetails.put(MAJOR_NAME, major.getMajorName().toString());
+            majorDetails.put(MAJOR_REQUIREMENTS,major.getMajorRequirements());
+            majorDetails.put(MAJOR_REQUIREMENT_TITLE, major.getMajorRequirements());
+            majorDetails.put(MAJOR_REQUIREMENT_MINHOURS, major.getMajorRequirements());
+            majorDetails.put(MAJOR_REQUIREMENT_MAXHOURS, major.getMajorRequirements());
+            majorDetails.put(MAJOR_REQUIREMENT_ACCEPTABLE_COURSE_SETS, major.getMajorRequirements());
+            majorDetails.put(MAJOR_APPLICATION_ID, major.getApplicationID().toString());
 
+            return majorDetails;
         }
+
 
 <<<<<<< HEAD
 //The one with the less dependencies is courses
