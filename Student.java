@@ -16,6 +16,7 @@ public class Student extends User{
 
     public Student(UUID studentID) {
         super(studentID);
+        this.semesterPlans = new ArrayList<>();
     }
 
 
@@ -76,12 +77,31 @@ public class Student extends User{
         return notes;
     }
 
-    public void addCourse(Course course) {
-
+    public void addCourseToSemsterPlan(Course course) {
+        if (!semesterPlans.isEmpty()) {
+            SemesterPlan lastSemesterPlan = semesterPlans.get(semesterPlans.size() - 1);
+            lastSemesterPlan.addCourse(course);
+        } else {
+            SemesterPlan semesterPlan = new SemesterPlan();
+            semesterPlan.addCourse(course);
+            semesterPlans.add(semesterPlan);
+        }
     }
 
-    public void removeCourse(Course course) {
+    public void removeCourseFromSemesterPlan(Course course) {
+        if (!semesterPlans.isEmpty()) {
+            SemesterPlan lastSemesterPlan = semesterPlans.get(semesterPlans.size() - 1);
+            lastSemesterPlan.removeCourse(course);
+        }
+    }
 
+    public void displaySemesterPlan() {
+        if (!semesterPlans.isEmpty()) {
+            SemesterPlan lastSemesterPlan = semesterPlans.get(semesterPlans.size() - 1);
+            lastSemesterPlan.displaySemesterPlan();
+        } else {
+            System.out.println("No semester plans available");
+        }
     }
 
     public void viewNote(Student student, String note) {

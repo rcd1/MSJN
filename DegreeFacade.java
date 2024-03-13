@@ -39,11 +39,11 @@ public class DegreeFacade {
     */
     
     public void addCourse(Student student, Course course) {
-        student.addCourse(course);
+        student.addCourseToSemsterPlan(course);
     }
 
     public void removeCourse(Student student, Course course) {
-        student.removeCourse(course);
+        student.removeCourseFromSemesterPlan(course);
     }
 
     public User createAccount(String firstName, String lastName, String email, String password, UserType type) {
@@ -66,5 +66,8 @@ public class DegreeFacade {
         return majorList.getMajor(majorName);
     }
 
+    public void displaySemesterPlan(Student student){
+        student.displaySemesterPlan();
+    }
 }
 
