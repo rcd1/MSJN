@@ -108,7 +108,7 @@ public class DataWriter extends DataConstants{
 
         }
         //Course Details/Info
-        public static void saveCourses(){
+        public static void saveCourses() {
             CourseList courses = CourseList.getInstance();
             ArrayList<Course> courseList = courses.getCourses();
             JSONArray jsonCourses = new JSONArray();
@@ -139,9 +139,9 @@ public class DataWriter extends DataConstants{
             courseDetails.put(COURSE_NUMBER, course.getNumber());
             courseDetails.put(COURSE_HOURS, course.getHours());
             courseDetails.put(COURSE_PREREQUISITES, buildCourseRequisitesJSON(course.getPrerequisites()));
-            courseDetails.put(COURSE_PREREQUISITES, buildCourseRequisitesJSON(course.getCorequisites()));
+            courseDetails.put(COURSE_COREQUISITES, buildCourseRequisitesJSON(course.getCorequisites()));
             courseDetails.put(COURSE_PREFERRED_SEMESTER, course.getPreferredSemester());
-
+            return courseDetails;
         }
 
         private static JSONArray buildCourseRequisitesJSON(ArrayList<RequirementSet> prerequisites) {
@@ -149,7 +149,7 @@ public class DataWriter extends DataConstants{
             for (RequirementSet requirementSet : prerequisites) {
                 JSONObject objectPrerequisite = new JSONObject();
                 objectPrerequisite.put(REQUIREMENT_SET_COURSES, buildCourseSetJSON(requirementSet.getRequiredCourses()));
-                objectPrerequisite.put(REQUIREMENT_GRADE, requirementSet.getRequiredGrade());
+                objectPrerequisite.put(REQUIREMENT_GRADE, requirementSet.getRequiredGrade().toString());
                 if (requirementSet instanceof AndRequirement) {
                     objectPrerequisite.put(REQUIREMENT_MODE, "a");
                 } else if (requirementSet instanceof OrRequirement) {
@@ -183,7 +183,7 @@ public class DataWriter extends DataConstants{
             ArrayList<Major> majors = majorList.getMajors();
             JSONArray jsonMajors = new JSONArray();
 
-            for(int i=0; i< majorListajorList.size(); i++){
+            for(int i=0; i< majors.size(); i++){
                 jsonMajors.add(getMajorJSON(majors.get(i)));
             }
 
@@ -210,9 +210,8 @@ public class DataWriter extends DataConstants{
             return majorDetails;
         }
 
+}
 
-<<<<<<< HEAD
-=======
+
     
 
->>>>>>> ab1b8d689724c8ce2a343a63f7aa3498e9b46d82
