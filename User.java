@@ -71,6 +71,11 @@ public abstract class User {
         
     }
 
+    /**
+     * Allow
+     * @param student the usertype profile that the student, advisor, 
+     * and administrator can view
+     */
     protected abstract void viewStudentProfile(Student student);
 
     /**

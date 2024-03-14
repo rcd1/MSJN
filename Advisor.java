@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.UUID;
+/**
+ * The advisor class has an arrayList of students
+ */
 public class Advisor extends User {
     private ArrayList<Student> students;
     
@@ -46,7 +49,7 @@ public class Advisor extends User {
         return true;
     }
 
-    
+
     public void addNote(Student student, String note){
 
     }
