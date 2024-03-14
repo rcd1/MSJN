@@ -61,4 +61,5 @@ public class SemesterPlan {
         }
         System.out.println("Total hours: " + calculateHours());
     }
+
 }
