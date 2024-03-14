@@ -122,15 +122,25 @@ public static ArrayList<Course> getCourses(){
             ArrayList<RequirementSet> prerequisites = rebuildCourseRequirements((JSONArray)courseJSONObject.get(COURSE_PREREQUISITES));
             ArrayList<RequirementSet> corequisites = rebuildCourseRequirements((JSONArray)courseJSONObject.get(COURSE_COREQUISITES));
             ArrayList<Keyword> keywords = rebuildKeywords((JSONArray)courseJSONObject.get(COURSE_KEYWORDS));
+            ArrayList<SemesterOffered> semestersOffered = rebuildSemestersOffered((JSONArray)courseJSONObject.get(COURSE_SEMESTERS_OFFERED));
             Long preferredSemesterTemp = ((Long)courseJSONObject.get(COURSE_PREFERRED_SEMESTER));
             int preferredSemester = preferredSemesterTemp.intValue();
 
-            courses.add(new Course(courseId, designator, number, hours, prerequisites, corequisites, keywords, preferredSemester));
+            courses.add(new Course(courseId, designator, number, hours, prerequisites, corequisites, keywords, semestersOffered, preferredSemester));
         }
     } catch (Exception e) {
         e.printStackTrace();
     }
     return courses;
+}
+
+
+private static ArrayList<SemesterOffered> rebuildSemestersOffered(JSONArray jsonArray) {
+    ArrayList<SemesterOffered> semestersOffered = new ArrayList<>();
+    for (int i = 0; i < jsonArray.size(); i++) {
+        semestersOffered.add(SemesterOffered.valueOf((String)jsonArray.get(i)));
+    }
+    return semestersOffered;
 }
 
 
@@ -177,9 +187,7 @@ private static ArrayList<Keyword> rebuildKeywords(JSONArray jsonArray) {
 
 
 
-/*----------------------------------------------------------------------------*/
-
-    /**
+/**
      * Imagine the Requirements like a Book. Books are broken into three objects: Book, 
      * Chapter, and Page. Rather than a Book being an ArrayList<Page> we make the Book 
      * an ArrayList<Chapter> and Chapter an ArrayList<Page>, otherwise there would 
@@ -199,13 +207,24 @@ private static ArrayList<Keyword> rebuildKeywords(JSONArray jsonArray) {
                 String majorName = (String)majorObject.get(MAJOR_NAME);
                 ArrayList<MajorRequirement> majorRequirements = rebuildMajorRequirements((JSONArray)majorObject.get(MAJOR_REQUIREMENTS));
                 Long ApplicationIDNumber = ((Long)majorObject.get(MAJOR_APPLICATION_ID));
+                ArrayList<SemesterPlan> recommendedSemesterPlans = rebuildRecommendedSemesterPlans((JSONArray)majorObject.get(MAJOR_RECOMMENDED_SEMESTER_PLANS));
                 ApplicationID applicationID = ApplicationID.getApplicationIDByNumber(ApplicationIDNumber.intValue());
-                majors.add(new Major(majorid, majorName, majorRequirements, applicationID));
+                majors.add(new Major(majorid, majorName, majorRequirements, recommendedSemesterPlans, applicationID));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return majors;
+    }
+
+
+    private static ArrayList<SemesterPlan> rebuildRecommendedSemesterPlans(JSONArray jsonArray) {
+        ArrayList<SemesterPlan> recommendedSemesterPlans = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            ArrayList<Course> courses = rebuildCoursesByUUIDs((JSONArray)jsonArray.get(i));
+            recommendedSemesterPlans.add(new SemesterPlan(courses));
+        }
+        return recommendedSemesterPlans;
     }
 
 

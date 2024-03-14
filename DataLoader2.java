@@ -25,16 +25,26 @@ public class DataLoader2 extends DataConstants2{
             ArrayList<RequirementSet> corequisites = rebuildCourseCoRequirements((JSONArray)courseJSONObject.get(COURSE_COREQUISITES));
             ArrayList<Keyword> keywords = new ArrayList<>();
             // Long preferredSemesterTemp = ((Long)courseJSONObject.get(COURSE_PREFERRED_SEMESTER));
+            ArrayList<SemesterOffered> semestersOffered = rebuildSemestersOffered((JSONArray)courseJSONObject.get(COURSE_SEMESTERS_OFFERED));
             Random rand = new Random();
             int preferredSemester = rand.nextInt(8)+1;
 
-            courses.add(new Course(courseId, designator, number, hours, prerequisites, corequisites, keywords, preferredSemester));
+            courses.add(new Course(courseId, designator, number, hours, prerequisites, corequisites, keywords, semestersOffered, preferredSemester));
         }
     } catch (Exception e) {
         e.printStackTrace();
     }
     return courses;
     }
+
+    private static ArrayList<SemesterOffered> rebuildSemestersOffered(JSONArray jsonArray) {
+        ArrayList<SemesterOffered> semestersOffered = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            semestersOffered.add(SemesterOffered.valueOf((String)jsonArray.get(i)));
+        }
+        return semestersOffered;
+    }
+    
 
     private static ArrayList<RequirementSet> rebuildCourseCoRequirements(JSONArray jsonArray) {
         ArrayList<RequirementSet> requirements = new ArrayList<>();

@@ -5,17 +5,20 @@ public class Major {
  private UUID majorid;
  private String majorName;
  private ArrayList<MajorRequirement> majorRequirements;
+ private ArrayList<SemesterPlan> recommendedSemesterPlans;
  private ApplicationID applicationID;
 
 
 
 public Major(UUID majorid, String majorName, ArrayList<MajorRequirement> majorRequirements,
-        ApplicationID applicationID) {
+        ArrayList<SemesterPlan> recommendedSemesterPlans, ApplicationID applicationID) {
     this.majorid = majorid;
     this.majorName = majorName;
     this.majorRequirements = majorRequirements;
+    this.recommendedSemesterPlans = recommendedSemesterPlans;
     this.applicationID = applicationID;
 }
+
 
 protected void addCourse(Course course){
 
@@ -55,7 +58,10 @@ public ApplicationID getApplicationID() {
 }
 
 
-
+public ArrayList<SemesterPlan> getRecommendedSemesterPlans() {
+    return recommendedSemesterPlans;
 }
 
 
+
+}
