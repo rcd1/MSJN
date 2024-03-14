@@ -20,8 +20,8 @@ public class DataWriter extends DataConstants{
 
         }
         try (FileWriter File = new FileWriter(USER_FILE_NAME)){
-            file.write(jsonUsers.toJSONString());
-            file.flush();
+            File.write(jsonUsers.toJSONString());
+            File.flush();
 
         } catch (IOException e){
             e.printStackTrace();
@@ -33,7 +33,7 @@ public class DataWriter extends DataConstants{
 
             userDetails.put(USER_EMAIL, user.getEmail());
             userDetails.put(USER_FIRST_NAME, user.getFirstName());
-            userDetails.put(USER_ID, user.getID().toString());
+            userDetails.put(USER_ID, user.getUserID().toString());
             userDetails.put(USER_LAST_NAME, user.getLastName());
             userDetails.put(USER_PASSWORD, user.getPassword());
 
@@ -197,7 +197,7 @@ public class DataWriter extends DataConstants{
             ArrayList<Major> majorList = majors.getMajors();
             JSONArray jsonMajors = new JSONArray();
 
-            for(int i=0; i< majorListajorList.size(); i++){
+            for(int i=0; i< majorList.size(); i++){
                 jsonMajors.add(getMajorJSON(MajorList.get(i)));
             }
 
