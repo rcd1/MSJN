@@ -135,4 +135,8 @@ public class Student extends User{
         });
         return returnGrade[1];
     }
+
+    public void generateSemesterPlans() {
+        
+    }
 }
