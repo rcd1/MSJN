@@ -18,6 +18,9 @@ public class dataLoaderTest {
         // for (Course course : courses) {
         //     System.out.println(course.getDesignator() + " " +
         //     course.getNumber() + ":");
+        //     for (SemesterOffered test : course.getSemestersOffered()) {
+        //         System.out.println(test);
+        //     }
         //     for (RequirementSet reqSet : course.getPrerequisites()) {
         //         System.out.println(reqSet.getRequiredGrade());
         //         for (Course course2 : reqSet.getRequiredCourses()) {

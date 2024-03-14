@@ -11,6 +11,7 @@ public class Course {
     private ArrayList<RequirementSet> prerequisites;
     private ArrayList<RequirementSet> corequisites;
     private ArrayList<Keyword> keywords;
+    private ArrayList<SemesterOffered> semestersOffered;
     private int preferredSemester;
 
     
@@ -22,12 +23,9 @@ public class Course {
         this.courseID = courseID;
     }
 
-
-    
-
     public Course(UUID courseID, Designator designator, String number, int hours,
             ArrayList<RequirementSet> prerequisites, ArrayList<RequirementSet> corequisites,
-            ArrayList<Keyword> keywords, int preferredSemester) {
+            ArrayList<Keyword> keywords, ArrayList<SemesterOffered> semestersOffered, int preferredSemester) {
         this.courseID = courseID;
         this.designator = designator;
         this.number = number;
@@ -35,8 +33,14 @@ public class Course {
         this.prerequisites = prerequisites;
         this.corequisites = corequisites;
         this.keywords = keywords;
+        this.semestersOffered = semestersOffered;
         this.preferredSemester = preferredSemester;
     }
+
+
+
+
+
 
 
 
@@ -155,6 +159,10 @@ public class Course {
 
     public ArrayList<RequirementSet> getCorequisites() {
         return corequisites;
+    }
+
+    public ArrayList<SemesterOffered> getSemestersOffered() {
+        return semestersOffered;
     }
     
 }

@@ -138,8 +138,17 @@ public class DataWriter extends DataConstants{
             courseDetails.put(COURSE_PREREQUISITES, buildCourseRequisitesJSON(course.getPrerequisites()));
             courseDetails.put(COURSE_COREQUISITES, buildCourseRequisitesJSON(course.getCorequisites()));
             courseDetails.put(COURSE_KEYWORDS, buildKeywordsJSON(course.getKeywords()));
+            courseDetails.put(COURSE_SEMESTERS_OFFERED, buildSemestersOfferedJSON(course.getSemestersOffered()));
             courseDetails.put(COURSE_PREFERRED_SEMESTER, course.getPreferredSemester());
             return courseDetails;
+        }
+
+        private static Object buildSemestersOfferedJSON(ArrayList<SemesterOffered> semestersOffered) {
+            JSONArray semestersArray = new JSONArray();
+            for (SemesterOffered semesterOffered : semestersOffered) {
+              semestersArray.add(semesterOffered.toString());  
+            }
+            return semestersArray;
         }
 
         private static Object buildKeywordsJSON(ArrayList<Keyword> keywords) {

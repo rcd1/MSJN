@@ -16,8 +16,10 @@ public Major(UUID majorid, String majorName, ArrayList<MajorRequirement> majorRe
     this.majorName = majorName;
     this.majorRequirements = majorRequirements;
     this.recommendedSemesterPlans = recommendedSemesterPlans;
+    this.recommendedSemesterPlans = recommendedSemesterPlans;
     this.applicationID = applicationID;
 }
+
 
 
 protected void addCourse(Course course){
@@ -62,8 +64,4 @@ public ArrayList<SemesterPlan> getRecommendedSemesterPlans() {
     return recommendedSemesterPlans;
 }
 
-
-
 }
-
-
