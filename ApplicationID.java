@@ -1,4 +1,5 @@
 public enum ApplicationID{
+    Undeclared(0),
     Cybersecurity(1), 
     Linguistics(2), 
     ArtifiicalIntelligence(3);
@@ -15,6 +16,8 @@ public enum ApplicationID{
 
     public static ApplicationID getApplicationIDByNumber(int number) {
         switch (number) {
+            case 0:
+            return Undeclared;
             case 1:
             return Cybersecurity;
             case 2:
@@ -22,7 +25,7 @@ public enum ApplicationID{
             case 3:
             return ArtifiicalIntelligence;
             default:
-            return Cybersecurity;
+            return Undeclared;
         }
     }
 }
