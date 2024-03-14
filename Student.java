@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 public class Student extends User{
@@ -18,6 +17,7 @@ public class Student extends User{
     public Student(UUID studentID) {
         super(studentID);
         this.semesterPlans = new ArrayList<>();
+        this.studentGrades = new HashMap<>();
     }
 
 

@@ -38,13 +38,6 @@ public class Course {
     }
 
 
-
-
-
-
-
-
-
     public UUID getCourseID() {
         return courseID;
     }
@@ -125,7 +118,11 @@ public class Course {
      * @return true if this Course has these parameters, false otherwise
      */
     public boolean checkCourse(String name, String number, int hours) {
-        return this.designator.toString().equalsIgnoreCase(name) && this.number.equalsIgnoreCase(number) && this.hours == hours;
+        return this.designator==Designator.valueOf(name) && this.number.equalsIgnoreCase(number) && this.hours == hours;
+    }
+
+    public boolean checkCourse(String name, String number) {
+        return this.designator.toString().equalsIgnoreCase(name) && this.number.equalsIgnoreCase(number);
     }
     /**
      * Used by CourseList to add the CourseRequirements after the Courses have been loaded
@@ -148,7 +145,9 @@ public class Course {
     }
 
 
-
+    public void addKeyword(Keyword keyword) {
+        this.keywords.add(keyword);
+    }
 
     public ArrayList<RequirementSet> getPrerequisites() {
         return prerequisites;

@@ -31,6 +31,15 @@ public class CourseList {
         return null;
     }
 
+    public Course getCourse(String name, String number) {
+        for (Course course : courses) {
+            if (course.checkCourse(name, number)) {
+            return course;
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Course> findCourses(String keyword) {
         ArrayList<Course> foundCourses = new ArrayList<>();
         for (Course course : courses) {

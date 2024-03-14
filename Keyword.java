@@ -9,5 +9,6 @@ public enum Keyword {
     CMS,
     GFL,
     PR,
-    MR;
+    MR,
+    LAE;
 }
