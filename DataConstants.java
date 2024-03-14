@@ -29,12 +29,14 @@ public abstract class DataConstants {
     protected static final String MAJOR_NAME = "majorName";
     protected static final String MAJOR_REQUIREMENTS = "majorRequirements";
     protected static final String MAJOR_APPLICATION_ID = "applicationID";
+    protected static final String MAJOR_RECOMMENDED_SEMESTER_PLANS = "recommendedSemesterPlans";
 
     /*--------------------------MajorRequirement--------------------------*/
     protected static final String MAJOR_REQUIREMENT_TITLE = "title";
     protected static final String MAJOR_REQUIREMENT_MINHOURS = "minHours";
     protected static final String MAJOR_REQUIREMENT_MAXHOURS = "maxHours";
     protected static final String MAJOR_REQUIREMENT_ACCEPTABLE_COURSE_SETS = "acceptableCourseSets";
+
 
     /*--------------------------RequirementSet--------------------------*/
     protected static final String REQUIREMENT_SET_TITLE = "title";

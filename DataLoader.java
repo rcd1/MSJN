@@ -199,13 +199,24 @@ private static ArrayList<Keyword> rebuildKeywords(JSONArray jsonArray) {
                 String majorName = (String)majorObject.get(MAJOR_NAME);
                 ArrayList<MajorRequirement> majorRequirements = rebuildMajorRequirements((JSONArray)majorObject.get(MAJOR_REQUIREMENTS));
                 Long ApplicationIDNumber = ((Long)majorObject.get(MAJOR_APPLICATION_ID));
+                ArrayList<SemesterPlan> recommendedSemesterPlans = rebuildRecommendedSemesterPlans((JSONArray)majorObject.get(MAJOR_RECOMMENDED_SEMESTER_PLANS));
                 ApplicationID applicationID = ApplicationID.getApplicationIDByNumber(ApplicationIDNumber.intValue());
-                majors.add(new Major(majorid, majorName, majorRequirements, applicationID));
+                majors.add(new Major(majorid, majorName, majorRequirements, recommendedSemesterPlans, applicationID));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return majors;
+    }
+
+
+    private static ArrayList<SemesterPlan> rebuildRecommendedSemesterPlans(JSONArray jsonArray) {
+        ArrayList<SemesterPlan> recommendedSemesterPlans = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            ArrayList<Course> courses = rebuildCoursesByUUIDs((JSONArray)jsonArray.get(i));
+            recommendedSemesterPlans.add(new SemesterPlan(courses));
+        }
+        return recommendedSemesterPlans;
     }
 
 

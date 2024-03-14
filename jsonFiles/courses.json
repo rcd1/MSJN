@@ -44322,7 +44322,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "669e88d5-9009-4f74-85aa-e675ffaaaf12",
@@ -44359,7 +44359,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "2f85f19f-f6ba-490f-9bb2-a41b9199d74f",
@@ -44378,7 +44378,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "669e88d5-9009-4f74-85aa-e675ffaaaf12",
@@ -44398,7 +44398,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "2f85f19f-f6ba-490f-9bb2-a41b9199d74f",
@@ -44472,7 +44472,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "669e88d5-9009-4f74-85aa-e675ffaaaf12",
@@ -44492,7 +44492,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "f8e10b3a-146b-4d43-a3d8-647028c98641",
@@ -44511,7 +44511,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "84b21549-16e9-4117-978c-39a43fb665b2",
@@ -44550,7 +44550,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "669e88d5-9009-4f74-85aa-e675ffaaaf12",
@@ -44656,7 +44656,7 @@
                 ]
             },
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "4b04470e-717c-4ac8-a5ca-34fd0572f148",
@@ -44693,7 +44693,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "12b2ee6d-d2c5-47fb-93de-08b5950ea2ae",
@@ -44747,7 +44747,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "f8e10b3a-146b-4d43-a3d8-647028c98641",
@@ -44822,7 +44822,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "9810a807-f799-48ac-a958-a345e60f6910",
@@ -44841,7 +44841,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "12b2ee6d-d2c5-47fb-93de-08b5950ea2ae",
@@ -44870,7 +44870,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "12b2ee6d-d2c5-47fb-93de-08b5950ea2ae",
@@ -44889,7 +44889,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6",
@@ -44957,7 +44957,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "12b2ee6d-d2c5-47fb-93de-08b5950ea2ae",
@@ -45059,13 +45059,7 @@
                 "mode": "a",
                 "requiredGrade": "C",
                 "requiredCourses": [
-                    "f8b358bf-d69e-4aae-b10c-8dc98f1f651f"
-                ]
-            },
-            {
-                "mode": "a",
-                "requiredGrade": "C",
-                "requiredCourses": [
+                    "f8b358bf-d69e-4aae-b10c-8dc98f1f651f",
                     "e5a84d03-ff91-40b0-8845-56cade318123"
                 ]
             }
@@ -45112,13 +45106,7 @@
                 "mode": "a",
                 "requiredGrade": "C",
                 "requiredCourses": [
-                    "f8b358bf-d69e-4aae-b10c-8dc98f1f651f"
-                ]
-            },
-            {
-                "mode": "a",
-                "requiredGrade": "C",
-                "requiredCourses": [
+                    "f8b358bf-d69e-4aae-b10c-8dc98f1f651f",
                     "e5a84d03-ff91-40b0-8845-56cade318123"
                 ]
             }
@@ -45211,13 +45199,7 @@
                 "mode": "a",
                 "requiredGrade": "C",
                 "requiredCourses": [
-                    "f8b358bf-d69e-4aae-b10c-8dc98f1f651f"
-                ]
-            },
-            {
-                "mode": "a",
-                "requiredGrade": "C",
-                "requiredCourses": [
+                    "f8b358bf-d69e-4aae-b10c-8dc98f1f651f",
                     "e5a84d03-ff91-40b0-8845-56cade318123"
                 ]
             }
@@ -45297,7 +45279,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "6c8202fd-b31b-4647-b551-b7f4dbf007a0",
@@ -45372,7 +45354,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "e5a84d03-ff91-40b0-8845-56cade318123",
@@ -45439,7 +45421,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "f8e10b3a-146b-4d43-a3d8-647028c98641",
@@ -45458,7 +45440,7 @@
         "designator": "MATH",
         "prerequisites": [
             {
-                "mode": "a",
+                "mode": "o",
                 "requiredGrade": "C",
                 "requiredCourses": [
                     "f8e10b3a-146b-4d43-a3d8-647028c98641",
@@ -45500,13 +45482,7 @@
                 "mode": "a",
                 "requiredGrade": "D",
                 "requiredCourses": [
-                    "26741fb0-6b29-42f5-92aa-a660f78e2f9b"
-                ]
-            },
-            {
-                "mode": "a",
-                "requiredGrade": "D",
-                "requiredCourses": [
+                    "26741fb0-6b29-42f5-92aa-a660f78e2f9b",
                     "56c36d9d-b24b-4cc1-b11c-c50774c05555"
                 ]
             }
