@@ -1,3 +1,6 @@
+/**
+ * Am enumeration class for the different type of courses that can be taken
+ */
 public enum Designator {
     ACCT,
     AESP,
