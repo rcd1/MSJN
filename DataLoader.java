@@ -47,9 +47,41 @@ public class DataLoader extends DataConstants {
     }
 
 
+    private static HashMap<Course, Grade> rebuildStudentGrades(JSONArray jsonArray) {
+        HashMap<Course,Grade> studentGrades = new HashMap<>();
+        for (Object i : jsonArray) {
+            JSONObject jsonObject = (JSONObject)i;
+        }
+    }
+
+
+    private static ArrayList<String> rebuildNotes(JSONArray jsonArray) {
+        ArrayList<String> notes= new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            notes.add((String)jsonArray.get(i));
+        }
+        return notes;
+    }
+
+
+    private static Advisor rebuildAdvisor(JSONObject jsonObject) {
+        UUID advisorID = UUID.fromString((String)jsonObject.get(STUDENT_ADVISOR));
+        return new Advisor(advisorID);
+    }
+
+
+    private static ArrayList<LegalGuardian> rebuildLegalGuardians(JSONArray jsonArray) {
+        return new ArrayList<LegalGuardian>();
+    }
+
+
     private static ArrayList<SemesterPlan> rebuildSemesterPlans(JSONArray jsonArray) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'rebuildSemesterPlans'");
+        ArrayList<SemesterPlan> semesterPlans = new ArrayList<>();
+        for (int i = 0; i < jsonArray.size(); i++) {
+            ArrayList<Course> courses = rebuildCoursesByUUIDs((JSONArray)jsonArray.get(i));
+            semesterPlans.add(new SemesterPlan(courses));
+        }
+        return semesterPlans;
     }
 
 

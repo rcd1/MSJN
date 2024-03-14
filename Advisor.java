@@ -14,6 +14,12 @@ public class Advisor extends User {
      * @param password The password of the advisor.
      * @param userID The userID of the advisor.
      */
+    
+
+    public Advisor(UUID userID) {
+        super(userID);
+    }
+
     public Advisor(String firstName, String lastName, String email, String password, UUID userID) {
         super(firstName, lastName, email, password, userID);
     }
