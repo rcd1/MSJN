@@ -17,12 +17,15 @@ public class Course {
     
     /**
      * For DataLoader, I won't be able to fully create requirements the same passthrough I create the courses, so we get a dummy course to fill in
-     * @param courseID
+     * @param courseID ID of the course 
      */
     public Course(UUID courseID) {
         this.courseID = courseID;
     }
 
+    /**
+     * The setter method for the Course's parameters.
+     */
     public Course(UUID courseID, Designator designator, String number, int hours,
             ArrayList<RequirementSet> prerequisites, ArrayList<RequirementSet> corequisites,
             ArrayList<Keyword> keywords, ArrayList<SemesterOffered> semestersOffered, int preferredSemester) {
