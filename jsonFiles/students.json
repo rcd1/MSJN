@@ -11,16 +11,16 @@
         "semesterPlans":[
             {"courses":[
                     {
-                        "courseId":"8a95b1f5-bad4-4d02-9378-71a1c7f67930"
+                        "courseId":"2e2ebf3f-c4d3-4dae-956b-d8afa7fca627"
                     },
                     {
-                        "courseId":"46377177-718d-413a-ad47-21fd93c13ca8"
+                        "courseId":"84b21549-16e9-4117-978c-39a43fb665b2"
                     },
                     {
-                        "courseId":"59433eb0-5545-4604-b1c2-2caf08148906"
+                        "courseId":"12224407-e656-4fe7-9078-88f1d9dc8325"
                     },
                     {
-                        "courseId":"c865ea7a-dcd9-4c4d-9d1e-11c84b38bf0b"
+                        "courseId":"669e88d5-9009-4f74-85aa-e675ffaaaf12"
                     }
                 ],
                 "hours": 12
@@ -36,15 +36,15 @@
         "hasScholarship":true,
         "studentGrades":[
             {
-                "courseId":"8a95b1f5-bad4-4d02-9378-71a1c7f67930",
+                "courseId":"2e2ebf3f-c4d3-4dae-956b-d8afa7fca627",
                 "grade":"B+"
             },
             {
-                "courseId":"46377177-718d-413a-ad47-21fd93c13ca8",
+                "courseId":"84b21549-16e9-4117-978c-39a43fb665b2",
                 "grade":"W"
             },
             {
-                "courseId":"59433eb0-5545-4604-b1c2-2caf08148906",
+                "courseId":"12224407-e656-4fe7-9078-88f1d9dc8325",
                 "grade":"C+"
             }
         ]
