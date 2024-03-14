@@ -38,11 +38,11 @@ public class DegreeFacade {
     }
     */
     
-    public void addCourse(Student student, Course course) {
+    public void addCourseToSemsterPlan(Student student, Course course) {
         student.addCourseToSemsterPlan(course);
     }
 
-    public void removeCourse(Student student, Course course) {
+    public void removeCourseFromSemesterPlan(Student student, Course course) {
         student.removeCourseFromSemesterPlan(course);
     }
 
@@ -51,7 +51,7 @@ public class DegreeFacade {
     }
 
     public ArrayList<Course> getAllCourses() {
-        return courseList.getAllCourses();
+        return courseList.getCourses();
     }
 
     public ArrayList<Course> findCourses(String keyword) {
