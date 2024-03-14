@@ -50,6 +50,7 @@ public class DegreeFacade {
     }
     */
     
+<<<<<<< HEAD
 
     /**
      * A method for when the student decides to add a course
@@ -66,6 +67,13 @@ public class DegreeFacade {
      * @param course the course that the student is removing
      */
     public void removeCourse(Student student, Course course) {
+=======
+    public void addCourseToSemsterPlan(Student student, Course course) {
+        student.addCourseToSemsterPlan(course);
+    }
+
+    public void removeCourseFromSemesterPlan(Student student, Course course) {
+>>>>>>> f733242d33f3525030d9d51e2d4546596a6d3b18
         student.removeCourseFromSemesterPlan(course);
     }
 
@@ -87,7 +95,7 @@ public class DegreeFacade {
      * @return all the courses from the array list of courses
      */
     public ArrayList<Course> getAllCourses() {
-        return courseList.getAllCourses();
+        return courseList.getCourses();
     }
 
     /**

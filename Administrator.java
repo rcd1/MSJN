@@ -10,7 +10,7 @@ public class Administrator extends User{
     
     /**
      * The parameters that the Administrator class inherits from the user.
-     * @param firstNamen the first name of the administrator.
+     * @param firstName the first name of the administrator.
      * @param lastName the last name of the administrator.
      * @param email the email of the administrator.
      * @param password the password of the administrator.
