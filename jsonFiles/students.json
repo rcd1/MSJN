@@ -49,15 +49,12 @@
         "year": 2021,
         "gpa": 3.5,
         "semesterPlans": [
-            {
-                "courses": [
-                    "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627",
-                    "84b21549-16e9-4117-978c-39a43fb665b2",
-                    "12224407-e656-4fe7-9078-88f1d9dc8325",
-                    "669e88d5-9009-4f74-85aa-e675ffaaaf12"
-                ],
-                "hours": 12
-            }
+            [
+                "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627",
+                "84b21549-16e9-4117-978c-39a43fb665b2",
+                "12224407-e656-4fe7-9078-88f1d9dc8325",
+                "669e88d5-9009-4f74-85aa-e675ffaaaf12"
+            ]
         ],
         "legalGuardians": [],
         "advisorId": "970c31ab-02bb-4f2b-b8b6-8e8a206a506c",
@@ -67,7 +64,7 @@
         "studentGrades": [
             {
                 "courseId": "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627",
-                "grade": "B+"
+                "grade": "B_Plus"
             },
             {
                 "courseId": "84b21549-16e9-4117-978c-39a43fb665b2",
@@ -75,7 +72,7 @@
             },
             {
                 "courseId": "12224407-e656-4fe7-9078-88f1d9dc8325",
-                "grade": "C+"
+                "grade": "C_Plus"
             }
         ]
     }
