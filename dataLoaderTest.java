@@ -2,17 +2,8 @@ import java.util.ArrayList;
 
 public class dataLoaderTest {
     public static void main(String[] args) {
-        UserList userList = UserList.getInstance();
-        ArrayList<Student> students = userList.getStudents();
-        ArrayList<Advisor> advisors = userList.getAdvisors();
-
-        for (Advisor advisor : advisors) {
-            System.out.println(advisor.toString());
-        }
-
-        for (Student student : students) {
-            System.out.println(student.toString());
-        }
+        dataLoaderTest goober = new dataLoaderTest();
+        goober.majorTest();
     }
 
     public void majorTest() {
@@ -56,6 +47,20 @@ public class dataLoaderTest {
             }
         }
         // CourseList.logout();
+    }
+
+    public void userTest() {
+        UserList userList = UserList.getInstance();
+        ArrayList<Student> students = userList.getStudents();
+        ArrayList<Advisor> advisors = userList.getAdvisors();
+
+        for (Advisor advisor : advisors) {
+            System.out.println(advisor.toString());
+        }
+
+        for (Student student : students) {
+            System.out.println(student.toString());
+        }
     }
 }
 
