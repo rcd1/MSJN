@@ -14,6 +14,9 @@ public class Student extends User{
     private boolean hasScholarship;
     private HashMap<Course, Grade> studentGrades;
 
+    //In the event a student does not have an Advisor, there is an "Empty" Advisor with the UUID "5581ca17-2ddf-4f52-a083-899869f4b5c0",
+    
+
     public Student(UUID studentID) {
         super(studentID);
         this.semesterPlans = new ArrayList<>();
