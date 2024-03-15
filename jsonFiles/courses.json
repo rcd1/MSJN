@@ -1592,7 +1592,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -1609,7 +1610,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -1643,7 +1645,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -1830,7 +1833,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -2311,7 +2315,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -2328,7 +2333,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -2397,7 +2403,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -2482,7 +2489,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -2499,7 +2507,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -2516,7 +2525,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -2533,7 +2543,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -2907,7 +2918,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -3026,7 +3038,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -3043,7 +3056,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -4420,7 +4434,9 @@
         "number": "121",
         "hours": 4,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "GFL"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -4435,7 +4451,9 @@
         "number": "122",
         "hours": 4,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "GFL"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -5181,7 +5199,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -5213,7 +5232,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -5571,7 +5591,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -5588,7 +5609,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -5605,7 +5627,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -6618,7 +6641,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -6635,7 +6659,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -6719,7 +6744,8 @@
         "hours": 4,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -8859,7 +8885,9 @@
         "number": "121",
         "hours": 4,
         "preferredSemester": 1,
-        "keywords": [],
+        "keywords": [
+            "GFL"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -8882,7 +8910,9 @@
         "number": "122",
         "hours": 4,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "GFL"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -10061,7 +10091,9 @@
         "number": "101",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -10099,7 +10131,9 @@
         "number": "101L",
         "hours": 1,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -14017,7 +14051,10 @@
         "number": "111",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "SCI",
+            "LSE"
+        ],
         "corequisites": [
             {
                 "mode": "a",
@@ -14056,7 +14093,10 @@
         "number": "111L",
         "hours": 1,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "SCI",
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -14071,7 +14111,9 @@
         "number": "112",
         "hours": 3,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "SCI"
+        ],
         "corequisites": [
             {
                 "mode": "a",
@@ -14102,7 +14144,9 @@
         "number": "112L",
         "hours": 1,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "SCI"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -15163,7 +15207,9 @@
         "number": "121",
         "hours": 4,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "GFL"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -15187,7 +15233,8 @@
         "hours": 4,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -15474,7 +15521,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -15862,7 +15910,9 @@
         "number": "298",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "GSS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -16156,7 +16206,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -16173,7 +16224,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -16533,7 +16585,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -19185,7 +19238,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -25760,7 +25814,9 @@
         "number": "205",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "GSS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -28050,7 +28106,9 @@
         "number": "202",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "GSS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -28065,7 +28123,9 @@
         "number": "218",
         "hours": 3,
         "preferredSemester": 7,
-        "keywords": [],
+        "keywords": [
+            "GSS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -28424,7 +28484,9 @@
         "number": "360",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "GSS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -32311,7 +32373,9 @@
         "number": "200",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "AIU"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -32342,7 +32406,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -32374,7 +32439,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -32406,7 +32472,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -32438,7 +32505,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -32470,7 +32538,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -32502,7 +32571,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -32534,7 +32604,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -32566,7 +32637,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -32598,7 +32670,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -36504,7 +36577,9 @@
         "number": "101",
         "hours": 3,
         "preferredSemester": 1,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -36527,7 +36602,9 @@
         "number": "101L",
         "hours": 1,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -38793,7 +38870,9 @@
         "number": "110",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "AIU"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -38809,7 +38888,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -38826,7 +38906,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -38843,7 +38924,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -40433,7 +40515,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -40458,7 +40541,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -40475,7 +40559,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -40507,7 +40592,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -40574,7 +40660,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -41462,7 +41549,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -41513,7 +41601,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -41566,7 +41655,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -41583,7 +41673,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -41600,7 +41691,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -41617,7 +41709,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -41634,7 +41727,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -41651,7 +41745,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -41668,7 +41763,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -43019,7 +43115,9 @@
         "number": "101",
         "hours": 4,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -43049,7 +43147,9 @@
         "number": "103",
         "hours": 4,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -43094,7 +43194,10 @@
         "number": "201",
         "hours": 4,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "LSE",
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -43124,7 +43227,9 @@
         "number": "215",
         "hours": 3,
         "preferredSemester": 7,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -43139,7 +43244,9 @@
         "number": "215L",
         "hours": 1,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -44274,7 +44381,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -44291,7 +44399,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -44325,7 +44434,8 @@
         "hours": 4,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -44352,7 +44462,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -44443,7 +44554,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -44460,7 +44572,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -44477,7 +44590,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45201,7 +45315,9 @@
         "number": "121",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "GFL"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -45224,7 +45340,9 @@
         "number": "122",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "GFL"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -45639,7 +45757,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45656,7 +45775,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45673,7 +45793,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45690,7 +45811,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45707,7 +45829,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45724,7 +45847,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45758,7 +45882,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45775,7 +45900,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45792,7 +45918,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45809,7 +45936,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45826,7 +45954,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45843,7 +45972,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -45877,7 +46007,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -53086,7 +53217,8 @@
         "hours": 4,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -53111,7 +53243,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -54437,7 +54570,8 @@
         "hours": 4,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -54462,7 +54596,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -57488,7 +57623,9 @@
         "number": "218",
         "hours": 3,
         "preferredSemester": 1,
-        "keywords": [],
+        "keywords": [
+            "GSS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -57934,7 +58071,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -58214,7 +58352,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -58239,7 +58378,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -58256,7 +58396,8 @@
         "hours": 4,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -58282,7 +58423,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -58662,7 +58804,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -58865,7 +59008,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -59790,7 +59934,9 @@
         "number": "101",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "AIU"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -59806,7 +59952,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -59823,7 +59970,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -59840,7 +59988,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -64269,7 +64418,9 @@
         "number": "210",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -64292,7 +64443,9 @@
         "number": "210L",
         "hours": 1,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -67065,7 +67218,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -67507,7 +67661,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -67524,7 +67679,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -67549,7 +67705,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -68228,7 +68385,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -68290,7 +68448,9 @@
         "number": "210",
         "hours": 3,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "GSS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -68930,7 +69090,9 @@
         "number": "310",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "AIU"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -76580,7 +76742,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "CMS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -76869,7 +77032,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "CMS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -78447,7 +78611,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LSE"
+            "LSE",
+            "SCI"
         ],
         "corequisites": [
             {
@@ -78480,7 +78645,8 @@
         "hours": 1,
         "preferredSemester": 1,
         "keywords": [
-            "LSE"
+            "LSE",
+            "SCI"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -78511,7 +78677,9 @@
         "number": "212",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "SCI"
+        ],
         "corequisites": [
             {
                 "mode": "a",
@@ -78542,7 +78710,9 @@
         "number": "212L",
         "hours": 1,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "SCI"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -79038,7 +79208,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -79242,7 +79413,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -81017,7 +81189,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -81042,7 +81215,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -81372,7 +81546,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -82866,7 +83041,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -83172,7 +83348,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -83509,7 +83686,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -85020,7 +85198,8 @@
         "hours": 4,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -85045,7 +85224,8 @@
         "hours": 4,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -85112,7 +85292,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -85516,7 +85697,9 @@
         "number": "200",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CMS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -89058,7 +89241,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -89100,7 +89284,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -89167,7 +89352,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -89201,7 +89387,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -89218,7 +89405,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -89430,7 +89618,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -89523,7 +89712,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -90209,7 +90399,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -90224,7 +90415,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GHS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -90387,7 +90579,9 @@
         "number": "222",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "GSS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -90980,7 +91174,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -90997,7 +91192,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -91014,7 +91210,8 @@
         "hours": 6,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -91031,7 +91228,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -91048,7 +91246,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GFL"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -91140,7 +91339,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -92130,7 +92330,9 @@
         "number": "140",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "CMS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -92145,7 +92347,9 @@
         "number": "145",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "CMS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -92190,7 +92394,9 @@
         "number": "213",
         "hours": 3,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "CMS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -92205,7 +92411,9 @@
         "number": "230",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "CMS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -92220,7 +92428,9 @@
         "number": "260",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "CMS"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -94552,7 +94762,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -94586,7 +94797,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -94603,7 +94815,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "LAE"
+            "LAE",
+            "AIU"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -96307,7 +96520,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -96324,7 +96538,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -96358,7 +96573,8 @@
         "hours": 3,
         "preferredSemester": 8,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -96417,7 +96633,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "GSS"
         ],
         "corequisites": [],
         "semestersOffered": [

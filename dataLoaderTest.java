@@ -3,8 +3,7 @@ import java.util.ArrayList;
 public class dataLoaderTest {
     public static void main(String[] args) {
         dataLoaderTest goober = new dataLoaderTest();
-        goober.userTest();
-        goober.majorTest();
+        // goober.courseTest();
     }
 
     public void majorTest() {
@@ -19,6 +18,7 @@ public class dataLoaderTest {
             for (MajorRequirement reqs: major.getMajorRequirements()) {
                 System.out.println(reqs.getTitle());
             }
+            
         }
     }
     
@@ -48,6 +48,10 @@ public class dataLoaderTest {
                     }
                 }
             }
+            for (Keyword key : course.getKeywords()) {
+                System.out.println(key);
+            }
+
         }
         // CourseList.logout();
     }
