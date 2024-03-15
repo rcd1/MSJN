@@ -10,5 +10,6 @@ public enum Keyword {
     GFL,
     PR,
     MR,
-    LAE;
+    LAE,
+    LSE;
 }
