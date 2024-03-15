@@ -23,4 +23,11 @@ public enum Keyword {
     SPCHC, // SPCH 140 or SPCH 145 or SPCH 230
     ENGLW, // Technical writing or business writing 
 
+    AP0,
+    AP1,
+    AP2,
+    AP3,
+    AP4,
+    AP5;
+
 }
