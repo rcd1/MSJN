@@ -1,3 +1,6 @@
+/**
+ * An enumeration class for keywords
+ */
 public enum Keyword {
     Honors,
     VSR,

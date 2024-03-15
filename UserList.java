@@ -10,7 +10,10 @@ public class UserList {
         userList = this;
         students = DataLoader.getStudents();
         advisors = DataLoader.getAdvisors();
+        reloadStudentsInAdvisors();
+        reloadAdvisorInStudents();
     }
+
 
     public static UserList getInstance() {
         if (userList == null) userList = new UserList();
@@ -59,5 +62,53 @@ public class UserList {
                 break;
         }
         return user;
+    }
+
+    
+    public static ArrayList<Student> getStudents() {
+        return students;
+    }
+
+
+    public static ArrayList<Advisor> getAdvisors() {
+        return advisors;
+    }
+
+
+
+
+    /*-----------------------------------DATALOADER STUFF------------------------------------*/
+
+     /**
+     * Helper method to turn empty Advisor Objects into the real stuff
+     */
+    private void reloadAdvisorInStudents() {
+        for (Student student : students) {
+            student.reloadAdvisor();
+        }
+    }
+    public static Advisor getAdvisorByUUID(UUID userID) {
+        for (Advisor advisor : advisors) {
+            if (userID.equals(advisor.getUserID())) return advisor;
+        }
+        System.out.println("Error in UserList.getAdvisorByUUID(): Unable to find advisor with UUID " + userID);
+        return null;
+    }
+
+    /**
+     * Helper method that turns the Blank Student objects in the Advisor's list into the real deal
+     */
+    private void reloadStudentsInAdvisors() {
+        for (Advisor advisor : advisors) {
+            advisor.reloadStudents();
+        }
+    }
+
+    public static Student getStudentByUUID(UUID userID) {
+        for (Student student : students) {
+            if (userID.equals(student.getUserID())) return student;
+        }
+        System.out.println("Error in UserList.getStudentByUUID(): Unable to find student with UUID " + userID);
+        return null;
     }
 }

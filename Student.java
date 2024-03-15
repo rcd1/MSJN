@@ -78,6 +78,10 @@ public class Student extends User{
         return notes;
     }
 
+    public void setStudentAdvisor(Advisor advisor) {
+        this.advisor = advisor;
+    }
+
     public void addCourseToSemsterPlan(Course course) {
         if (!semesterPlans.isEmpty()) {
             SemesterPlan lastSemesterPlan = semesterPlans.get(semesterPlans.size() - 1);
@@ -138,5 +142,16 @@ public class Student extends User{
 
     public void generateSemesterPlans() {
         
+    }
+
+    public String toString() {
+        return super.toString();
+
+    }
+
+
+    public void reloadAdvisor() {
+        Advisor realOne = UserList.getAdvisorByUUID(advisor.userID);
+        this.advisor = realOne;
     }
 }

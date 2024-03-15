@@ -13,11 +13,13 @@ public abstract class DataConstants {
     protected static final String STUDENT_GPA = "gpa";
     protected static final String STUDENT_SEMESTER_PLANS = "semesterPlans";
     protected static final String STUDENT_LEGAL_GUARDIANS = "legalGuardians";
-    protected static final String STUDENT_ADVISOR = "advisor";
+    protected static final String STUDENT_ADVISOR = "advisorId";
     protected static final String STUDENT_NOTES = "notes";
     protected static final String STUDENT_IS_HONORS = "isHonors";
     protected static final String STUDENT_HAS_SCHOLARSHIP = "hasScholarship";
     protected static final String STUDENT_GRADES = "studentGrades";
+    protected static final String STUDENT_GRADES_COURSE_ID = "courseId";
+    protected static final String STUDENT_GRADES_GRADE = "grade";
     /*-------------------------Advisor-------------------------*/
     protected static final String ADVISORS_FILE_NAME = "jsonFiles/advisors.json";
     protected static final String ADVISOR_STUDENTS = "students";
@@ -43,8 +45,6 @@ public abstract class DataConstants {
     protected static final String REQUIREMENT_SET_COURSES = "requiredCourses";
     protected static final String REQUIREMENT_SET_GRADE = "requiredGrade";
     protected static final String REQUIREMENT_SET_MODE = "mode";   
-
-    
 
     /*-----------------------------Course-----------------------------*/
     protected static final String COURSE_FILE_NAME = "jsonFiles/courses.json";
