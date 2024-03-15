@@ -88,4 +88,11 @@ public abstract class User {
     protected boolean checkCredentials(String firstName, String lastName, String email) {
         return this.firstName.equalsIgnoreCase(firstName) && this.lastName.equalsIgnoreCase(lastName) && this.email.equalsIgnoreCase(email);
     }
+
+    public String toString() {
+        return "First Name: " + firstName 
+        + "\nLast Name: " + lastName
+        + "\nEmail: " + email
+        + "\nPassword: " + password;
+    }
 }

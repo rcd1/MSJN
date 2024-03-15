@@ -27,12 +27,12 @@ public class DataLoader extends DataConstants {
                 String lastName = (String)studentJSONObject.get(USER_LAST_NAME);
                 String email = (String)studentJSONObject.get(USER_EMAIL);
                 String password = (String)studentJSONObject.get(USER_PASSWORD);
-                Major major = rebuildMajor((JSONObject)studentJSONObject.get(STUDENT_MAJOR));
+                Major major = rebuildMajor((String)studentJSONObject.get(STUDENT_MAJOR));
                 int year = ((Long)studentJSONObject.get(STUDENT_YEAR)).intValue();
                 double gpa = ((double)studentJSONObject.get(STUDENT_GPA));
                 ArrayList<SemesterPlan> semesterPlans = rebuildSemesterPlans((JSONArray)studentJSONObject.get(STUDENT_SEMESTER_PLANS));
                 ArrayList<LegalGuardian> legalGuardians = rebuildLegalGuardians((JSONArray)studentJSONObject.get(STUDENT_LEGAL_GUARDIANS));
-                Advisor advisor = rebuildAdvisor((JSONObject)studentJSONObject.get(STUDENT_ADVISOR));
+                Advisor advisor = rebuildAdvisor((String)studentJSONObject.get(STUDENT_ADVISOR));
                 ArrayList<String> notes = rebuildNotes((JSONArray)studentJSONObject.get(STUDENT_NOTES));
                 boolean isHonors = ((boolean)studentJSONObject.get(STUDENT_IS_HONORS));
                 boolean hasScholarship = ((boolean)studentJSONObject.get(STUDENT_HAS_SCHOLARSHIP));
@@ -49,9 +49,14 @@ public class DataLoader extends DataConstants {
 
     private static HashMap<Course, Grade> rebuildStudentGrades(JSONArray jsonArray) {
         HashMap<Course,Grade> studentGrades = new HashMap<>();
+        CourseList courseList = CourseList.getInstance();
         for (Object i : jsonArray) {
             JSONObject jsonObject = (JSONObject)i;
+            Course course = courseList.getCourseByUUID(UUID.fromString((String)jsonObject.get(STUDENT_GRADES_COURSE_ID)));
+            Grade grade = Grade.valueOf((String)jsonObject.get(STUDENT_GRADES_GRADE));
+            studentGrades.put(course, grade);
         }
+        return studentGrades;
     }
 
 
@@ -64,8 +69,8 @@ public class DataLoader extends DataConstants {
     }
 
 
-    private static Advisor rebuildAdvisor(JSONObject jsonObject) {
-        UUID advisorID = UUID.fromString((String)jsonObject.get(STUDENT_ADVISOR));
+    private static Advisor rebuildAdvisor(String theIDString) {
+        UUID advisorID = UUID.fromString(theIDString);
         return new Advisor(advisorID);
     }
 
@@ -85,16 +90,16 @@ public class DataLoader extends DataConstants {
     }
 
 
-    private static Major rebuildMajor(JSONObject jsonObject) {
+    private static Major rebuildMajor(String theIDString) {
         MajorList majorList = MajorList.getInstance();
-        UUID majorID = UUID.fromString((String)jsonObject.get(STUDENT_MAJOR));
+        UUID majorID = UUID.fromString(theIDString);
         return majorList.getMajorByUUID(majorID);
     }
 
 /*----------------------------------------------------------------------------*/
 
 
-/*----------------------------------------------------------------------------*/
+/*-----------------------------------Advisor----------------------------------*/
 
     public static ArrayList<Advisor> getAdvisors(){
         ArrayList<Advisor> advisors = new ArrayList<>();
@@ -135,7 +140,7 @@ public class DataLoader extends DataConstants {
 /*----------------------------------------------------------------------------*/
 
   
-
+/*----------------------------------Course------------------------------------*/
 
 public static ArrayList<Course> getCourses(){
     ArrayList<Course> courses = new ArrayList<>();

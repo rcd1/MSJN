@@ -59,7 +59,7 @@ public class CourseList {
         for (Course i : courses) {
             if (courseID.equals(i.getCourseID())) return i;
         }
-        //System.out.println("CourseList.java could not find course with UUID " + courseID);
+        System.out.println("CourseList.java could not find course with UUID " + courseID);
         return null;
     }
 
