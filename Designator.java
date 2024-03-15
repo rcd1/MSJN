@@ -139,5 +139,6 @@ public enum Designator {
     UCAM,
     UNIV,
     WGST,
-    NULL;
+    NULL, // Not a real Designator
+    FILL; // This designator specifies a special course that can be fulfilled by a number of different courses
 }
