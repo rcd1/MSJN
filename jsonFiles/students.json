@@ -64,7 +64,7 @@
         "studentGrades": [
             {
                 "courseId": "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627",
-                "grade": "B_Plus"
+                "grade": "B_PLUS"
             },
             {
                 "courseId": "84b21549-16e9-4117-978c-39a43fb665b2",
@@ -72,7 +72,7 @@
             },
             {
                 "courseId": "12224407-e656-4fe7-9078-88f1d9dc8325",
-                "grade": "C_Plus"
+                "grade": "C_PLUS"
             }
         ]
     }

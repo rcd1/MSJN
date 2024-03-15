@@ -46,7 +46,11 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
-
+    /**
+     * Create the Student Grades HashMap from JSON
+     * @param jsonArray the array containing pairs of Course UUIDs and Grade values
+     * @return a completed HashMap<Course, Grade>
+     */
     private static HashMap<Course, Grade> rebuildStudentGrades(JSONArray jsonArray) {
         HashMap<Course,Grade> studentGrades = new HashMap<>();
         CourseList courseList = CourseList.getInstance();
@@ -59,7 +63,11 @@ public class DataLoader extends DataConstants {
         return studentGrades;
     }
 
-
+    /**
+     * Create the ArrayList<Notes> from JSON
+     * @param jsonArray the array containing a list of Strings
+     * @return a completed ArrayList<String>
+     */
     private static ArrayList<String> rebuildNotes(JSONArray jsonArray) {
         ArrayList<String> notes= new ArrayList<>();
         for (int i = 0; i < jsonArray.size(); i++) {
@@ -68,18 +76,30 @@ public class DataLoader extends DataConstants {
         return notes;
     }
 
-
+    /**
+     * Create A Blank version of the Student's Advisor stored in JSON
+     * @param theIDString the String representing the ID of the Advisor stored in advisors.json
+     * @return A Blank Advisor object containing only the UUID
+     */
     private static Advisor rebuildAdvisor(String theIDString) {
         UUID advisorID = UUID.fromString(theIDString);
         return new Advisor(advisorID);
     }
 
-
+    /**
+     * Will not be implmented this Sprint, but would create the list of LegalGuardians stored in students.json
+     * @param jsonArray TBD
+     * @return a blank ArrayList for now
+     */
     private static ArrayList<LegalGuardian> rebuildLegalGuardians(JSONArray jsonArray) {
         return new ArrayList<LegalGuardian>();
     }
 
-
+    /**
+     * Create the list of courses the student will take each semester as stored in students.json
+     * @param jsonArray an array of arrays of strings, the string representing UUIDs for courses in courses.json
+     * @return a completed ArrayList
+     */
     private static ArrayList<SemesterPlan> rebuildSemesterPlans(JSONArray jsonArray) {
         ArrayList<SemesterPlan> semesterPlans = new ArrayList<>();
         for (int i = 0; i < jsonArray.size(); i++) {
@@ -89,7 +109,11 @@ public class DataLoader extends DataConstants {
         return semesterPlans;
     }
 
-
+    /**
+     * Create the full major object based on the ID stored in students.json
+     * @param theIDString a String representing the id of a major stored in majors.json
+     * @return the full Major object
+     */
     private static Major rebuildMajor(String theIDString) {
         MajorList majorList = MajorList.getInstance();
         UUID majorID = UUID.fromString(theIDString);
@@ -100,7 +124,10 @@ public class DataLoader extends DataConstants {
 
 
 /*-----------------------------------Advisor----------------------------------*/
-
+    /**
+     * Convert advisors.json into a completed ArrayList<Advisor>
+     * @return an ArrayList
+     */
     public static ArrayList<Advisor> getAdvisors(){
         ArrayList<Advisor> advisors = new ArrayList<>();
         try {
@@ -124,12 +151,15 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
-
+    /**
+     * Create the list of the advisor's advisees/students as stored in advisors.json
+     * @param jsonArray an array of Strings representing the IDs of students stored in student.json
+     * @return an ArrayList of Student objects containing only the UUIDs of those students (they will be completed properly in UserList)
+     */
     private static ArrayList<Student> rebuildStudents(JSONArray jsonArray) {
         ArrayList<Student> students = new ArrayList<>();
-        for (Object i : jsonArray) {
-            JSONObject studentJSON = (JSONObject)i;
-            UUID studentID = UUID.fromString((String)studentJSON.get(ADVISOR_STUDENT_ID));
+        for (int i = 0; i < jsonArray.size(); i++) {
+            UUID studentID = UUID.fromString((String)jsonArray.get(i));
             students.add(new Student(studentID));
         }
         return students;
@@ -141,7 +171,10 @@ public class DataLoader extends DataConstants {
 
   
 /*----------------------------------Course------------------------------------*/
-
+/**
+ * Convert courses.json into an ArrayList<Course>
+ * @return a list containing all stored courses
+ */
 public static ArrayList<Course> getCourses(){
     ArrayList<Course> courses = new ArrayList<>();
 
@@ -171,7 +204,11 @@ public static ArrayList<Course> getCourses(){
     return courses;
 }
 
-
+/**
+ * Convert strings in the jsonArray into an ArrayList of Semesters a course is offered
+ * @param jsonArray an array of JSONStrings representing the values of the SemesterOffered enum
+ * @return a full ArrayList
+ */
 private static ArrayList<SemesterOffered> rebuildSemestersOffered(JSONArray jsonArray) {
     ArrayList<SemesterOffered> semestersOffered = new ArrayList<>();
     for (int i = 0; i < jsonArray.size(); i++) {
