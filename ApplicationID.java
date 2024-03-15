@@ -5,10 +5,12 @@ public enum ApplicationID{
     /**
      * assigning a number to each application area 
      */
-    Undeclared(0),
-    Cybersecurity(1), 
-    Linguistics(2), 
-    ArtifiicalIntelligence(3);
+    UNDECLARED(0),
+    SCIENCE(1), 
+    MATH(2), 
+    DIGITALDESIGN(3),
+    ROBOTICS(4),
+    SPEECH(5);
 
     private int number;
 
@@ -31,17 +33,11 @@ public enum ApplicationID{
      * Otherwise the set default will be Undeclared.
      */
     public static ApplicationID getApplicationIDByNumber(int number) {
-        switch (number) {
-            case 0:
-            return Undeclared;
-            case 1:
-            return Cybersecurity;
-            case 2:
-            return Linguistics;
-            case 3:
-            return ArtifiicalIntelligence;
-            default:
-            return Undeclared;
+        for(ApplicationID appid : ApplicationID.values()) {
+            if(appid.getNumber() == number) {
+                return appid;
+            }
         }
+        return UNDECLARED;
     }
 }
