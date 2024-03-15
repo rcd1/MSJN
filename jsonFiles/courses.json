@@ -10091,7 +10091,9 @@
         "number": "101",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -10129,7 +10131,9 @@
         "number": "101L",
         "hours": 1,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -36573,7 +36577,9 @@
         "number": "101",
         "hours": 3,
         "preferredSemester": 1,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -36596,7 +36602,9 @@
         "number": "101L",
         "hours": 1,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -43107,7 +43115,9 @@
         "number": "101",
         "hours": 4,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -43137,7 +43147,9 @@
         "number": "103",
         "hours": 4,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -43182,7 +43194,10 @@
         "number": "201",
         "hours": 4,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "LSE",
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -43212,7 +43227,9 @@
         "number": "215",
         "hours": 3,
         "preferredSemester": 7,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -43227,7 +43244,9 @@
         "number": "215L",
         "hours": 1,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -64399,7 +64418,9 @@
         "number": "210",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -64422,7 +64443,9 @@
         "number": "210L",
         "hours": 1,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "LSE"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",

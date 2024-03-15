@@ -49,23 +49,21 @@ public class KeywordMapTest {
 
     public static HashMap<String, String> loadLSEKeywords() {
         test = new HashMap<String, String>();
-        test.put("ANTH", "161-161");
-        test.put("ASTR", "101-101");
+        // test.put("ANTH", "161-161");
+        // test.put("ASTR", "101-101");
         test.put("BIOL", "101,101L");
-        test.put("BIOL", "110-110");
+        // test.put("BIOL", "110-110");
         test.put("CHEM", "111,111L");
-        test.put("CHEM", "141-141");
+        // test.put("CHEM", "141-141");
         test.put("ENVR", "101,101L");
-        test.put("ENVR", "200-200");
-        test.put("GEOG", "201,202");
-        test.put("GEOL", "101,103");
-        test.put("GEOL", "201,201");
-        test.put("GEOL", "215,215L");
-        test.put("GEOL", "302-302");
+        // test.put("ENVR", "200-200");
+        // test.put("GEOG", "201,202");
+        test.put("GEOL", "101,103,201,201,215,215L");
+        // test.put("GEOL", "302-302");
         test.put("MSCI", "101,102");
         test.put("MSCI", "210,210L");
-        test.put("MSCI", "215,215L");
-        test.put("PHYS", "211,211L");
+        // test.put("MSCI", "215,215L");
+        // test.put("PHYS", "211,211L");
         return test;
     }
 

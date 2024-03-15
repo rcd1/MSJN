@@ -7,8 +7,8 @@ public class addKeywordsTest {
     public static void main(String[] args) {
         CourseList courseList = new CourseList();
         ArrayList<Course> courses = courseList.getCourses();
-        Keyword toAdd = Keyword.GFL;
-        HashMap<String, String> test = KeywordMapTest.loadGFLKeywords();
+        Keyword toAdd = Keyword.LSE;
+        HashMap<String, String> test = KeywordMapTest.loadLSEKeywords();
         for (String key : test.keySet()) {
             String big = test.get(key);
             int thingyIndex = big.indexOf('-');
@@ -32,7 +32,7 @@ public class addKeywordsTest {
                     break;
             }
         }
-        DataWriter.saveCourses();
+        // DataWriter.saveCourses();
     }
 
     private static void pairKeyWordMode(CourseList courseList, Keyword toAdd, ArrayList<Course> courses, String key,
