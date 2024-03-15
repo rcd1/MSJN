@@ -32,7 +32,7 @@ public class Student extends User {
         this.legalGuardians = new ArrayList<>();
         this.notes = new ArrayList<>();
         this.studentGrades = new HashMap<>();
-        this.applicationID = ApplicationID.Undeclared;
+        this.applicationID = ApplicationID.UNDECLARED;
     }
 
     public Student(String firstName, String lastName, String email, String password, UUID userID, Major major, int year,
@@ -65,7 +65,7 @@ public class Student extends User {
         this.legalGuardians = new ArrayList<>();
         this.notes = new ArrayList<>();
         this.studentGrades = new HashMap<>();
-        this.applicationID = ApplicationID.Undeclared;
+        this.applicationID = ApplicationID.UNDECLARED;
     }
 
     public double calculateGPA() {
