@@ -166,5 +166,14 @@ public class Course {
     public ArrayList<SemesterOffered> getSemestersOffered() {
         return semestersOffered;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof Course) {
+            return this.courseID.equals(((Course) o).getCourseID());
+        } else {
+            return false;
+        }
+    }
     
 }
