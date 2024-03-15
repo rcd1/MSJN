@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import org.json.simple.JSONArray;
@@ -11,22 +12,8 @@ public class DataWriter extends DataConstants {
 
     // puts user list into JSON files
     public static void saveUsers() {
-        UserList users = UserList.getInstance();
-        ArrayList<User> userList = users.getUser();
-
-        JSONArray jsonUsers = new JSONArray();
-
-        for (int i = 0; i < userList.size(); i++) {
-            jsonUsers.add(getUserJSON(userList.get(i)));
-
-        }
-        try (FileWriter File = new FileWriter(USER_FILE_NAME)) {
-            File.write(jsonUsers.toJSONString());
-            File.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        saveAdvisors();
+        saveStudents();
     }
 
     public static JSONObject getUserJSON(User user) {
@@ -41,18 +28,19 @@ public class DataWriter extends DataConstants {
         return userDetails;
     }
 
-    public static void saveAllAdvisors() {
-        Advisor advisors = Advisor.getInstance();
-        ArrayList<Advisor> Advisor = advisors.getStudentAdvisor();
-        JSONArray jsonMajors = new JSONArray();
+    public static void saveAdvisors() {
+        UserList userList = UserList.getInstance();
+        ArrayList<Advisor> advisors = userList.getAdvisors();
+        JSONArray jsonAdvisors = new JSONArray();
 
-        for (int i = 0; i < Advisor.size(); i++) {
-            jsonAdvisors.add(getAdvisorJSON(Advisor.get(i)));
+        for (int i = 0; i < advisors.size(); i++) {
+            jsonAdvisors.add(getAdvisorJSON(advisors.get(i)));
 
         }
         try (FileWriter file = new FileWriter(ADVISORS_FILE_NAME)) {
-            file.write(jsonCourses.toJSONString());
+            file.write(jsonAdvisors.toJSONString());
             file.flush();
+            file.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -60,27 +48,33 @@ public class DataWriter extends DataConstants {
     }
 
     public static JSONObject getAdvisorJSON(Advisor advisor) {
-        JSONObject advisorDetails = newJSONObject();
-        advisorDetails.put(ADVISOR_STUDENTS, advisor.getAdvisorStudent());
-        advisorDetails.put(ADVISORS_FILE_NAME, advisor.getAdvisorFileName());
-        advisorDetails.put(ADVISOR_STUDENT_ID, advisor.getAdvisorFileName());
-
-        JSONArray advisorArray = new JSONArray();
+        JSONObject advisorDetails = addUserInfoToJSONObject(advisor);
+        advisorDetails.put(ADVISOR_STUDENTS, buildStudentsJSON(advisor.getStudents()));
+        return advisorDetails;
 
     }
 
-    public static void saveAllStudents() {
-        Student students = Student.getInstance();
-        ArrayList<Student> Student = students.getStudents();
+    private static JSONArray buildStudentsJSON(ArrayList<Student> students) {
+        JSONArray arrayStudents = new JSONArray();
+        for (Student student : students) {
+            arrayStudents.add(student.getUserID().toString());
+        }
+        return arrayStudents;
+    }
+
+    public static void saveStudents() {
+        UserList userList = UserList.getInstance();
+        ArrayList<Student> students = userList.getStudents();
         JSONArray jsonStudents = new JSONArray();
 
-        for (int i = 0; i < Student.size(); i++) {
-            jsonStudents.add(getStudentJSON(Student.get(i)));
+        for (int i = 0; i < students.size(); i++) {
+            jsonStudents.add(getStudentJSON(students.get(i)));
         }
 
         try (FileWriter file = new FileWriter(STUDENT_FILE_NAME)) {
-            file.write(jsonCourses.toJSONString());
+            file.write(jsonStudents.toJSONString());
             file.flush();
+            file.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -90,16 +84,61 @@ public class DataWriter extends DataConstants {
     // Student details/info
     public static JSONObject getStudentJSON(Student student) {
         JSONObject studentDetails = new JSONObject();
-        studentDetails.put(STUDENT_ADVISOR, student.getStudentAdvisor());
-        studentDetails.put(STUDENT_FILE_NAME, student.getStudentFileName());
-        studentDetails.put(STUDENT_GPA, student.getStudentGPA());
-        studentDetails.put(STUDENT_GRADES, student.getStudentGrades());
-        studentDetails.put(STUDENT_HAS_SCHOLARSHIP, student.getStudentHasScholarship());
-        studentDetails.put(STUDENT_IS_HONORS, student.getStudentIsHonors());
-        studentDetails.put(STUDENT_LEGAL_GUARDIANS, student.getStudentLegalGuardian());
-        studentDetails.put(STUDENT_MAJOR, student.getStudentMajor());
-        studentDetails.put(STUDENT_NOTES, student.getStudentNotes());
+        studentDetails = addUserInfoToJSONObject((User)student);
+        studentDetails.put(STUDENT_MAJOR, student.getMajor().getMajorid().toString());
+        studentDetails.put(STUDENT_YEAR, student.getYear());
+        studentDetails.put(STUDENT_GPA, student.getGpa());
+        studentDetails.put(STUDENT_SEMESTER_PLANS, buildSemesterPlansJSON(student.getSemesterPlans()));
+        studentDetails.put(STUDENT_LEGAL_GUARDIANS, buildLegalGuardiansJSON(student.getLegalGuardians()));
+        studentDetails.put(STUDENT_ADVISOR, student.getAdvisor().getUserID().toString());
+        studentDetails.put(STUDENT_NOTES, buildNotesJSON(student.getNotes()));
+        studentDetails.put(STUDENT_IS_HONORS, student.getHonors());
+        studentDetails.put(STUDENT_HAS_SCHOLARSHIP, student.getHasScholarship());
+        studentDetails.put(STUDENT_GRADES, buildStudentGradeJSON(student.getStudentGrades()));
+        studentDetails.put(STUDENT_APPLICATION_ID, student.getApplicationID().getNumber());
 
+        return studentDetails;
+        
+
+    }
+
+    private static JSONObject addUserInfoToJSONObject(User user) {
+        JSONObject userDetails = new JSONObject();
+        userDetails.put(USER_ID, user.getUserID().toString());
+        userDetails.put(USER_FIRST_NAME, user.getFirstName());
+        userDetails.put(USER_LAST_NAME, user.getLastName());
+        userDetails.put(USER_EMAIL, user.getEmail());
+        userDetails.put(USER_PASSWORD, user.getPassword());
+        return userDetails;
+
+    }
+
+
+    private static JSONArray buildStudentGradeJSON(HashMap<Course, Grade> studentGrades) {
+        JSONArray studentGradesArray = new JSONArray();
+        for (Course course : studentGrades.keySet()) {
+            JSONObject objectStudentGrade = new JSONObject();
+            objectStudentGrade.put(STUDENT_GRADES_COURSE_ID, course.getCourseID().toString());
+            objectStudentGrade.put(STUDENT_GRADES_GRADE, studentGrades.get(course).toString());
+            studentGradesArray.add(objectStudentGrade);
+        }
+        return studentGradesArray;
+    }
+
+    private static JSONArray buildLegalGuardiansJSON(ArrayList<LegalGuardian> legalGuardians) {
+        JSONArray guardiansArray = new JSONArray();
+        for (LegalGuardian legalGuardian : legalGuardians) {
+            guardiansArray.add(legalGuardian.getUserID().toString());
+        }
+        return guardiansArray;
+    }
+
+    private static JSONArray buildNotesJSON(ArrayList<String> notes) {
+        JSONArray notesArray = new JSONArray();
+        for (String string : notes) {
+            notesArray.add(string);  
+        }
+        return notesArray;
     }
 
     // Course Details/Info
@@ -115,6 +154,7 @@ public class DataWriter extends DataConstants {
         try (FileWriter file = new FileWriter(COURSE_FILE_NAME)) {
             file.write(jsonCourses.toJSONString());
             file.flush();
+            file.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -181,11 +221,6 @@ public class DataWriter extends DataConstants {
 
     }
 
-    private static JSONArray buildCourseCorequisitesJSON(ArrayList<RequirementSet> corequisites) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buildCourseCorequisiteJSON'");
-    }
-
     public static void saveMajors() {
         MajorList majorList = MajorList.getInstance();
         ArrayList<Major> majors = majorList.getMajors();
@@ -198,6 +233,7 @@ public class DataWriter extends DataConstants {
         try (FileWriter file = new FileWriter(MAJOR_FILE_NAME)) {
             file.write(jsonMajors.toJSONString());
             file.flush();
+            file.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

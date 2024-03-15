@@ -4,6 +4,7 @@ public class dataLoaderTest {
     public static void main(String[] args) {
         dataLoaderTest goober = new dataLoaderTest();
         // goober.courseTest();
+        // goober.userTest();
     }
 
     public void majorTest() {

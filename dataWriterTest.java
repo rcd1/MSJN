@@ -1,10 +1,16 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class dataWriterTest {
+    private Scanner input;
+
+    public dataWriterTest() {
+        input = new Scanner(System.in);
+    }
     public static void main(String[] args) {
        dataWriterTest hi = new dataWriterTest();
-       hi.majorTest();
+       hi.usersTest();
     }
 
     public void majorTest() {
@@ -37,4 +43,17 @@ public class dataWriterTest {
         input.close();
         test.logout();
     }
+
+    public void usersTest() {
+        UserList userList = UserList.getInstance();
+        ArrayList<Student> students = userList.getStudents();
+        ArrayList<Advisor> advisors = userList.getAdvisors();
+        Student student = new Student( "Test", "Terry", "email@email.email", "passwordbutcool", UUID.randomUUID());
+        students.add(student);
+        Advisor advisor = new Advisor("Testing", "Testerson", "The third", "Esquire", UUID.randomUUID());
+        advisors.add(advisor);
+        userList.logout();
+
+    }
+
 }

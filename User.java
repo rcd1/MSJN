@@ -7,8 +7,16 @@ public abstract class User {
     protected String firstName, lastName, email, password;
     protected UUID userID;
 
+    //New students will be given a blank advisor with this ID, we replace student's advisor with a new Advisor if we see this.
+    protected static final String BLANK_ADVISOR_ID = "5581ca17-2ddf-4f52-a083-899869f4b5c0";
+    protected static final String BLANK_MAJOR_ID = "0273bd9e-bf37-4697-887d-9c176cdeb413";
+
     public User(UUID userID) {
         this.userID = userID;
+        this.firstName = "";
+        this.lastName = "";
+        this.email = "";
+        this.password = "";
     }
 
     /**

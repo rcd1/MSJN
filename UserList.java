@@ -111,4 +111,8 @@ public class UserList {
         System.out.println("Error in UserList.getStudentByUUID(): Unable to find student with UUID " + userID);
         return null;
     }
+
+    public void logout() {
+        DataWriter.saveUsers();
+    }
 }
