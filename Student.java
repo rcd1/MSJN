@@ -134,8 +134,8 @@ public class Student extends User {
         return returnGrade[1];
     }
 
-    public void generateSemesterPlans() {
-
+    public ArrayList<SemesterPlan> generateEightSemesterPlan() {
+        return new ArrayList<SemesterPlan>();
     }
 
     public String toString() {
