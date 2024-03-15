@@ -7,8 +7,8 @@ public class addKeywordsTest {
     public static void main(String[] args) {
         CourseList courseList = new CourseList();
         ArrayList<Course> courses = courseList.getCourses();
-        Keyword toAdd = Keyword.AIU;
-        HashMap<String, String> test = KeywordMapTest.loadAIUKeywords();
+        Keyword toAdd = Keyword.GFL;
+        HashMap<String, String> test = KeywordMapTest.loadGFLKeywords();
         for (String key : test.keySet()) {
             String big = test.get(key);
             int thingyIndex = big.indexOf('-');
@@ -32,7 +32,7 @@ public class addKeywordsTest {
                     break;
             }
         }
-        // DataWriter.saveCourses();
+        DataWriter.saveCourses();
     }
 
     private static void pairKeyWordMode(CourseList courseList, Keyword toAdd, ArrayList<Course> courses, String key,
@@ -40,8 +40,8 @@ public class addKeywordsTest {
         for (String string : values) {
             Course swapCourse = courseList.getCourse(key, string);
             int swapIndex = courses.indexOf(swapCourse);
-            // System.out.println(key + string);
-            // System.out.println(swapCourse.getDesignator() + swapCourse.getNumber());
+            System.out.println(key + string);
+            System.out.println(swapCourse.getDesignator() + swapCourse.getNumber());
             swapCourse.addKeyword(toAdd);
             courses.set(swapIndex, swapCourse);
         }
@@ -66,8 +66,8 @@ public class addKeywordsTest {
             String big) {
         Course swapCourse = courseList.getCourse(key, big);
         int swapIndex = courses.indexOf(swapCourse);
-        // System.out.println(key + " " + big);
-        // System.out.println(swapCourse.getDesignator() + swapCourse.getNumber());
+        System.out.println(key + big);
+        System.out.println(swapCourse.getDesignator() + swapCourse.getNumber());
         swapCourse.addKeyword(toAdd);
         courses.set(swapIndex, swapCourse);
     }

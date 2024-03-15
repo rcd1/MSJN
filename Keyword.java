@@ -11,6 +11,7 @@ public enum Keyword {
     ARP,
     CMS,
     GFL,
+    GHS,
     PR,
     MR,
     LAE,

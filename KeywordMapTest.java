@@ -91,6 +91,61 @@ public class KeywordMapTest {
         return test;
     }
 
-    public static HashMap<String, String> loadAIUKeywords()
+    public static HashMap<String, String> loadCMSKeywords() {
+        test = new HashMap<>();
+        test.put("PHIL","213,325");
+        test.put("SAEL","200");
+        test.put("SPCH","140,145,213,230,260");
+        return test;
+    }
 
+    public static HashMap<String, String> loadGSSKeywords() {
+        test = new HashMap<>();
+        test.put("AFAM","201,218,355");
+        test.put("ANTH","101,102,204,210,211,212,213,244,273,280");
+        test.put("COLA","298");
+        test.put("CRJU","101");
+        test.put("EDEX","205");
+        test.put("EDTE","202,218");
+        test.put("EDUC","360");
+        test.put("GEOG","103,121,210,221,223,224,225,226,228");
+        test.put("JSTU","218");
+        test.put("LASP","331");
+        test.put("LING","101,273");
+        test.put("MUSC","210");
+        test.put("POLI","101,201");
+        test.put("PSYC","101");
+        test.put("RELG","101,338");
+        test.put("SOCY","101,301,307,309,310,340,355");
+        test.put("SOWK","222");
+        test.put("WGST","112,113,210,300");
+        return test;
+    }
+
+    public static HashMap<String, String> loadGHSKeywords() {
+        test = new HashMap<>();
+        test.put("ARTH","107");
+        test.put("FAMS","300");
+        test.put("GERM","280");
+        test.put("HIST","101,102,103,104,105,106,108,109,110,111,112,201,214");
+        test.put("SOST","201,202");
+        return test;
+    }
+
+    public static HashMap<String, String> loadGFLKeywords() {
+        test = new HashMap<>();
+        test.put("ARAB","121,122");
+        test.put("ASLG","121,122");
+        test.put("CHIN","121,122");
+        test.put("FREN","109,110,121,122");
+        test.put("GERM","109,110,121,122");
+        test.put("GREK","121,122");
+        test.put("ITAL","121,122");
+        test.put("JAPA","121,122");
+        test.put("LATN","109,110,121,122");
+        test.put("PORT","121,122");
+        test.put("RUSS","121,122");
+        test.put("SPAN","109,110,111,121,122");
+        return test;
+    }
 }
