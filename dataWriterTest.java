@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class dataWriterTest {
     public static void main(String[] args) {
        dataWriterTest hi = new dataWriterTest();
+       hi.majorTest();
     }
 
     public void majorTest() {
