@@ -64,4 +64,8 @@ public ArrayList<SemesterPlan> getRecommendedSemesterPlans() {
     return recommendedSemesterPlans;
 }
 
+public void addMajorRequirement(MajorRequirement majorRequirement) {
+    this.majorRequirements.add(majorRequirement);
+}
+
 }

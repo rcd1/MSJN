@@ -4,6 +4,7 @@ public class dataLoaderTest {
     public static void main(String[] args) {
         dataLoaderTest goober = new dataLoaderTest();
         // goober.userTest();
+        goober.majorTest();
     }
 
     public void majorTest() {
@@ -15,6 +16,9 @@ public class dataLoaderTest {
             + major.getApplicationID());
             for (SemesterPlan semesterPlan : major.getRecommendedSemesterPlans()) {
                 semesterPlan.displaySemesterPlan();
+            }
+            for (MajorRequirement reqs: major.getMajorRequirements()) {
+                System.out.println(reqs.getTitle());
             }
         }
     }

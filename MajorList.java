@@ -45,4 +45,8 @@ public class MajorList {
     System.out.println("MajorList.java could not find Major with UUID " + majorID);
     return null;
     }
+
+    public void logout() {
+        DataWriter.saveMajors();
+    }
 }

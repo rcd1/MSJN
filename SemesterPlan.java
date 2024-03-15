@@ -62,4 +62,14 @@ public class SemesterPlan {
         System.out.println("Total hours: " + calculateHours());
     }
 
+
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
+
+
+    public int getHours() {
+        return hours;
+    }
+
 }
