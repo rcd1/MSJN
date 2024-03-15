@@ -18,6 +18,7 @@ public abstract class DataConstants {
     protected static final String STUDENT_IS_HONORS = "isHonors";
     protected static final String STUDENT_HAS_SCHOLARSHIP = "hasScholarship";
     protected static final String STUDENT_GRADES = "studentGrades";
+    protected static final String STUDENT_APPLICATION_ID = "applicationID";
     protected static final String STUDENT_GRADES_COURSE_ID = "courseId";
     protected static final String STUDENT_GRADES_GRADE = "grade";
     /*-------------------------Advisor-------------------------*/
@@ -30,7 +31,6 @@ public abstract class DataConstants {
     protected static final String MAJOR_ID = "majorID";
     protected static final String MAJOR_NAME = "majorName";
     protected static final String MAJOR_REQUIREMENTS = "majorRequirements";
-    protected static final String MAJOR_APPLICATION_ID = "applicationID";
     protected static final String MAJOR_RECOMMENDED_SEMESTER_PLANS = "recommendedSemesterPlans";
 
     /*--------------------------MajorRequirement--------------------------*/

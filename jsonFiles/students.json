@@ -37,7 +37,8 @@
                 "courseId": "12224407-e656-4fe7-9078-88f1d9dc8325",
                 "grade": "C_PLUS"
             }
-        ]
+        ],
+        "applicationID": 1
     },
     {
         "userId": "0b186e4d-9891-4f52-be8a-413c850786ab",
@@ -74,6 +75,7 @@
                 "courseId": "12224407-e656-4fe7-9078-88f1d9dc8325",
                 "grade": "C_PLUS"
             }
-        ]
+        ],
+        "applicationID": 1
     }
 ]

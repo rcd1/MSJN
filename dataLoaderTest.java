@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class dataLoaderTest {
     public static void main(String[] args) {
         dataLoaderTest goober = new dataLoaderTest();
-        // goober.userTest();
+        goober.userTest();
         goober.majorTest();
     }
 
@@ -12,8 +12,7 @@ public class dataLoaderTest {
         ArrayList<Major> test = majorList.getMajors();
         for (Major major : test) {
             System.out.println(major.getMajorName() + "\n" 
-            + major.getMajorid() + "\n" 
-            + major.getApplicationID());
+            + major.getMajorid() + "\n");
             for (SemesterPlan semesterPlan : major.getRecommendedSemesterPlans()) {
                 semesterPlan.displaySemesterPlan();
             }
@@ -63,7 +62,7 @@ public class dataLoaderTest {
         }
 
         for (Student student : students) {
-            System.out.println(student.toString());
+            System.out.println(student.toString() + "\n" + student.getApplicationID());
         }
     }
 }

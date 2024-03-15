@@ -41,8 +41,12 @@ public class DataLoader extends DataConstants {
                 boolean hasScholarship = ((boolean) studentJSONObject.get(STUDENT_HAS_SCHOLARSHIP));
                 HashMap<Course, Grade> studentGrades = rebuildStudentGrades(
                         (JSONArray) studentJSONObject.get(STUDENT_GRADES));
+                Long ApplicationIDNumber = ((Long) studentJSONObject.get(STUDENT_APPLICATION_ID));
+
+                ApplicationID applicationID = ApplicationID.getApplicationIDByNumber(ApplicationIDNumber.intValue());
+
                 students.add(new Student(firstName, lastName, email, password, userID, major, year, gpa, semesterPlans,
-                        legalGuardians, advisor, notes, isHonors, hasScholarship, studentGrades));
+                        legalGuardians, advisor, notes, isHonors, hasScholarship, studentGrades, applicationID));
             }
             return students;
         } catch (Exception e) {
@@ -322,11 +326,9 @@ public class DataLoader extends DataConstants {
                 String majorName = (String) majorObject.get(MAJOR_NAME);
                 ArrayList<MajorRequirement> majorRequirements = rebuildMajorRequirements(
                         (JSONArray) majorObject.get(MAJOR_REQUIREMENTS));
-                Long ApplicationIDNumber = ((Long) majorObject.get(MAJOR_APPLICATION_ID));
                 ArrayList<SemesterPlan> recommendedSemesterPlans = rebuildRecommendedSemesterPlans(
                         (JSONArray) majorObject.get(MAJOR_RECOMMENDED_SEMESTER_PLANS));
-                ApplicationID applicationID = ApplicationID.getApplicationIDByNumber(ApplicationIDNumber.intValue());
-                majors.add(new Major(majorid, majorName, majorRequirements, recommendedSemesterPlans, applicationID));
+                majors.add(new Major(majorid, majorName, majorRequirements, recommendedSemesterPlans));
             }
         } catch (Exception e) {
             e.printStackTrace();

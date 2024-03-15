@@ -13,6 +13,7 @@ public class Student extends User{
     private boolean isHonors;
     private boolean hasScholarship;
     private HashMap<Course, Grade> studentGrades;
+    private ApplicationID applicationID;
 
     //In the event a student does not have an Advisor, there is an "Empty" Advisor with the UUID "5581ca17-2ddf-4f52-a083-899869f4b5c0",
     
@@ -24,9 +25,12 @@ public class Student extends User{
     }
 
 
-    public Student(String firstName, String lastName, String email, String password, UUID userID, Major major, int year, double gpa,
-            ArrayList<SemesterPlan> semesterPlans, ArrayList<LegalGuardian> legalGuardians, Advisor advisor,
-            ArrayList<String> notes, boolean isHonors, boolean hasScholarship, HashMap<Course, Grade> studentGrades) {
+    
+
+    public Student(String firstName, String lastName, String email, String password, UUID userID, Major major, int year,
+            double gpa, ArrayList<SemesterPlan> semesterPlans, ArrayList<LegalGuardian> legalGuardians, Advisor advisor,
+            ArrayList<String> notes, boolean isHonors, boolean hasScholarship, HashMap<Course, Grade> studentGrades,
+            ApplicationID applicationID) {
         super(firstName, lastName, email, password, userID);
         this.major = major;
         this.year = year;
@@ -38,48 +42,21 @@ public class Student extends User{
         this.isHonors = isHonors;
         this.hasScholarship = hasScholarship;
         this.studentGrades = studentGrades;
+        this.applicationID = applicationID;
     }
+
+
+
 
     // Doesn't initialize other members. Might need a bunch of setters. This is for when a new account is created
     public Student(String firstName, String lastName, String email, String password, UUID userID) {
         super(firstName, lastName, email, password, userID);
     }
 
-    public Advisor getStudentAdvisor() {
-        return advisor;
-    }
-
     public double calculateGPA() {
         return -1.0;
     }
 
-    public double getStudentGPA() {
-        return gpa;
-    }
-
-    public HashMap<Course, Grade> getStudentGrades() {
-        return studentGrades;
-    }
-    
-    public boolean getStudentHasScholarship() {
-        return hasScholarship;
-    }
-
-    public boolean getStudentIsHonors() {
-        return isHonors;
-    }
-
-    public ArrayList<LegalGuardian> getStudentLegalGuardian() {
-        return legalGuardians;
-    }
-
-    public Major getStudentMajor() {
-        return major;
-    }
-
-    public ArrayList<String> getStudentNotes() {
-        return notes;
-    }
 
     public void setStudentAdvisor(Advisor advisor) {
         this.advisor = advisor;
@@ -156,5 +133,75 @@ public class Student extends User{
     public void reloadAdvisor() {
         Advisor realOne = UserList.getAdvisorByUUID(advisor.userID);
         this.advisor = realOne;
+    }
+
+
+
+
+    public Major getMajor() {
+        return major;
+    }
+
+
+
+
+    public int getYear() {
+        return year;
+    }
+
+
+
+
+    public double getGpa() {
+        return gpa;
+    }
+
+
+
+
+    public ArrayList<SemesterPlan> getSemesterPlans() {
+        return semesterPlans;
+    }
+
+
+
+
+    public ArrayList<LegalGuardian> getLegalGuardians() {
+        return legalGuardians;
+    }
+
+
+
+
+    public Advisor getAdvisor() {
+        return advisor;
+    }
+
+
+
+
+    public ArrayList<String> getNotes() {
+        return notes;
+    }
+
+
+
+
+    public boolean isHonors() {
+        return isHonors;
+    }
+
+
+
+
+    public boolean isHasScholarship() {
+        return hasScholarship;
+    }
+
+
+
+
+    public ApplicationID getApplicationID() {
+        return applicationID;
     }
 }

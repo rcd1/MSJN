@@ -6,18 +6,16 @@ public class Major {
  private String majorName;
  private ArrayList<MajorRequirement> majorRequirements;
  private ArrayList<SemesterPlan> recommendedSemesterPlans;
- private ApplicationID applicationID;
 
 
 
 public Major(UUID majorid, String majorName, ArrayList<MajorRequirement> majorRequirements,
-        ArrayList<SemesterPlan> recommendedSemesterPlans, ApplicationID applicationID) {
+        ArrayList<SemesterPlan> recommendedSemesterPlans) {
     this.majorid = majorid;
     this.majorName = majorName;
     this.majorRequirements = majorRequirements;
     this.recommendedSemesterPlans = recommendedSemesterPlans;
     this.recommendedSemesterPlans = recommendedSemesterPlans;
-    this.applicationID = applicationID;
 }
 
 
@@ -53,10 +51,6 @@ public String getMajorName() {
 
 public ArrayList<MajorRequirement> getMajorRequirements() {
     return majorRequirements;
-}
-
-public ApplicationID getApplicationID() {
-    return applicationID;
 }
 
 

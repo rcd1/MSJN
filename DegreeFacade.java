@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.UUID;
+
 /**
  * This facade class can be considered the central hub of the program
  * 
@@ -25,10 +26,11 @@ public class DegreeFacade {
 
     /**
      * An method for when the user is getting into the system
-     * @param email the email of the user
+     * 
+     * @param email    the email of the user
      * @param password the password of the user
      * @return the user based of their email and password after checking
-     * to see whether their inputs were 1:1 the same based on the userlist.
+     *         to see whether their inputs were 1:1 the same based on the userlist.
      */
     public User login(String email, String password) {
         return user = userList.getUser(email, password);
@@ -41,49 +43,45 @@ public class DegreeFacade {
         user = null;
     }
 
-    /*public void addCourseToStudent(User user, Course course) {
-        user.addCourseToStudent(student, course);
-    }
-
-    public void removeCourseFromStudent(Administrator administrator, Course course) {
-        administrator.removeCourseFromStudent(administrator, course);
-    }
-    */
-    
-<<<<<<< HEAD
+    /*
+     * public void addCourseToStudent(User user, Course course) {
+     * user.addCourseToStudent(student, course);
+     * }
+     * 
+     * public void removeCourseFromStudent(Administrator administrator, Course
+     * course) {
+     * administrator.removeCourseFromStudent(administrator, course);
+     * }
+     */
 
     /**
      * A method for when the student decides to add a course
+     * 
      * @param student the person adding the course
-     * @param course the course that the student is adding
+     * @param course  the course that the student is adding
      */
-    public void addCourse(Student student, Course course) {
-        student.addCourseToSemsterPlan(course);
-    }
-
-    /**
-     *  A method for when the student decides to remove a course
-     * @param student the person removing the course
-     * @param course the course that the student is removing
-     */
-    public void removeCourse(Student student, Course course) {
-=======
     public void addCourseToSemsterPlan(Student student, Course course) {
         student.addCourseToSemsterPlan(course);
     }
 
+    /**
+     * A method for when the student decides to remove a course
+     * 
+     * @param student the person removing the course
+     * @param course  the course that the student is removing
+     */
     public void removeCourseFromSemesterPlan(Student student, Course course) {
->>>>>>> f733242d33f3525030d9d51e2d4546596a6d3b18
         student.removeCourseFromSemesterPlan(course);
     }
 
     /**
      * A nmethod used to create a new account for the student
+     * 
      * @param firstName the user's first name
-     * @param lastName the user's last name
-     * @param email the user's email
-     * @param password the user's password
-     * @param type the user's type
+     * @param lastName  the user's last name
+     * @param email     the user's email
+     * @param password  the user's password
+     * @param type      the user's type
      * @return the user based on its parameters
      */
     public User createAccount(String firstName, String lastName, String email, String password, UserType type) {
@@ -92,6 +90,7 @@ public class DegreeFacade {
 
     /**
      * A methods that grabs all the courses from the array list of type course
+     * 
      * @return all the courses from the array list of courses
      */
     public ArrayList<Course> getAllCourses() {
@@ -100,8 +99,9 @@ public class DegreeFacade {
 
     /**
      * A method used to search for courses from an arrayList of type Course
-     * @param keyword searches for the student 
-     * @return courses from the array list based on the keywords 
+     * 
+     * @param keyword searches for the student
+     * @return courses from the array list based on the keywords
      */
     public ArrayList<Course> findCourses(String keyword) {
         return courseList.findCourses(keyword);
@@ -109,8 +109,9 @@ public class DegreeFacade {
 
     /**
      * An accessor(getter) method for a course from an ArrayList of type Course
-     * @param courseID The ID of the course 
-     * @return the course based on its ID 
+     * 
+     * @param courseID The ID of the course
+     * @return the course based on its ID
      */
     public ArrayList<Course> getCourseByUUID(UUID courseID) {
         return getCourseByUUID(courseID);
@@ -118,8 +119,9 @@ public class DegreeFacade {
 
     /**
      * An accessor (getter) method for the student's major
+     * 
      * @param majorName the name of the major
-     * @return name of the major from the list 
+     * @return name of the major from the list
      */
     public Major getMajor(String majorName) {
         return majorList.getMajor(majorName);
@@ -127,10 +129,10 @@ public class DegreeFacade {
 
     /**
      * A method for displaying the semester plan of the student
+     * 
      * @param student the user generating their own semester plan
      */
-    public void displaySemesterPlan(Student student){
+    public void displaySemesterPlan(Student student) {
         student.displaySemesterPlan();
     }
 }
-
