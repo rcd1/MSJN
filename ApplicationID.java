@@ -35,7 +35,7 @@ public enum ApplicationID{
     /**
      * A method that grabs the application id based on the number that correlates to it.
      * @param number represents the differemt cases for the application areas
-     * @return Undeclared, Cybersecurity, Linguistics, or Artificial Intelligence. 
+     * @return An enum value from ApplicationID if the number is valid 
      * Otherwise the set default will be Undeclared.
      */
     public static ApplicationID getApplicationIDByNumber(int number) {
