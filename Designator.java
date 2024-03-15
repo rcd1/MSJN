@@ -138,5 +138,6 @@ public enum Designator {
     THEA,
     UCAM,
     UNIV,
-    WGST
+    WGST,
+    NULL;
 }

@@ -19,10 +19,12 @@ public class Advisor extends User {
 
     public Advisor(UUID userID) {
         super(userID);
+        students = new ArrayList<>();
     }
 
     public Advisor(String firstName, String lastName, String email, String password, UUID userID) {
         super(firstName, lastName, email, password, userID);
+        students = new ArrayList<>();
     }
 
     public Advisor(String firstName, String lastName, String email, String password, UUID userID,

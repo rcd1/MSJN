@@ -21,6 +21,14 @@ public class Course {
      */
     public Course(UUID courseID) {
         this.courseID = courseID;
+        this.designator = Designator.NULL;
+        this.number = "404";
+        this.hours = 0;
+        this.prerequisites = new ArrayList<>();
+        this.corequisites = new ArrayList<>();
+        this.keywords = new ArrayList<>();
+        this.semestersOffered = new ArrayList<>();
+        this.preferredSemester = 0;
     }
 
     /**
