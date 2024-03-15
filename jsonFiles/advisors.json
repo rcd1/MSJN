@@ -8,5 +8,15 @@
         "students": [
             "3318e5f5-0667-4e05-9f14-463450dddc60"
         ]
+    },
+    {
+        "userId": "6c0b13b9-0f5f-4194-8279-fe9d56cce185",
+        "firstName": "Osbert",
+        "lastName": "Odden",
+        "email": "osberto@email.sc.edu",
+        "password": "ozzie0zz13",
+        "students" : [
+            "3318e5f5-0667-4e05-9f14-463450dddc60"
+        ]
     }
 ]
