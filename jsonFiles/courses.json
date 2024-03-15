@@ -14053,7 +14053,8 @@
         "preferredSemester": 5,
         "keywords": [
             "SCI",
-            "LSE"
+            "LSE",
+            "COP1"
         ],
         "corequisites": [
             {
@@ -14112,7 +14113,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "SCI"
+            "SCI",
+            "COP2"
         ],
         "corequisites": [
             {
@@ -35092,7 +35094,8 @@
         "hours": 3,
         "preferredSemester": 7,
         "keywords": [
-            "LAE"
+            "LAE",
+            "ENGLW"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -35124,7 +35127,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "LAE"
+            "LAE",
+            "ENGLW"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -78612,7 +78616,8 @@
         "preferredSemester": 8,
         "keywords": [
             "LSE",
-            "SCI"
+            "SCI",
+            "COP1"
         ],
         "corequisites": [
             {
@@ -78678,7 +78683,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "SCI"
+            "SCI",
+            "COP2"
         ],
         "corequisites": [
             {
@@ -92331,7 +92337,8 @@
         "hours": 3,
         "preferredSemester": 5,
         "keywords": [
-            "CMS"
+            "CMS",
+            "SPCHC"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -92348,7 +92355,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "CMS"
+            "CMS",
+            "SPCHC"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -92412,7 +92420,8 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "CMS"
+            "CMS",
+            "SPCHC"
         ],
         "corequisites": [],
         "semestersOffered": [
