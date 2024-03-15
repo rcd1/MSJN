@@ -5,17 +5,19 @@ public enum ApplicationID{
     /**
      * assigning a number to each application area 
      */
-    UNDECLARED(0),
-    SCIENCE(1), 
-    MATH(2), 
-    DIGITALDESIGN(3),
-    ROBOTICS(4),
-    SPEECH(5);
+    UNDECLARED("Undeclared",0),
+    SCIENCE("Science",1), 
+    MATH("Math",2), 
+    DIGITALDESIGN("Digital Design", 3),
+    ROBOTICS("Robotics", 4),
+    SPEECH("Speech", 5);
 
     private int number;
+    private String name;
 
     //An mutator (setter) method for the number values.
-    ApplicationID(int number) {
+    ApplicationID(String name, int number) {
+        this.name = name;
         this.number = number;
     }
 
@@ -24,6 +26,10 @@ public enum ApplicationID{
      */
     public int getNumber() {
         return number;
+    }
+
+    public String getName() {
+        return name;
     }
 
     /**
