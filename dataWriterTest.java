@@ -91,7 +91,7 @@ public class dataWriterTest {
             System.out.println("Minimum Grade?: ");
             String reqGrade = input.nextLine().toUpperCase();
             Grade grade = Grade.valueOf(reqGrade);
-            ArrayList<Course> acceptableCourses = fillCourseArray();
+            ArrayList<Course> acceptableCourses = fillCourseArray2();
             System.out.println("Is this an And or Or RequirementSet? (a/o)?: ");
             String reqType = input.nextLine();
             switch (reqType) {
@@ -118,6 +118,22 @@ public class dataWriterTest {
             }
         }
         return reqSets;
+    }
+
+    private ArrayList<Course> fillCourseArray3() {
+        System.out.println("What Subject do these courses derive from? (CSCE, MATH, etc.)?: ");
+        String subject = input.nextLine();
+        System.out.println("What level should the courses be? (1,2,3,4,5,...): ");
+        String level = input.nextLine();
+        return courseList.getCoursesSameSubjectInSetLevel(subject,level);
+    }
+
+    private ArrayList<Course> fillCourseArray2() {
+        ArrayList<Course> keywordCourses = new ArrayList<>();
+        System.out.println("Which Keyword would you like the courses of?");
+        String keywordChoice = input.nextLine();
+        keywordCourses = courseList.findCourses(keywordChoice);
+        return keywordCourses;
     }
 
     private void workOnSemesterPlans(Major toWorkOn) {
