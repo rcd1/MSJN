@@ -40,10 +40,26 @@ public class CourseList {
         return null;
     }
 
+    /**
+     * Get all courses in a Subject that are within a specified level
+     * @param subject the subject code (CSCE, ENGL, etc)
+     * @param level the level of courses we want (1, 2, etc) for 100 level, 200 level, etc
+     * @return an array of all courses with the same subject and at a specified level
+     */
+    public ArrayList<Course> getCoursesSameSubjectInSetLevel(String subject, String level) {
+        ArrayList<Course> subset = new ArrayList<>();
+        for (Course course : courses) {
+            if (course.getDesignator().equals(Designator.valueOf(subject)) && course.getNumber().startsWith(level)) {
+                subset.add(course);
+            }
+        }
+        return subset;
+    }
+
     public ArrayList<Course> findCourses(String keyword) {
         ArrayList<Course> foundCourses = new ArrayList<>();
         for (Course course : courses) {
-            if (course.getKeywords().contains(keyword)) {
+            if (course.getKeywords().contains(Keyword.valueOf(keyword))) {
                 foundCourses.add(course);
             }
         }
