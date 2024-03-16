@@ -69,7 +69,7 @@
       ],
       "majorRequirements": [
          {
-            "minHours": 35,
+            "minHours": 6,
             "acceptableCourseSets": [
                {
                   "mode": "a",
@@ -81,8 +81,96 @@
                   ]
                }
             ],
-            "maxHours": 41,
-            "title": "Carolina Core"
+            "maxHours": 6,
+            "title": "CMW"
+         },
+         {
+            "minHours": 8,
+            "acceptableCourseSets": [
+               {
+                  "mode": "a",
+                  "requiredGrade": "C",
+                  "title": "ARP",
+                  "requiredCourses": [
+                     "4bd274cb-260e-47a5-9893-203a3943d704",
+                     "3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6"
+                  ]
+               }
+            ],
+            "maxHours": 8,
+            "title": "ARP"
+         },
+         {
+            "minHours": 8,
+            "acceptableCourseSets": [
+               {
+                  "mode": "a",
+                  "requiredGrade": "C",
+                  "title": "SCI",
+                  "requiredCourses": [
+                     "a379a182-57c9-4b28-950d-35903009bce3",
+                     "b6bf4208-6933-4e10-a961-118f12d7acba",
+                     "66a95212-0d75-4fae-97ff-c3c76c29d47e",
+                     "75764c82-d463-4fcf-a367-e7f925416456"
+                  ]
+               },
+               {
+                  "mode": "a",
+                  "requiredGrade": "C",
+                  "title": "SCI",
+                  "requiredCourses": [
+                     "b35fcab4-a5d5-470a-855a-2f7a276f1d2e",
+                     "8b52945b-8079-4906-8e35-500bdd72cb8f",
+                     "a9f73275-ae03-4859-b101-4ebfeafa7a5a",
+                     "9230a9d3-b020-4a93-9f9c-ea8a8204130e"
+                  ]
+               }
+            ],
+            "maxHours": 8,
+            "title": "SCI"
+         },
+         {
+            "minHours": 0,
+            "acceptableCourseSets": [
+               {
+                  "mode": "a",
+                  "requiredGrade": "D",
+                  "title": "GFL",
+                  "requiredCourses": [
+                     "8699fb7e-844c-4fcd-b212-7a5ac8f5303e",
+                     "06fd9a7c-6141-4ca3-ba63-efc1c4f8dce4"
+                  ]
+               },
+               {
+                  "mode": "a",
+                  "requiredGrade": "D",
+                  "title": "GFL",
+                  "requiredCourses": [
+                     "ffb67b43-b300-4eb9-a1b2-7665fc643050",
+                     "a44d65c9-5d2e-4b7f-8d18-83c2fb1ecf0e"
+                  ]
+               },
+               {
+                  "mode": "a",
+                  "requiredGrade": "D",
+                  "title": "GFL",
+                  "requiredCourses": [
+                     "ba1a7952-7839-4445-8623-e570c28596ab",
+                     "52444a70-db5d-4df8-8fc3-d53a5a0352e7"
+                  ]
+               },
+               {
+                  "mode": "a",
+                  "requiredGrade": "D",
+                  "title": "GFL",
+                  "requiredCourses": [
+                     "4038e4be-d18e-4287-8938-16341579d5a1",
+                     "d7ba67f4-be30-43bf-bdd2-eaa3ee4df143"
+                  ]
+               }
+            ],
+            "maxHours": 6,
+            "title": "GFL"
          }
       ],
       "majorName": "Computer Science"
