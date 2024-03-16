@@ -97660,5 +97660,39 @@
             "FALL"
         ],
         "id": "ca0b22c6-e274-4fca-8a86-30970183e043"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "CSCEME"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "ebaa2324-22b2-4c6c-a8dc-e5e1813522bb"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "LAE"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "6551ad0d-6059-49c2-8460-e84cbed98402"
     }
 ]

@@ -28,6 +28,7 @@ public enum Keyword {
     AP2,
     AP3,
     AP4,
-    AP5;
+    AP5,
+    CSCEME;
 
 }
