@@ -97439,5 +97439,175 @@
             "FALL"
         ],
         "id": "a489466a-4977-4777-bbed-1e3264b86a54"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "COP1"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "f7558f52-2bc6-4677-9c5a-97bf70a50dc6"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "COP2"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "633c60c6-2ddb-4fe2-8406-b196da67ae3c"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "SPCHC"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "7e06d8ac-a553-4a9f-868f-45b8d583ab31"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "ENGLW"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "123a6a77-428b-40c2-b110-b7f527226a44"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "AP0"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "fa3abae6-3d07-4e03-bf01-5a2ac6168a0d"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "AP1"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "5cd53f48-fbb5-4df2-87e0-0511f9bf4bc6"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "AP2"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "0af54a43-63cf-4ede-89e7-cf1b6a9f6897"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "AP3"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "57204644-4707-4d22-bf7e-11a42f3e93b5"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "AP4"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "7774b902-3fb2-4361-8a47-81dced9335be"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "AP5"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "b332e179-b6af-4d7c-8ef0-7e41564f3594"
     }
 ]
