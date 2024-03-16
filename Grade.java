@@ -2,6 +2,7 @@
  * An Enum representing the grades of the student 
  */
 public enum Grade {
+    CR("CR",4.0),
     A("A",4.0),
     B_PLUS("B+",3.5),
     B("B",3.0),
