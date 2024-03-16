@@ -35,14 +35,23 @@ public class ApplicationUI {
                         break;
                 }
             } else {
-                displaySemesterPlan(user);
-                logout();
-                running = false;
-            }
-        scanner.close();
+                displayLoggedInMenu();
+                String option = getUserOption().toLowerCase();
+                switch(option) {
+                    case "view semester plan":
+                        displaySemesterPlan(user);
+                        break;
+                    case "logout":
+                        logout();
+                        break;
+                    default:
+                        System.out.println("Invalid option.");
+                        break;
+                }
+            }   
         }
+        scanner.close();
     }
-
     //Display details
     private void displayMainMenu() {
         System.out.println("Welcome to DegreeWorks");
@@ -53,17 +62,24 @@ public class ApplicationUI {
         System.out.print("Enter your choice: ");
     }
 
+    private void displayLoggedInMenu() {
+        System.out.println("Logged in as " + user.getFirstName() + " " + user.getLastName());
+        System.out.println("View Semester Plan");
+        System.out.println("Logout");
+        System.out.print("Enter your choice: ");
+    }
+
     private String getUserOption() {
         return scanner.nextLine();
     }
     //Login
     private void login() {
         System.out.println("Enter email: ");
-        String userName = scanner.nextLine();
+        String email = scanner.nextLine();
         System.out.println("Enter password: ");
         String password = scanner.nextLine();
 
-        user = application.login(userName, password);
+        user = application.login(email, password);
         if (user != null) {
             System.out.println("Login successful.");
         } else {
