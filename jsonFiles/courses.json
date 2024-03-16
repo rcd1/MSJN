@@ -97609,5 +97609,22 @@
             "FALL"
         ],
         "id": "b332e179-b6af-4d7c-8ef0-7e41564f3594"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "AIU"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "4f8fbfab-fa57-4f2f-a599-8312f70c92e8"
     }
 ]
