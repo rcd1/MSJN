@@ -9,8 +9,8 @@ public class addKeywordsTest {
         ArrayList<Course> courses = courseList.getCourses();
 
         // Modify this line and the next
-        Keyword toAdd = Keyword.AP3;
-        HashMap<String, String> test = KeywordMapTest.loadAP3Keywords();
+        Keyword toAdd = Keyword.AP5;
+        HashMap<String, String> test = KeywordMapTest.loadAP5Keywords();
 
         for (String key : test.keySet()) {
             String big = test.get(key);

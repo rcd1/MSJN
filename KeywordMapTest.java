@@ -108,6 +108,19 @@ public class KeywordMapTest {
         return test;
     }
 
+    public static HashMap<String, String> loadAP4Keywords() {
+        test = new HashMap<>();
+        test.put("EMCH","535");
+        test.put("ELCT","331,531");
+        return test;
+    }
+
+    public static HashMap<String, String> loadAP5Keywords() {
+        test = new HashMap<>();
+        test.put("LING","340,421,440,565,567");
+        return test;
+    }
+
     public static HashMap<String, String> loadCMSKeywords() {
         test = new HashMap<>();
         test.put("PHIL","213,325");
