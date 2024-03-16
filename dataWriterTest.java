@@ -58,7 +58,7 @@ public class dataWriterTest {
         ArrayList<MajorRequirement> majorRequirements = toWorkOn.getMajorRequirements();
         boolean keepAdding = true;
         while (keepAdding) {
-            System.out.println("Title?: ");
+            System.out.println(" MajorRequirement Title?: ");
             String title = input.nextLine();
             System.out.println("MinHours?: ");
             int minHours = input.nextInt();
@@ -68,7 +68,7 @@ public class dataWriterTest {
             input.nextLine();
             ArrayList<RequirementSet> toAdd = fillRequirementSets();
             majorRequirements.add(new MajorRequirement(title, minHours, maxHours, toAdd));
-            System.out.println("Keep Adding? y/n: ");
+            System.out.println("Keep Adding MajorRequirements? y/n: ");
             String choice = input.nextLine().toLowerCase();
             switch (choice) {
                 case "y":
@@ -86,6 +86,8 @@ public class dataWriterTest {
         ArrayList<RequirementSet> reqSets = new ArrayList<>();
 
         while (keepAdding) {
+            System.out.println("RequirementSet Title?: ");
+            String title = input.nextLine();
             System.out.println("Minimum Grade?: ");
             String reqGrade = input.nextLine().toUpperCase();
             Grade grade = Grade.valueOf(reqGrade);
@@ -94,18 +96,18 @@ public class dataWriterTest {
             String reqType = input.nextLine();
             switch (reqType) {
                 case "a":
-                    reqSets.add(new AndRequirement(acceptableCourses, grade));
+                    reqSets.add(new AndRequirement(title,acceptableCourses, grade));
                     break;
 
                 case "o":
-                    reqSets.add(new OrRequirement(acceptableCourses, grade));
+                    reqSets.add(new OrRequirement(title,acceptableCourses, grade));
                     break;
                 default:
                     System.out.println("ERROR: BAD CHARACTER, FORSHAME");
                     System.exit(0);
                     break;
             }
-            System.out.println("Keep Adding? y/n: ");
+            System.out.println("Keep Adding RequirementSets? y/n: ");
             String choice = input.nextLine().toLowerCase();
             switch (choice) {
                 case "y":
@@ -136,7 +138,7 @@ public class dataWriterTest {
             String courseString = input.nextLine();
             String[] values = courseString.split(" ");
             toAdd.add(courseList.getCourse(values[0], values[1]));
-            System.out.println("Keep Adding? y/n: ");
+            System.out.println("Keep Adding Courses? y/n: ");
             String choice = input.nextLine().toLowerCase();
             switch (choice) {
                 case "y":

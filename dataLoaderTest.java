@@ -5,6 +5,7 @@ public class dataLoaderTest {
         dataLoaderTest goober = new dataLoaderTest(); //goober nice :) 
         // goober.courseTest();
         // goober.userTest();
+        goober.majorTest();
     }
 
     public void majorTest() {
