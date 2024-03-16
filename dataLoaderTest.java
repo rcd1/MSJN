@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class dataLoaderTest {
     public static void main(String[] args) {
         dataLoaderTest goober = new dataLoaderTest(); //goober nice :) 
-        // goober.courseTest();
+        goober.courseTest();
         // goober.userTest();
-        goober.majorTest();
+        // goober.majorTest();
     }
 
     public void majorTest() {
@@ -27,34 +27,35 @@ public class dataLoaderTest {
     public void courseTest() {
         CourseList courseList = CourseList.getInstance();
         ArrayList<Course> courses = courseList.getCourses();
-        for (Course course : courses) {
-            System.out.println(course.getDesignator() + " " +
-            course.getNumber() + ":");
-            for (SemesterOffered test : course.getSemestersOffered()) {
-                System.out.println(test);
-            }
-            for (RequirementSet reqSet : course.getPrerequisites()) {
-                System.out.println(reqSet.getRequiredGrade());
-                for (Course course2 : reqSet.getRequiredCourses()) {
-                    System.out.println(course2.getDesignator() + " " +
-                    course2.getNumber());
-                }
-            }
-            for (RequirementSet reqSet : course.getCorequisites()) {
-                System.out.println(reqSet.getRequiredGrade());
-                for (Course course2 : reqSet.getRequiredCourses()) {
-                    System.out.println(course2.getDesignator() + " " +
-                    course2.getNumber());
-                    for (Keyword keyword : course2.getKeywords()) {
-                        System.out.println(keyword);
-                    }
-                }
-            }
-            for (Keyword key : course.getKeywords()) {
-                System.out.println(key);
-            }
+        System.out.println(courses.size());
+        // for (Course course : courses) {
+        //     System.out.println(course.getDesignator() + " " +
+        //     course.getNumber() + ":");
+        //     for (SemesterOffered test : course.getSemestersOffered()) {
+        //         System.out.println(test);
+        //     }
+        //     for (RequirementSet reqSet : course.getPrerequisites()) {
+        //         System.out.println(reqSet.getRequiredGrade());
+        //         for (Course course2 : reqSet.getRequiredCourses()) {
+        //             System.out.println(course2.getDesignator() + " " +
+        //             course2.getNumber());
+        //         }
+        //     }
+        //     for (RequirementSet reqSet : course.getCorequisites()) {
+        //         System.out.println(reqSet.getRequiredGrade());
+        //         for (Course course2 : reqSet.getRequiredCourses()) {
+        //             System.out.println(course2.getDesignator() + " " +
+        //             course2.getNumber());
+        //             for (Keyword keyword : course2.getKeywords()) {
+        //                 System.out.println(keyword);
+        //             }
+        //         }
+        //     }
+        //     for (Keyword key : course.getKeywords()) {
+        //         System.out.println(key);
+        //     }
 
-        }
+        // }
         // CourseList.logout();
     }
 

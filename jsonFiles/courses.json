@@ -14098,7 +14098,15 @@
             "SCI",
             "LSE"
         ],
-        "corequisites": [],
+        "corequisites": [
+            {
+                "mode": "a",
+                "requiredGrade": "C",
+                "requiredCourses": [
+                    "a379a182-57c9-4b28-950d-35903009bce3"
+                ]
+            }
+        ],
         "semestersOffered": [
             "SPRING",
             "SUMMER",
@@ -14149,7 +14157,15 @@
         "keywords": [
             "SCI"
         ],
-        "corequisites": [],
+        "corequisites": [
+            {
+                "mode": "a",
+                "requiredGrade": "C",
+                "requiredCourses": [
+                    "66a95212-0d75-4fae-97ff-c3c76c29d47e"
+                ]
+            }
+        ],
         "semestersOffered": [
             "SPRING",
             "SUMMER",
@@ -78637,7 +78653,15 @@
     },
     {
         "designator": "PHYS",
-        "prerequisites": [
+        "prerequisites": [],
+        "number": "211L",
+        "hours": 1,
+        "preferredSemester": 1,
+        "keywords": [
+            "LSE",
+            "SCI"
+        ],
+        "corequisites": [
             {
                 "mode": "a",
                 "requiredGrade": "C",
@@ -78646,14 +78670,6 @@
                 ]
             }
         ],
-        "number": "211L",
-        "hours": 1,
-        "preferredSemester": 1,
-        "keywords": [
-            "LSE",
-            "SCI"
-        ],
-        "corequisites": [],
         "semestersOffered": [
             "SPRING",
             "SUMMER",
@@ -78668,13 +78684,7 @@
                 "mode": "a",
                 "requiredGrade": "C",
                 "requiredCourses": [
-                    "b35fcab4-a5d5-470a-855a-2f7a276f1d2e"
-                ]
-            },
-            {
-                "mode": "a",
-                "requiredGrade": "C",
-                "requiredCourses": [
+                    "b35fcab4-a5d5-470a-855a-2f7a276f1d2e",
                     "3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6"
                 ]
             }
@@ -78704,7 +78714,14 @@
     },
     {
         "designator": "PHYS",
-        "prerequisites": [
+        "prerequisites": [],
+        "number": "212L",
+        "hours": 1,
+        "preferredSemester": 8,
+        "keywords": [
+            "SCI"
+        ],
+        "corequisites": [
             {
                 "mode": "a",
                 "requiredGrade": "C",
@@ -78713,13 +78730,6 @@
                 ]
             }
         ],
-        "number": "212L",
-        "hours": 1,
-        "preferredSemester": 8,
-        "keywords": [
-            "SCI"
-        ],
-        "corequisites": [],
         "semestersOffered": [
             "SPRING",
             "SUMMER",
@@ -97643,7 +97653,7 @@
             "FALL"
         ],
         "id": "c50b5f03-2bce-452c-9680-11a741daccb0"
-    }, 
+    },
     {
         "designator": "FILL",
         "prerequisites": [],

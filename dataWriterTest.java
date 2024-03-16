@@ -52,7 +52,7 @@ public class dataWriterTest {
 
         input.close();
         // Only uncomment if you're ABSOLUTELY SURE YOU WANT TO SAVE
-        // test.logout(); 
+        test.logout(); 
     }
 
     private void workOnMajorRequirements(Major toWorkOn) {
@@ -92,7 +92,22 @@ public class dataWriterTest {
             System.out.println("Minimum Grade?: ");
             String reqGrade = input.nextLine().toUpperCase();
             Grade grade = Grade.valueOf(reqGrade);
-            ArrayList<Course> acceptableCourses = fillCourseArray();
+            System.out.println("How do you want to add classes?: ");
+            int fillCourseType = showCourseFillingOptions();
+            ArrayList<Course> acceptableCourses = new ArrayList<>();
+            switch (fillCourseType) {
+                case 1: 
+                acceptableCourses = fillCourseArray1();
+                break;
+                case 2: 
+                acceptableCourses = fillCourseArray2();
+                break;
+                case 3: 
+                acceptableCourses = fillCourseArray3();
+                break;
+
+            }
+            
             System.out.println("Is this an And or Or RequirementSet? (a/o)?: ");
             String reqType = input.nextLine();
             switch (reqType) {
@@ -121,6 +136,15 @@ public class dataWriterTest {
         return reqSets;
     }
 
+    private int showCourseFillingOptions() {
+        System.out.println("1. Fill Courses Individually");
+        System.out.println("2. Fill By Keyword");
+        System.out.println("3. Fill by Subject and Level (Ex. All 500-level CSCE courses)");
+        int choice = input.nextInt();
+        input.nextLine();
+        return choice;
+    }
+
     private ArrayList<Course> fillCourseArray3() {
         System.out.println("What Subject do these courses derive from? (CSCE, MATH, etc.)?: ");
         String subject = input.nextLine();
@@ -140,13 +164,13 @@ public class dataWriterTest {
     private void workOnSemesterPlans(Major toWorkOn) {
         ArrayList<SemesterPlan> recommendedSemesterPlans = toWorkOn.getRecommendedSemesterPlans();
         while (recommendedSemesterPlans.size() < 8) {
-            ArrayList<Course> toAdd = fillCourseArray();
+            ArrayList<Course> toAdd = fillCourseArray1();
             recommendedSemesterPlans.add(new SemesterPlan(toAdd));
         }
 
     }
 
-    private ArrayList<Course> fillCourseArray() {
+    private ArrayList<Course> fillCourseArray1() {
         ArrayList<Course> toAdd = new ArrayList<>();
         boolean keepAdding = true;
         while (keepAdding) {
