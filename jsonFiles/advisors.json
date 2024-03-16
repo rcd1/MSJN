@@ -5,7 +5,8 @@
         "lastName": "Advisor",
         "email": "Not Real",
         "password": "To be set to another as assigned",
-        "students": []
+        "students": [],
+        "department": ""
     },
     {
         "userId": "970c31ab-02bb-4f2b-b8b6-8e8a206a506c",
@@ -15,7 +16,8 @@
         "password": "something_cool",
         "students": [
             "3318e5f5-0667-4e05-9f14-463450dddc60"
-        ]
+        ],
+        "department": "CS"
     },
     {
         "userId": "6c0b13b9-0f5f-4194-8279-fe9d56cce185",
@@ -25,6 +27,7 @@
         "password": "ozzie0zz13",
         "students": [
             "3318e5f5-0667-4e05-9f14-463450dddc60"
-        ]
+        ],
+        "department": "CIS"
     }
 ]

@@ -50,6 +50,7 @@ public class DataWriter extends DataConstants {
     public static JSONObject getAdvisorJSON(Advisor advisor) {
         JSONObject advisorDetails = addUserInfoToJSONObject(advisor);
         advisorDetails.put(ADVISOR_STUDENTS, buildStudentsJSON(advisor.getStudents()));
+        advisorDetails.put(ADVISOR_DEPARTMENT, advisor.getDepartment());
         return advisorDetails;
 
     }

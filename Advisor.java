@@ -6,6 +6,7 @@ import java.util.UUID;
  */
 public class Advisor extends User {
     private ArrayList<Student> students;
+    private String department;
 
     /**
      * The Advisor class is inheriting from parameters from the user.
@@ -19,18 +20,21 @@ public class Advisor extends User {
 
     public Advisor(UUID userID) {
         super(userID);
-        students = new ArrayList<>();
+        this.students = new ArrayList<>();
+        this.department = "";
     }
 
     public Advisor(String firstName, String lastName, String email, String password, UUID userID) {
         super(firstName, lastName, email, password, userID);
         students = new ArrayList<>();
+        this.department = "";
     }
 
     public Advisor(String firstName, String lastName, String email, String password, UUID userID,
-            ArrayList<Student> students) {
+            ArrayList<Student> students, String department) {
         super(firstName, lastName, email, password, userID);
         this.students = students;
+        this.department =department;
     }
 
     /**
@@ -90,6 +94,10 @@ public class Advisor extends User {
 
     public String toString() {
         return super.toString();
+    }
+
+    public String getDepartment() {
+        return department;
     }
 
 }
