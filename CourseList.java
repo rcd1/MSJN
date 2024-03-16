@@ -79,6 +79,16 @@ public class CourseList {
         return null;
     }
 
+    public ArrayList<Course> getCoursesAboveLevelInSubject(Designator designator, String number) {
+        ArrayList<Course> returnCourses = new ArrayList<Course>();
+        for(Course course : courses) {
+            if(course.getDesignator() == designator && (Integer.parseInt(course.getNumber().substring(0, 3)) >= Integer.parseInt(number))) {
+                returnCourses.add(course);
+            }
+        }
+        return returnCourses;
+    }
+
     public static void logout() {
         DataWriter.saveCourses();
     }
