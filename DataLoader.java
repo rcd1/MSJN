@@ -163,7 +163,8 @@ public class DataLoader extends DataConstants {
                 String email = (String) advisorJsonObject.get(USER_EMAIL);
                 String password = (String) advisorJsonObject.get(USER_PASSWORD);
                 ArrayList<Student> students = rebuildStudents((JSONArray) advisorJsonObject.get(ADVISOR_STUDENTS));
-                advisors.add(new Advisor(firstName, lastName, email, password, advisorID, students));
+                String department = (String)advisorJsonObject.get(ADVISOR_DEPARTMENT);
+                advisors.add(new Advisor(firstName, lastName, email, password, advisorID, students, department));
             }
             return advisors;
         } catch (Exception e) {

@@ -51,7 +51,8 @@ public class dataWriterTest {
         }
 
         input.close();
-        test.logout();
+        // Only uncomment if you're ABSOLUTELY SURE YOU WANT TO SAVE
+        // test.logout(); 
     }
 
     private void workOnMajorRequirements(Major toWorkOn) {
@@ -91,7 +92,7 @@ public class dataWriterTest {
             System.out.println("Minimum Grade?: ");
             String reqGrade = input.nextLine().toUpperCase();
             Grade grade = Grade.valueOf(reqGrade);
-            ArrayList<Course> acceptableCourses = fillCourseArray2();
+            ArrayList<Course> acceptableCourses = fillCourseArray();
             System.out.println("Is this an And or Or RequirementSet? (a/o)?: ");
             String reqType = input.nextLine();
             switch (reqType) {
