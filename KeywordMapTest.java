@@ -89,6 +89,25 @@ public class KeywordMapTest {
         return test;
     }
 
+    public static HashMap<String, String> loadAP1Keywords() {
+        test = new HashMap<>();
+        test.put("STAT","511,512,513");
+        return test;
+    }
+
+    public static HashMap<String, String> loadAP2Keywords() {
+        test = new HashMap<>();
+        test.put("MATH","242,300,520,546,554,574");
+        return test;
+    }
+
+    public static HashMap<String, String> loadAP3Keywords() {
+        test = new HashMap<>();
+        test.put("MART","201,210,380,581D,371,571C");
+        test.put("MATH","527,576");
+        return test;
+    }
+
     public static HashMap<String, String> loadCMSKeywords() {
         test = new HashMap<>();
         test.put("PHIL","213,325");
