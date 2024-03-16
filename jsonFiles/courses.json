@@ -97694,5 +97694,22 @@
             "FALL"
         ],
         "id": "6551ad0d-6059-49c2-8460-e84cbed98402"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "GHS"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "bf6e4b08-8198-4a8a-ba48-744dfe9e7f8f"
     }
 ]
