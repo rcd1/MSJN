@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ApplicationUI {
@@ -13,21 +14,33 @@ public class ApplicationUI {
     public void run() {
         boolean running = true;
         while(running) {
-            displayMainMenu();
-            String option = getUserOption().toLowerCase();
-            if ("login".equals(option)) {
-                login();
-            } else if ("logout".equals(option)) {
-                logout();
-            } else if ("create account".equals(option)) {
-                createAccount();
-            } else if ("exit".equals(option)) {
-                running = false;
+            if (user == null) {
+                displayMainMenu();
+                String option = getUserOption().toLowerCase();
+                switch(option) {
+                    case "login":
+                        login();
+                        break;
+                    case "logout":
+                        logout();
+                        break;
+                    case "create account":
+                        createAccount();
+                        break;
+                    case "exit":
+                        running = false;
+                        break;
+                    default:
+                        System.out.println("Invalid option.");
+                        break;
+                }
             } else {
-                System.out.println("Invalid option. Please try again.");
+                displaySemesterPlan(user);
+                logout();
+                running = false;
             }
-        }
         scanner.close();
+        }
     }
 
     //Display details
@@ -93,5 +106,29 @@ public class ApplicationUI {
         user = null;
         application.logout();
         System.out.println("Logout successful.");
+    }
+
+    private void displaySemesterPlan(User user) {
+        if (user instanceof Student) {
+            ((Student) user).displaySemesterPlan();
+            //edit semsterplan code
+        } else if (user instanceof Advisor) {
+            Advisor advisor = (Advisor) user;
+            ArrayList<Student> advisedStudents = advisor.getStudents();
+            System.out.println("Select a student to view their semester plan: ");
+            for (int i = 0; i < advisedStudents.size(); i++) {
+                Student student = advisedStudents.get(i);
+                String fullName = student.getFirstName() + " " + student.getLastName();
+                System.out.println((i + 1) + ". " + fullName);
+            }
+            String option = getUserOption();
+            int choice = Integer.parseInt(option);
+            if (choice >= 1 && choice <= advisedStudents.size()) {
+                Student selectedStudent = advisedStudents.get(choice - 1);
+                selectedStudent.displaySemesterPlan();
+            } else {
+                System.out.println("Invalid choice.");
+            }
+        }
     }
 }

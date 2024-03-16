@@ -100,4 +100,16 @@ public class Advisor extends User {
         return department;
     }
 
+    public void viewStudentSemesterPlan(Student student) {
+        ArrayList<SemesterPlan> semesterPlans = student.getSemesterPlans();
+        if (semesterPlans != null && !semesterPlans.isEmpty()) {
+            System.out.println("Semester plans for " + student.getFirstName() + " " + student.getLastName() + ":");
+            for (SemesterPlan semesterPlan : semesterPlans) {
+                System.out.println("Semester Plan:");
+                semesterPlan.displaySemesterPlan();
+            }
+        } else {
+            System.out.println("No semester plans found for " + student.getFirstName() + " " + student.getLastName() + ":");
+        }
+    }
 }
