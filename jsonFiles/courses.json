@@ -97626,5 +97626,39 @@
             "FALL"
         ],
         "id": "4f8fbfab-fa57-4f2f-a599-8312f70c92e8"
+    },
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "LSE"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "c50b5f03-2bce-452c-9680-11a741daccb0"
+    }, 
+    {
+        "designator": "FILL",
+        "prerequisites": [],
+        "number": "000",
+        "hours": 0,
+        "preferredSemester": 0,
+        "keywords": [
+            "GSS"
+        ],
+        "corequisites": [],
+        "semestersOffered": [
+            "SPRING",
+            "SUMMER",
+            "FALL"
+        ],
+        "id": "ca0b22c6-e274-4fca-8a86-30970183e043"
     }
 ]
