@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class dataLoaderTest {
     public static void main(String[] args) {
-        dataLoaderTest goober = new dataLoaderTest();
+        dataLoaderTest goober = new dataLoaderTest(); //goober nice :) 
         // goober.courseTest();
         // goober.userTest();
     }
