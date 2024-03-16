@@ -21,9 +21,6 @@ public class ApplicationUI {
                     case "login":
                         login();
                         break;
-                    case "logout":
-                        logout();
-                        break;
                     case "create account":
                         createAccount();
                         break;
@@ -57,7 +54,6 @@ public class ApplicationUI {
         System.out.println("Welcome to DegreeWorks");
         System.out.println("Login");
         System.out.println("Create Account");
-        System.out.println("Logout");
         System.out.println("Exit");
         System.out.print("Enter your choice: ");
     }
