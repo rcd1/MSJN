@@ -191,4 +191,13 @@ public class Student extends User {
     public HashMap<Course, Grade> getStudentGrades() {
         return studentGrades;
     }
+
+    public void displayProgress() {
+        for (MajorRequirement majorRequirement : major.getMajorRequirements()) {
+            if (majorRequirement.SatisfiesRequirement(this)) {
+                
+            }
+        }
+        System.out.println();
+    }
 }

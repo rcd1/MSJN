@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.io.IOException;
+import java.io.FileWriter;
 
 public class SemesterPlan {
     private ArrayList<Course> courses;
@@ -69,6 +71,26 @@ public class SemesterPlan {
 
     public int getHours() {
         return hours;
+    }
+
+    public void saveSemesterPlanToFile(String fileName) {
+        try (FileWriter writer = new FileWriter(fileName)) {
+            if (courses.isEmpty()) {
+                writer.write("Semester Plan is empty.");
+            } else {
+                writer.write("Semester Plan\n");
+                for (int i = 0; i < courses.size(); i++) {
+                    Course course = courses.get(i);
+                    writer.write("Course " + (i + 1) + ":\n");
+                    writer.write("Course ID: " + course.getCourseID() + "\n");
+                    writer.write(course.getDesignator() + " " + course.getNumber());
+                    writer.write("Hours: " + course.getHours() + "\n");
+                }
+                writer.write("Total hours: " + calculateHours());
+            }
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
     }
 
 }

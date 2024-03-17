@@ -141,4 +141,36 @@ public class DegreeFacade {
         userList.logout();
         majorList.logout();
     }
+
+    public void displayAdvisorStudentsList(Advisor advisor) {
+        advisor.displayStudents();
+    }
+
+    public void addStudentToAdvisorList(Advisor advisor, String firstName, String lastName) {
+        Student studentToAdd = userList.findStudentByName(firstName, lastName);
+        if (studentToAdd != null) {
+            advisor.addStudent(studentToAdd);
+        }
+    }
+
+    public void viewStudentProgress(Student student) {
+        student.displayProgress();
+    }
+
+    public void saveSemesterPlanToFile(User user, String fileName) {
+        if (user instanceof Student) {
+            ArrayList<SemesterPlan> semesterPlans = ((Student) user).getSemesterPlans();
+            for (SemesterPlan semesterPlan : semesterPlans) {
+                semesterPlan.saveSemesterPlanToFile(fileName);
+            }
+        } else if (user instanceof Advisor) {
+            ArrayList<Student> advisedStudents = ((Advisor) user).getStudents();
+            for (Student student : advisedStudents) {
+            ArrayList<SemesterPlan> semesterPlans = student.getSemesterPlans();
+                for (SemesterPlan semesterPlan : semesterPlans) {
+                    semesterPlan.saveSemesterPlanToFile(fileName);
+                }
+            }
+        }      
+    }
 }

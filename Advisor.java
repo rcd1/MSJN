@@ -53,7 +53,7 @@ public class Advisor extends User {
      * @return true
      */
     public boolean addStudent(Student student) {
-        return true;
+        return students.add(student);
     }
 
     /**
@@ -111,5 +111,13 @@ public class Advisor extends User {
         } else {
             System.out.println("No semester plans found for " + student.getFirstName() + " " + student.getLastName() + ":");
         }
+    }
+
+    public void displayStudents() {
+        String studentToString = "";
+        for (int i = 0; i < students.size(); i++) {
+            studentToString += (i+1) + ". " + students.get(i).getFirstName() + " " + students.get(i).getLastName() + "\n";
+        }
+        System.out.println(studentToString);
     }
 }
