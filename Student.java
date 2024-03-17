@@ -298,6 +298,10 @@ public class Student extends User {
         return applicationID;
     }
 
+    public void setApplicationID(ApplicationID applicationID) {
+        this.applicationID = applicationID;
+    }
+
     public HashMap<Course, Grade> getStudentGrades() {
         return studentGrades;
     }
