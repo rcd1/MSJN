@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class dataLoaderTest {
     public static void main(String[] args) {
         dataLoaderTest goober = new dataLoaderTest(); //goober nice :) 
-        goober.courseTest();
+        // goober.courseTest();
         // goober.userTest();
         // goober.majorTest();
         // goober.addNameAndDesc();
@@ -74,16 +74,16 @@ public class dataLoaderTest {
         }
     }
 
-    public void addNameAndDesc() {
-        CourseList courseList = CourseList.getInstance();
-        ArrayList<String[]> thingies = DataLoader2.getNameAndDescriptions();
-        ArrayList<Course> courses = courseList.getCourses();
-        System.out.println(thingies.size() + " " + courses.size());
-        for (int i = 0; i < 4845; i++) {
-            courses.get(i).setName(thingies.get(i)[0]);
-            courses.get(i).setDescription(thingies.get(i)[1]);
-        }
-        courseList.logout();
-    }
+    // public void addNameAndDesc() {
+    //     CourseList courseList = CourseList.getInstance();
+    //     ArrayList<String[]> thingies = DataLoader2.getNameAndDescriptions();
+    //     ArrayList<Course> courses = courseList.getCourses();
+    //     System.out.println(thingies.size() + " " + courses.size());
+    //     for (int i = 0; i < 4845; i++) {
+    //         courses.get(i).setName(thingies.get(i)[0]);
+    //         courses.get(i).setDescription(thingies.get(i)[1]);
+    //     }
+    //     courseList.logout();
+    // }
 }
 

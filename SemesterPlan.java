@@ -58,8 +58,7 @@ public class SemesterPlan {
                 Course course = courses.get(i);
                 System.out.println("Course " + (i + 1) + ":");
                 System.out.println("Course ID: " + course.getCourseID());
-                System.out.println("Designator: " + course.getDesignator());
-                System.out.println("Number " + course.getNumber());
+                System.out.println(course.getDesignator() + " " + course.getNumber());
                 System.out.println("Hours: " + course.getHours());
             }
         }
