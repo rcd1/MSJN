@@ -41,6 +41,10 @@ public class SemesterPlan {
         return true;
     }
 
+    public void primitiveAddCourse(Course course) {
+        courses.add(course);
+    }
+
     public boolean removeCourse(Course course) {
         return courses.remove(course);
     }

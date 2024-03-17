@@ -14,6 +14,7 @@ public class Student extends User {
     private boolean hasScholarship;
     private HashMap<Course, Grade> studentGrades;
     private ApplicationID applicationID;
+    private ArrayList<SemesterPlan> eightSemesterPlan; // Follows a pseudo singleton design pattern
 
     /*
      * In the User.java, there are 2 final String representing the UUIDs of a blank
@@ -135,7 +136,18 @@ public class Student extends User {
     }
 
     public ArrayList<SemesterPlan> generateEightSemesterPlan() {
-        return new ArrayList<SemesterPlan>();
+        ArrayList<SemesterPlan> eightSemesterPlan = new ArrayList<SemesterPlan>(8);
+        
+        // Copy already completed classes into new eight semester plan
+        for(int i = 0; i < semesterPlans.size(); i++) {
+            eightSemesterPlan.set(i, new SemesterPlan());
+            SemesterPlan semesterPlan = eightSemesterPlan.get(i);
+            for(Course course : semesterPlans.get(i).getCourses()) {
+                semesterPlan.primitiveAddCourse(course);
+            }
+        }
+
+        return eightSemesterPlan;
     }
 
     public String toString() {
