@@ -224,15 +224,24 @@ public class Student extends User {
 
     public boolean fillCourse(Course fillerCourse) {
         ArrayList<SemesterPlan> eightSemesterPlan = this.generateEightSemesterPlan();
+        Keyword applicationAreaKeyword = Keyword.valueOf(this.applicationID.getKeyword());
 
-        loop:
         for(SemesterPlan semesterPlan : eightSemesterPlan) {
             for(Course loopCourse : semesterPlan.getCourses()) {
-                if(loopCourse.getDesignator() == Designator.FILL &&
-                fillerCourse.getKeywords().contains(loopCourse.getKeywords().get(0)) &&
-                this.studentGrades.get(fillerCourse) == null) {
-                    this.studentGrades.put(fillerCourse, Grade.R);
-                    break loop;
+                if(loopCourse.getDesignator() == Designator.FILL) {
+                    Keyword loopCourseKeyword = loopCourse.getKeywords().get(0);
+                    if(!(loopCourseKeyword == Keyword.AP0 && applicationAreaKeyword == Keyword.AP0)) {
+                        Keyword comparisonKeyword;
+                        if(loopCourseKeyword == Keyword.AP0) {
+                            comparisonKeyword = applicationAreaKeyword;
+                        } else {
+                            comparisonKeyword = loopCourse.getKeywords().get(0);
+                        }
+                        if(fillerCourse.getKeywords().contains(comparisonKeyword) && this.studentGrades.get(fillerCourse) == null) {
+                            this.studentGrades.put(fillerCourse, Grade.R);
+                            return true;
+                        }
+                    } 
                 }
             }
         }
