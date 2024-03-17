@@ -153,4 +153,21 @@ public class DegreeFacade {
             System.err.println("Error saving user data: " + e.getMessage());
         }
     }
+
+    public void saveSemesterPlanToFile(User user, String fileName) {
+        if (user instanceof Student) {
+            ArrayList<SemesterPlan> semesterPlans = ((Student) user).getSemesterPlans();
+            for (SemesterPlan semesterPlan : semesterPlans) {
+                semesterPlan.saveSemesterPlanToFile(fileName);
+            }
+        } else if (user instanceof Advisor) {
+            ArrayList<Student> advisedStudents = ((Advisor) user).getStudents();
+            for (Student student : advisedStudents) {
+            ArrayList<SemesterPlan> semesterPlans = student.getSemesterPlans();
+                for (SemesterPlan semesterPlan : semesterPlans) {
+                    semesterPlan.saveSemesterPlanToFile(fileName);
+                }
+            }
+        }      
+    }
 }
