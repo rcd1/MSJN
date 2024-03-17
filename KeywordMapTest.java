@@ -121,6 +121,12 @@ public class KeywordMapTest {
         return test;
     }
 
+    public static HashMap<String, String>loadCSCEMEKeywords() {
+        test = new HashMap<>();
+        test.put("CSCE","500-790");
+        return test;
+    }
+
     public static HashMap<String, String> loadCMSKeywords() {
         test = new HashMap<>();
         test.put("PHIL","213,325");

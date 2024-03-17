@@ -17843,7 +17843,9 @@
         "number": "317",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18140,7 +18142,9 @@
         "number": "500",
         "hours": 3,
         "preferredSemester": 1,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18170,7 +18174,9 @@
         "number": "510",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18195,7 +18201,9 @@
         "number": "512",
         "hours": 3,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18225,7 +18233,9 @@
         "number": "513",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18248,7 +18258,9 @@
         "number": "515",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18272,7 +18284,9 @@
         "number": "516",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18295,7 +18309,9 @@
         "number": "517",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18318,7 +18334,9 @@
         "number": "518",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18342,7 +18360,9 @@
         "number": "520",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18373,7 +18393,9 @@
         "number": "522",
         "hours": 3,
         "preferredSemester": 1,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18396,7 +18418,9 @@
         "number": "526",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18419,7 +18443,9 @@
         "number": "531",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18442,7 +18468,9 @@
         "number": "546",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18465,7 +18493,9 @@
         "number": "547",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18488,7 +18518,9 @@
         "number": "548",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18512,7 +18544,9 @@
         "number": "551",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18542,7 +18576,9 @@
         "number": "552",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18565,7 +18601,9 @@
         "number": "555",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18589,7 +18627,9 @@
         "number": "556",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18604,7 +18644,9 @@
         "number": "557",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18619,7 +18661,9 @@
         "number": "561",
         "hours": 3,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18644,7 +18688,9 @@
         "number": "563",
         "hours": 3,
         "preferredSemester": 1,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18670,7 +18716,9 @@
         "number": "564",
         "hours": 3,
         "preferredSemester": 1,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18695,7 +18743,9 @@
         "number": "565",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18720,7 +18770,9 @@
         "number": "567",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18744,7 +18796,9 @@
         "number": "569",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18759,7 +18813,9 @@
         "number": "571",
         "hours": 3,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18774,7 +18830,9 @@
         "number": "572",
         "hours": 3,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18811,7 +18869,9 @@
         "number": "574",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18841,7 +18901,9 @@
         "number": "578",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18864,7 +18926,9 @@
         "number": "580",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18901,7 +18965,9 @@
         "number": "581",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18926,7 +18992,9 @@
         "number": "582",
         "hours": 3,
         "preferredSemester": 2,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18950,7 +19018,9 @@
         "number": "585",
         "hours": 3,
         "preferredSemester": 1,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18975,7 +19045,9 @@
         "number": "587",
         "hours": 3,
         "preferredSemester": 3,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -18990,7 +19062,9 @@
         "number": "590",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -19005,7 +19079,9 @@
         "number": "594",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -19028,7 +19104,9 @@
         "number": "611",
         "hours": 3,
         "preferredSemester": 7,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -19051,7 +19129,9 @@
         "number": "612",
         "hours": 3,
         "preferredSemester": 4,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -19074,7 +19154,9 @@
         "number": "613",
         "hours": 3,
         "preferredSemester": 5,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -19097,7 +19179,9 @@
         "number": "750",
         "hours": 3,
         "preferredSemester": 8,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -19120,7 +19204,9 @@
         "number": "774",
         "hours": 3,
         "preferredSemester": 7,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
@@ -19135,7 +19221,9 @@
         "number": "790",
         "hours": 3,
         "preferredSemester": 6,
-        "keywords": [],
+        "keywords": [
+            "CSCEME"
+        ],
         "corequisites": [],
         "semestersOffered": [
             "SPRING",
