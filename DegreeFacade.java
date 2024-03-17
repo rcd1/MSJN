@@ -1,3 +1,6 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -172,5 +175,14 @@ public class DegreeFacade {
                 }
             }
         }      
+    }
+
+    public void saveUserData(User user) {
+        try (FileOutputStream fileOut = new FileOutputStream("userdata.ser");
+             ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+            out.writeObject(userList);
+        } catch (IOException e) {
+            System.err.println("Error saving user data: " + e.getMessage());
+        }
     }
 }

@@ -92,5 +92,4 @@ public class SemesterPlan {
             System.err.println("Error writing to file: " + e.getMessage());
         }
     }
-
 }

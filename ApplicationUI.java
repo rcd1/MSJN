@@ -47,7 +47,11 @@ public class ApplicationUI {
                     case "view semester plan":
                         displaySemesterPlan(user);
                         break;
+                    case "save semester plan to text file":
+                        saveSemesterPlanToFile(user);
+                        break;
                     case "logout":
+                        saveUserData();
                         logout();
                         break;
                     case "manage your students":
@@ -241,5 +245,10 @@ public class ApplicationUI {
                 System.out.println("Invalid choice.");
             }
         }
+    }
+
+    private void saveUserData() {
+        application.saveUserData(user);
+
     }
 }
