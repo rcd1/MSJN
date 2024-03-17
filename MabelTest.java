@@ -16,7 +16,7 @@ public class MabelTest {
 
 
 
-        Student student = userList.getStudentByUUID(UUID.fromString("0b186e4d-9891-4f52-be8a-413c850786ab"));
+        Student student = userList.getStudentByUUID(UUID.fromString("04018168-0e9a-4d65-961b-466e58e28c7d"));
         ArrayList<SemesterPlan> semesterPlans = student.generateEightSemesterPlan();
         //semesterPlans = majorList.getMajorByUUID(UUID.fromString("5ded2f1a-0d27-4b1e-8d70-cb779bc16bde")).getRecommendedSemesterPlans();
         for(SemesterPlan semesterPlan : semesterPlans) {
