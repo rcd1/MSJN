@@ -219,8 +219,22 @@ public class Student extends User {
                 }
             }
         }
-
         return eightSemesterPlan;
+    }
+
+    public boolean fillCourse(Course fillerCourse) {
+        ArrayList<SemesterPlan> eightSemesterPlan = this.generateEightSemesterPlan();
+
+        loop:
+        for(SemesterPlan semesterPlan : eightSemesterPlan) {
+            for(Course loopCourse : semesterPlan.getCourses()) {
+                if(loopCourse.getDesignator() == Designator.FILL && fillerCourse.getKeywords().contains(loopCourse.getKeywords().get(0))) {
+                    this.studentGrades.put(fillerCourse, Grade.R);
+                    break loop;
+                }
+            }
+        }
+        return false;
     }
 
     public String toString() {
