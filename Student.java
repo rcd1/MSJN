@@ -175,7 +175,6 @@ public class Student extends User {
                     semesterHoursToAdd = 3;
                     // Get courses that could fill this
                     Keyword searchKeyword = tempCourse.getKeywords().get(0);
-
                     if(searchKeyword == Keyword.AP0 && applicationID != ApplicationID.UNDECLARED) {
                         searchKeyword = Keyword.valueOf(applicationID.getKeyword());
                     }
@@ -209,6 +208,14 @@ public class Student extends User {
                 
                 if(addCourse) {
                     eightSemesterPlan.get(planIndex).primitiveAddCourse(courseToAdd);
+                    semesterHours += semesterHoursToAdd;
+                }
+
+
+                if(semesterHours >= 15 && eightSemesterPlan.size() < 8) {
+                    eightSemesterPlan.add(new SemesterPlan());
+                    semesterHours = 0;
+                    planIndex++;
                 }
             }
         }
