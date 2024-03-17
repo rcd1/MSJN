@@ -228,7 +228,9 @@ public class Student extends User {
         loop:
         for(SemesterPlan semesterPlan : eightSemesterPlan) {
             for(Course loopCourse : semesterPlan.getCourses()) {
-                if(loopCourse.getDesignator() == Designator.FILL && fillerCourse.getKeywords().contains(loopCourse.getKeywords().get(0))) {
+                if(loopCourse.getDesignator() == Designator.FILL &&
+                fillerCourse.getKeywords().contains(loopCourse.getKeywords().get(0)) &&
+                this.studentGrades.get(fillerCourse) == null) {
                     this.studentGrades.put(fillerCourse, Grade.R);
                     break loop;
                 }
