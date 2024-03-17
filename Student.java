@@ -147,6 +147,15 @@ public class Student extends User {
             }
         }
 
+        ArrayList<SemesterPlan> majorMapSkeleton = major.getRecommendedSemesterPlans();
+
+        for(SemesterPlan semesterPlan : majorMapSkeleton) {
+            for(Course course : semesterPlan.getCourses()) {
+                
+            }
+
+        }
+
         return eightSemesterPlan;
     }
 
