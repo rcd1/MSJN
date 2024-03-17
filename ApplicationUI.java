@@ -47,7 +47,11 @@ public class ApplicationUI {
                     case "view semester plan":
                         displaySemesterPlan(user);
                         break;
+                    case "save semester plan to text file":
+                        saveSemesterPlanToFile(user);
+                        break;
                     case "logout":
+                        saveUserData();
                         logout();
                         break;
                     default:
@@ -71,6 +75,7 @@ public class ApplicationUI {
     private void displayLoggedInMenu() {
         System.out.println("Logged in as " + user.getFirstName() + " " + user.getLastName());
         System.out.println("View Semester Plan");
+        System.out.println("Save Semester Plan to Text File");
         System.out.println("Logout");
         System.out.print("Enter your choice: ");
     }
@@ -154,5 +159,18 @@ public class ApplicationUI {
                 System.out.println("Invalid choice.");
             }
         }
+    }
+
+    private void saveSemesterPlanToFile(User user) {
+        System.out.println("Enter the file name to save the semester plan:");
+        String fileName = scanner.nextLine();
+    
+        application.saveSemesterPlanToFile(user, fileName);
+        System.out.println("Semester plan saved to " + fileName + ".");
+    }
+
+    private void saveUserData() {
+        application.saveUserData(user);
+
     }
 }
