@@ -40,7 +40,7 @@ public class Course {
      */
     public Course(UUID courseID, Designator designator, String number, int hours,
             ArrayList<RequirementSet> prerequisites, ArrayList<RequirementSet> corequisites,
-            ArrayList<Keyword> keywords, ArrayList<SemesterOffered> semestersOffered, int preferredSemester) {
+            ArrayList<Keyword> keywords, ArrayList<SemesterOffered> semestersOffered, String name, String description, int preferredSemester) {
         this.courseID = courseID;
         this.designator = designator;
         this.number = number;
@@ -49,9 +49,9 @@ public class Course {
         this.corequisites = corequisites;
         this.keywords = keywords;
         this.semestersOffered = semestersOffered;
+        this.name = name;
+        this.description = description;
         this.preferredSemester = preferredSemester;
-        this.name = "";
-        this.description = "";
     }
 
 
