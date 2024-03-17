@@ -1,20 +1,35 @@
 import java.util.ArrayList;
 import java.util.UUID;
-
+/**
+ * Attriutes of Major List 
+ */
 public class MajorList {
     private static MajorList majorList;
     private static ArrayList<Major> majors;
 
+    /**
+     * A setter method for the Major List 
+     * The data loader will grab tha major
+     */
     public MajorList() {
         majorList = this;
         majors = DataLoader.getMajors();
     }
 
+    /**
+     * It will be get an instance of major list
+     * If the major list is empty, then a new majorLisst will be generated
+     * @return major list
+     */
     public static MajorList getInstance() {
         if (majorList == null) majorList = new MajorList();
         return majorList;
     }
 
+    /**
+     * A getter enthod for majors using the Array List of type Major
+     * @return majors 
+     */
     public ArrayList<Major> getMajors() {
         return majors;
     }
@@ -46,6 +61,9 @@ public class MajorList {
     return null;
     }
 
+    /**
+     * The datawriter will save the major when the user logouts
+     */
     public void logout() {
         DataWriter.saveMajors();
     }

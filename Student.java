@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
+/**
+ * Attributes of Student 
+ * Student extends User
+ */
 public class Student extends User {
     private Major major;
     private int year;
@@ -134,9 +138,14 @@ public class Student extends User {
         return returnGrade[1];
     }
 
+    /**
+     * 
+     * @return a new Array List of type Semester Plan
+     */
     public ArrayList<SemesterPlan> generateEightSemesterPlan() {
         return new ArrayList<SemesterPlan>();
     }
+
 
     public String toString() {
         return super.toString();
@@ -148,6 +157,9 @@ public class Student extends User {
         this.advisor = realOne;
     }
 
+    /*=
+     * Getters for major,Year, GPA, SemesterPlans, LegalGuardians, Advisor, Notes, Honors, Scholarships, Applicarion ID, and Student Grades
+     */
     public Major getMajor() {
         return major;
     }

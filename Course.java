@@ -54,42 +54,61 @@ public class Course {
         this.preferredSemester = preferredSemester;
     }
 
-
+    /*
+     * An accessor (getter) method for the number values.
+     */
     public UUID getCourseID() {
         return courseID;
     }
 
-
+    /*
+     * An mutator(setter) method for the courseID.
+     */
     public void setCourseID(UUID courseID) {
         this.courseID = courseID;
     }
 
-
+    /*
+     * An accessor (getter) method for the designator.
+     */
     public Designator getDesignator() {
         return designator;
     }
 
-
+    /*
+     * An mutator(setter) method for the designator values.
+     */
     public void setDesignator(Designator designator) {
         this.designator = designator;
     }
 
-
+    /*
+     * An accessor (getter) method for the number values.
+     */
     public String getNumber() {
         return number;
     }
 
-
+    /*
+     * An mutator (setter) method for the number values.
+     */
     public void setNumber(String number) {
         this.number = number;
     }
 
-
+    /**
+     * An accessor (getter) method for the hour value
+     * @return hours
+     */
     public int getHours() {
         return hours;
     }
 
 
+    /**
+     * An mutator (setter) method for the hour value
+     * @param hours hours connected to the course
+     */
     public void setHours(int hours) {
         this.hours = hours;
     }
@@ -97,7 +116,10 @@ public class Course {
 
     
 
-
+    /**
+     * An accessor (getter) for keywords
+     * @return keywords
+     */
     public ArrayList<Keyword> getKeywords() {
         return keywords;
     }
@@ -166,17 +188,27 @@ public class Course {
         this.keywords.add(keyword);
     }
 
+ 
+    /**
+     * An accessor (getter) method for the prerequisites.
+     * @return prerequisites
+     */
     public ArrayList<RequirementSet> getPrerequisites() {
         return prerequisites;
     }
 
-
-
-
+    /**
+     * An accessor (getter) method for the corequisites.
+     * @return corequistes 
+     */
     public ArrayList<RequirementSet> getCorequisites() {
         return corequisites;
     }
 
+    /**
+     * An accessor (getter) method for the semester offered.
+     * @return semester offered
+     */
     public ArrayList<SemesterOffered> getSemestersOffered() {
         return semestersOffered;
     }
@@ -190,18 +222,34 @@ public class Course {
         }
     }
 
+    /**
+     * A getter method for course's name
+     * @return name of course
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * A setter for the course's name
+     * @param name the name of course
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * An getter method for the description
+     * @return the description of the course
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * An setter method for the description.
+     * @param description A breif overview of the course a student can take
+     */
     public void setDescription(String description) {
         this.description = description;
     }

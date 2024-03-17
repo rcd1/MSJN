@@ -30,10 +30,16 @@ public enum ApplicationID{
         return number;
     }
 
+    /*
+     * An accessor (getter) method for the name.
+     */
     public String getName() {
         return name;
     }
 
+    /*
+     * An accessor (getter) method for the keyword.
+     */
     public Keyword getKeyword() {
         return keyword;
     }
