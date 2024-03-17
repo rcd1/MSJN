@@ -205,5 +205,18 @@ public class Course {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public boolean SatisfiesRequirement(Student student) {
+        if(prerequisites.isEmpty()) {
+            return true;
+        }
+        
+        for(RequirementSet requirementSet : prerequisites) {
+            if(requirementSet.SatisfiesRequirement(student)) {
+                return true;
+            }
+        }
+        return false;
+    }
     
 }
