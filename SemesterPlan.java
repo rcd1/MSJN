@@ -11,6 +11,9 @@ public class SemesterPlan {
         int sum = 0;
         for (Course course : courses) {
             sum += course.getHours();
+            if(course.getDesignator() == Designator.FILL) {
+                sum += 3;
+            }
         }
         return sum;
     }
@@ -41,6 +44,10 @@ public class SemesterPlan {
             return false;
         }
         return true;
+    }
+
+    public void primitiveAddCourse(Course course) {
+        courses.add(course);
     }
 
     public boolean removeCourse(Course course) {
