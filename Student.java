@@ -137,6 +137,8 @@ public class Student extends User {
 
     public ArrayList<SemesterPlan> generateEightSemesterPlan() {
         ArrayList<SemesterPlan> eightSemesterPlan = new ArrayList<SemesterPlan>(8);
+        int offset = semesterPlans.size();
+        int planIndex = offset;
         
         // Copy already completed classes into new eight semester plan
         for(int i = 0; i < semesterPlans.size(); i++) {
@@ -149,9 +151,14 @@ public class Student extends User {
 
         ArrayList<SemesterPlan> majorMapSkeleton = major.getRecommendedSemesterPlans();
 
-        for(SemesterPlan semesterPlan : majorMapSkeleton) {
-            for(Course course : semesterPlan.getCourses()) {
-                
+        int semesterHours = 0;        
+        for(int i = 0; i < majorMapSkeleton.size(); i++) {
+            ArrayList<Course> skeletonSemesterCourses = majorMapSkeleton.get(i).getCourses();
+            for(int j = 0; j < skeletonSemesterCourses.size(); j++) {
+                Grade courseGrade = studentGrades.get(skeletonSemesterCourses.get(j));
+                if(courseGrade != null && courseGrade.getPointValue() >= Grade.C.getPointValue()) {
+
+                }
             }
 
         }

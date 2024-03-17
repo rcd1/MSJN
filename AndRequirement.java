@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 /**
  * A class representing a degree requirement where all
  * courses in the list of courses must be completed to satisfiy the requirement
@@ -17,8 +18,14 @@ public class AndRequirement extends RequirementSet{
 
     @Override
     public boolean SatisfiesRequirement(Student student) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'SatisfiesRequirement'");
+        HashMap<Course, Grade> grades = student.getStudentGrades();
+        for(Course course : requiredCourses) {
+            Grade grade = grades.get(course);
+            if(grade == null || grade.getPointValue() < requiredGrade.getPointValue()) {
+                return false;
+            }
+        }
+        return true;
     }
     
 }
