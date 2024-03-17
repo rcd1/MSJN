@@ -187,7 +187,7 @@ public class Student extends User {
                         for(Course studentCourse : availableFillerCourses.keySet()) {
                             Grade studentGrade = availableFillerCourses.get(studentCourse);
                             if(studentGrade != null && (potentialCourse.equals(studentCourse) &&
-                            (studentGrade.getPointValue() >= Grade.C.getPointValue()))) {
+                            (studentGrade.getPointValue() >= Grade.C.getPointValue() || studentGrade == Grade.R))) {
                                 courseToAdd = studentCourse;
                                 semesterHoursToAdd = courseToAdd.getHours();
                                 availableFillerCourses.remove(studentCourse);
