@@ -48,6 +48,7 @@ public class ApplicationUI {
                         displaySemesterPlan(user);
                         break;
                     case "logout":
+                        saveUserData();
                         logout();
                         break;
                     default:
@@ -154,5 +155,9 @@ public class ApplicationUI {
                 System.out.println("Invalid choice.");
             }
         }
+    }
+
+    private void saveUserData() {
+        application.saveUserData(user);
     }
 }
