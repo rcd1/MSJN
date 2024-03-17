@@ -91,33 +91,31 @@ public class KeywordMapTest {
 
     public static HashMap<String, String> loadAP1Keywords() {
         test = new HashMap<>();
-        test.put("STAT","511,512,513");
+        test.put("CSCE","520,580,587,582,567");
         return test;
     }
 
     public static HashMap<String, String> loadAP2Keywords() {
         test = new HashMap<>();
-        test.put("MATH","242,300,520,546,554,574");
+        test.put("CSCE","564,565,567,569");
         return test;
     }
 
     public static HashMap<String, String> loadAP3Keywords() {
         test = new HashMap<>();
-        test.put("MART","201,210,380,581D,371,571C");
-        test.put("MATH","527,576");
+        test.put("CSCE","552,520,565,572,580");
         return test;
     }
 
     public static HashMap<String, String> loadAP4Keywords() {
         test = new HashMap<>();
-        test.put("EMCH","535");
-        test.put("ELCT","331,531");
+        test.put("CSCE","574,580");
         return test;
     }
 
     public static HashMap<String, String> loadAP5Keywords() {
         test = new HashMap<>();
-        test.put("LING","340,421,440,565,567");
+        test.put("CSCE","520,531,587,580");
         return test;
     }
 

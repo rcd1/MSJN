@@ -9,8 +9,8 @@ public class addKeywordsTest {
         ArrayList<Course> courses = courseList.getCourses();
 
         // Modify this line and the next
-        Keyword toAdd = Keyword.CSCEME;
-        HashMap<String, String> test = KeywordMapTest.loadCSCEMEKeywords();
+        Keyword toAdd = Keyword.AP5;
+        HashMap<String, String> test = KeywordMapTest.loadAP5Keywords();
 
         for (String key : test.keySet()) {
             String big = test.get(key);

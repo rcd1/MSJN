@@ -20119,7 +20119,10 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP1",
+            "AP3",
+            "AP5"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20208,7 +20211,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP5"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20351,7 +20355,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP3"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20503,7 +20508,8 @@
         "hours": 3,
         "preferredSemester": 1,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP2"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20532,7 +20538,9 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP2",
+            "AP3"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20561,7 +20569,9 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP1",
+            "AP2"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20589,7 +20599,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP2"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20627,7 +20638,8 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP3"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20668,7 +20680,8 @@
         "hours": 3,
         "preferredSemester": 4,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP4"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20729,7 +20742,11 @@
         "hours": 3,
         "preferredSemester": 6,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP1",
+            "AP3",
+            "AP4",
+            "AP5"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20799,7 +20816,8 @@
         "hours": 3,
         "preferredSemester": 2,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP1"
         ],
         "corequisites": [],
         "semestersOffered": [
@@ -20856,7 +20874,9 @@
         "hours": 3,
         "preferredSemester": 3,
         "keywords": [
-            "CSCEME"
+            "CSCEME",
+            "AP1",
+            "AP5"
         ],
         "corequisites": [],
         "semestersOffered": [
