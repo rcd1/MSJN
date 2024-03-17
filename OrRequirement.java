@@ -29,5 +29,4 @@ public class OrRequirement extends RequirementSet {
         }
         return false;
     }
-    
 }

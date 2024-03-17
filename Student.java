@@ -149,18 +149,62 @@ public class Student extends User {
             }
         }
 
+        eightSemesterPlan.add(new SemesterPlan());
+
         ArrayList<SemesterPlan> majorMapSkeleton = major.getRecommendedSemesterPlans();
 
-        int semesterHours = 0;        
+        HashMap<Course, Grade> availableFillerCourses = (HashMap<Course, Grade>)studentGrades.clone();
+        
+        int semesterHours = 0;
+
+        // Loop through the arrayList of semesters
         for(int i = 0; i < majorMapSkeleton.size(); i++) {
             ArrayList<Course> skeletonSemesterCourses = majorMapSkeleton.get(i).getCourses();
+            
+            // Loop through the arrayList of courses in the semester
             for(int j = 0; j < skeletonSemesterCourses.size(); j++) {
-                Grade courseGrade = studentGrades.get(skeletonSemesterCourses.get(j));
-                if(courseGrade != null && courseGrade.getPointValue() >= Grade.C.getPointValue()) {
+                // Determine what course to add, if any
+                Course tempCourse = skeletonSemesterCourses.get(j);
+                Course courseToAdd = tempCourse;
+                int semesterHoursToAdd = courseToAdd.getHours();
+                boolean addCourse = true;
+                
+                // Find course that might need to be added
+                // First, handle filler courses
+                if(tempCourse.getDesignator() == Designator.FILL) {
+                    semesterHoursToAdd = 3;
+                    // Get courses that could fill this
+                    ArrayList<Course> potentialCourses = CourseList.getInstance().findCourses(tempCourse.getKeywords().get(0).toString());
+                    
+                    // Check if one of the potential courses has been taken, and if it has, then add that course. Otherwise, add the filler
+                    outerLoop: 
+                    for(Course potentialCourse : potentialCourses) {
+                        for(Course studentCourse : availableFillerCourses.keySet()) {
+                            Grade studentGrade = availableFillerCourses.get(studentCourse);
+                            if(studentGrade != null && (potentialCourse.equals(studentCourse) &&
+                            (studentGrade.getPointValue() >= Grade.C.getPointValue()))) {
+                                courseToAdd = studentCourse;
+                                semesterHoursToAdd = courseToAdd.getHours();
+                                availableFillerCourses.remove(studentCourse);
+                                addCourse = studentGrade == Grade.R; // If the course hasn't been completed, but has been determined, add it.
+                                break outerLoop;
+                            }
+                        }
+                    }                    
+                } else { // Handle non-filler courses
+                    semesterHoursToAdd = courseToAdd.getHours();
+                    Grade grade = studentGrades.get(tempCourse);
+                    if(grade != null && grade.getPointValue() >= Grade.C.getPointValue()) {
+                        addCourse = false;
+                        availableFillerCourses.remove(courseToAdd);
+                    }
+                }
 
+                
+                if(addCourse) {
+                    eightSemesterPlan.get(planIndex).primitiveAddCourse(courseToAdd);
                 }
             }
-
         }
 
         return eightSemesterPlan;
