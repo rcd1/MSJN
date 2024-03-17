@@ -25,7 +25,7 @@ public class CourseList {
 
     public Course getCourse(String name, String number, int hours) {
         for (Course course : courses) {
-            if (course.checkCourse(name, number, hours))
+            if (!course.getDesignator().equals(Designator.FILL) && course.checkCourse(name, number, hours))
             return course;
         }
         return null;
@@ -33,7 +33,7 @@ public class CourseList {
 
     public Course getCourse(String name, String number) {
         for (Course course : courses) {
-            if (course.checkCourse(name, number)) {
+            if (!course.getDesignator().equals(Designator.FILL) && course.checkCourse(name, number)) {
             return course;
             }
         }
@@ -49,7 +49,7 @@ public class CourseList {
     public ArrayList<Course> getCoursesSameSubjectInSetLevel(String subject, String level) {
         ArrayList<Course> subset = new ArrayList<>();
         for (Course course : courses) {
-            if (course.getDesignator().equals(Designator.valueOf(subject)) && course.getNumber().startsWith(level)) {
+            if (!course.getDesignator().equals(Designator.FILL) && course.getDesignator().equals(Designator.valueOf(subject)) && course.getNumber().startsWith(level)) {
                 subset.add(course);
             }
         }
@@ -59,7 +59,7 @@ public class CourseList {
     public ArrayList<Course> findCourses(String keyword) {
         ArrayList<Course> foundCourses = new ArrayList<>();
         for (Course course : courses) {
-            if (course.getKeywords().contains(Keyword.valueOf(keyword))) {
+            if (!course.getDesignator().equals(Designator.FILL) && course.getKeywords().contains(Keyword.valueOf(keyword))) {
                 foundCourses.add(course);
             }
         }
@@ -82,7 +82,7 @@ public class CourseList {
     public ArrayList<Course> getCoursesAboveLevelInSubject(Designator designator, String number) {
         ArrayList<Course> returnCourses = new ArrayList<Course>();
         for(Course course : courses) {
-            if(course.getDesignator() == designator && (Integer.parseInt(course.getNumber().substring(0, 3)) >= Integer.parseInt(number))) {
+            if(!course.getDesignator().equals(Designator.FILL) && course.getDesignator() == designator && (Integer.parseInt(course.getNumber().substring(0, 3)) >= Integer.parseInt(number))) {
                 returnCourses.add(course);
             }
         }
