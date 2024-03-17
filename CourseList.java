@@ -89,7 +89,7 @@ public class CourseList {
         return returnCourses;
     }
 
-    public static void logout() {
+    public void logout() {
         DataWriter.saveCourses();
     }
 }

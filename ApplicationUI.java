@@ -6,18 +6,23 @@ public class ApplicationUI {
     private DegreeFacade application;
     private User user;
 
+    public static void main(String[] args) {
+        ApplicationUI test = new ApplicationUI();
+        test.run();
+    }
+
     public ApplicationUI() {
         scanner = new Scanner(System.in);
         application = new DegreeFacade();
     }
-    
+
     public void run() {
         boolean running = true;
-        while(running) {
+        while (running) {
             if (user == null) {
                 displayMainMenu();
                 String option = getUserOption().toLowerCase();
-                switch(option) {
+                switch (option) {
                     case "login":
                         login();
                         break;
@@ -26,6 +31,10 @@ public class ApplicationUI {
                         break;
                     case "exit":
                         running = false;
+                        application.exit();
+                        break;
+                    case "Scenarios":
+                        displayScenarios();
                         break;
                     default:
                         System.out.println("Invalid option.");
@@ -34,7 +43,7 @@ public class ApplicationUI {
             } else {
                 displayLoggedInMenu();
                 String option = getUserOption().toLowerCase();
-                switch(option) {
+                switch (option) {
                     case "view semester plan":
                         displaySemesterPlan(user);
                         break;
@@ -45,11 +54,12 @@ public class ApplicationUI {
                         System.out.println("Invalid option.");
                         break;
                 }
-            }   
+            }
         }
         scanner.close();
     }
-    //Display details
+
+    // Display details
     private void displayMainMenu() {
         System.out.println("Welcome to DegreeWorks");
         System.out.println("Login");
@@ -68,7 +78,8 @@ public class ApplicationUI {
     private String getUserOption() {
         return scanner.nextLine();
     }
-    //Login
+
+    // Login
     private void login() {
         System.out.println("Enter email: ");
         String email = scanner.nextLine();
@@ -82,7 +93,8 @@ public class ApplicationUI {
             System.out.println("Login failed. Please check your username and password.");
         }
     }
-    //Signup/CreateAcc
+
+    // Signup/CreateAcc
     private void createAccount() {
         System.out.println("Are you a student or advisor?");
         boolean isValid = false;
@@ -92,7 +104,7 @@ public class ApplicationUI {
             if (typeInput.equalsIgnoreCase(UserType.STUDENT.getPhrase())) {
                 type = UserType.STUDENT;
                 isValid = true;
-            } else if(typeInput.equalsIgnoreCase(UserType.ADVISOR.getPhrase())) {
+            } else if (typeInput.equalsIgnoreCase(UserType.ADVISOR.getPhrase())) {
                 type = UserType.ADVISOR;
                 isValid = true;
             }
@@ -113,7 +125,7 @@ public class ApplicationUI {
         }
     }
 
-    //logout
+    // logout
     private void logout() {
         user = null;
         application.logout();
@@ -123,7 +135,7 @@ public class ApplicationUI {
     private void displaySemesterPlan(User user) {
         if (user instanceof Student) {
             ((Student) user).displaySemesterPlan();
-            //edit semsterplan code
+            // edit semsterplan code
         } else if (user instanceof Advisor) {
             Advisor advisor = (Advisor) user;
             ArrayList<Student> advisedStudents = advisor.getStudents();

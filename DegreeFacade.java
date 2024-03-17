@@ -135,4 +135,10 @@ public class DegreeFacade {
     public void displaySemesterPlan(Student student) {
         student.displaySemesterPlan();
     }
+
+    public void exit() {
+        courseList.logout();
+        userList.logout();
+        majorList.logout();
+    }
 }
