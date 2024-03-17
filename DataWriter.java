@@ -178,6 +178,8 @@ public class DataWriter extends DataConstants {
         courseDetails.put(COURSE_KEYWORDS, buildKeywordsJSON(course.getKeywords()));
         courseDetails.put(COURSE_SEMESTERS_OFFERED, buildSemestersOfferedJSON(course.getSemestersOffered()));
         courseDetails.put(COURSE_PREFERRED_SEMESTER, course.getPreferredSemester());
+        courseDetails.put(COURSE_NAME, course.getName());
+        courseDetails.put(COURSE_DESCRIPTION, course.getDescription());
         return courseDetails;
     }
 

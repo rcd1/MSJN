@@ -163,7 +163,7 @@ public class DataLoader extends DataConstants {
                 String email = (String) advisorJsonObject.get(USER_EMAIL);
                 String password = (String) advisorJsonObject.get(USER_PASSWORD);
                 ArrayList<Student> students = rebuildStudents((JSONArray) advisorJsonObject.get(ADVISOR_STUDENTS));
-                String department = (String)advisorJsonObject.get(ADVISOR_DEPARTMENT);
+                String department = (String) advisorJsonObject.get(ADVISOR_DEPARTMENT);
                 advisors.add(new Advisor(firstName, lastName, email, password, advisorID, students, department));
             }
             return advisors;
@@ -219,11 +219,13 @@ public class DataLoader extends DataConstants {
                 ArrayList<Keyword> keywords = rebuildKeywords((JSONArray) courseJSONObject.get(COURSE_KEYWORDS));
                 ArrayList<SemesterOffered> semestersOffered = rebuildSemestersOffered(
                         (JSONArray) courseJSONObject.get(COURSE_SEMESTERS_OFFERED));
+                String name = (String) courseJSONObject.get(COURSE_NAME);
+                String description = (String) courseJSONObject.get(COURSE_DESCRIPTION);
                 Long preferredSemesterTemp = ((Long) courseJSONObject.get(COURSE_PREFERRED_SEMESTER));
                 int preferredSemester = preferredSemesterTemp.intValue();
 
                 courses.add(new Course(courseId, designator, number, hours, prerequisites, corequisites, keywords,
-                        semestersOffered, preferredSemester));
+                        semestersOffered, name, description, preferredSemester));
             }
         } catch (Exception e) {
             e.printStackTrace();
