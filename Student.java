@@ -174,7 +174,13 @@ public class Student extends User {
                 if(tempCourse.getDesignator() == Designator.FILL) {
                     semesterHoursToAdd = 3;
                     // Get courses that could fill this
-                    ArrayList<Course> potentialCourses = CourseList.getInstance().findCourses(tempCourse.getKeywords().get(0).toString());
+                    Keyword searchKeyword = tempCourse.getKeywords().get(0);
+
+                    if(searchKeyword == Keyword.AP0 && applicationID != ApplicationID.UNDECLARED) {
+                        searchKeyword = Keyword.valueOf(applicationID.getKeyword());
+                    }
+
+                    ArrayList<Course> potentialCourses = CourseList.getInstance().findCourses(searchKeyword.toString());
                     
                     // Check if one of the potential courses has been taken, and if it has, then add that course. Otherwise, add the filler
                     outerLoop: 
