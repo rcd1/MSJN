@@ -140,7 +140,7 @@ public class Student extends User {
         
         // Copy already completed classes into new eight semester plan
         for(int i = 0; i < semesterPlans.size(); i++) {
-            eightSemesterPlan.set(i, new SemesterPlan());
+            eightSemesterPlan.add(new SemesterPlan());
             SemesterPlan semesterPlan = eightSemesterPlan.get(i);
             for(Course course : semesterPlans.get(i).getCourses()) {
                 semesterPlan.primitiveAddCourse(course);
