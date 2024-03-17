@@ -12,6 +12,8 @@ public class Course {
     private ArrayList<RequirementSet> corequisites;
     private ArrayList<Keyword> keywords;
     private ArrayList<SemesterOffered> semestersOffered;
+    private String name;
+    private String description;
     private int preferredSemester;
 
     
@@ -29,6 +31,8 @@ public class Course {
         this.keywords = new ArrayList<>();
         this.semestersOffered = new ArrayList<>();
         this.preferredSemester = 0;
+        this.name = "";
+        this.description = "";
     }
 
     /**
@@ -46,6 +50,8 @@ public class Course {
         this.keywords = keywords;
         this.semestersOffered = semestersOffered;
         this.preferredSemester = preferredSemester;
+        this.name = "";
+        this.description = "";
     }
 
 
@@ -182,6 +188,22 @@ public class Course {
         } else {
             return false;
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
     
 }
