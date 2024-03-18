@@ -44,11 +44,18 @@ public class ApplicationUI {
                 String option = getUserOption().toLowerCase();
                 clear();
                 switch (option) {
+                    case "view your progress":
+                        Student student = (Student) user;
+                        student.displayProgress();
+                        break;
                     case "view semester plan":
                         displaySemesterPlan(user);
                         break;
                     case "save semester plan to text file":
                         saveSemesterPlanToFile(user);
+                        break;
+                    case "choose application area":
+                        selectApplicationArea();
                         break;
                     case "logout":
                         logout();
@@ -63,6 +70,39 @@ public class ApplicationUI {
             }
         }
         scanner.close();
+    }
+
+    private void selectApplicationArea() {
+        Student student = (Student) user;
+        while (true) {
+            for (ApplicationID applicationID : ApplicationID.values()) {
+                System.out.println(applicationID.getName());
+            }
+            System.out.println("Which Area would you like?: ");
+            String option = getUserOption().toLowerCase();
+            switch (option) {
+                // Ideally won't be hard code later
+                case "undeclared":
+                    student.setApplicationID(ApplicationID.UNDECLARED);
+                    return;
+                case "science":
+                    student.setApplicationID(ApplicationID.SCIENCE);
+                    return;
+                case "math":
+                    student.setApplicationID(ApplicationID.MATH);
+                    return;
+                case "robotics":
+                    student.setApplicationID(ApplicationID.ROBOTICS);
+                    return;
+                case "speech":
+                    student.setApplicationID(ApplicationID.SPEECH);
+                    return;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
+            }
+        }
+
     }
 
     private void clear() {
@@ -179,6 +219,9 @@ public class ApplicationUI {
         System.out.println("Logged in as " + user.getFirstName() + " " + user.getLastName());
         if (user instanceof Advisor) {
             System.out.println("Manage Your Students");
+        } else if (user instanceof Student) {
+            System.out.println("View your progress");
+            System.out.println("Choose Application Area");
         }
         System.out.println("View Semester Plan");
         System.out.println("Save Semester Plan to Text File");

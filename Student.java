@@ -359,7 +359,7 @@ public class Student extends User {
         }
         System.out.println("Courses taken: ");
         for (Course course : studentGrades.keySet()) {
-            System.out.println(course.getDesignator() + " " + course.getNumber());
+            System.out.println(course.getDesignator() + " " + course.getNumber() + ": " +  studentGrades.get(course));
         }
         System.out.println("Selected Application Area: " + applicationID.getName());
     }
