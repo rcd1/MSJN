@@ -37,14 +37,7 @@ public enum ApplicationID{
         return name;
     }
 
-<<<<<<< HEAD
-    /*
-     * An accessor (getter) method for the keyword.
-     */
-    public Keyword getKeyword() {
-=======
     public String getKeyword() {
->>>>>>> a08fcb05758d39941913b2e7774abd9b356b5a37
         return keyword;
     }
     /**
