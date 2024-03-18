@@ -57,6 +57,12 @@ public class ApplicationUI {
                     case "choose application area":
                         selectApplicationArea();
                         break;
+                    case "view courses":
+                        viewCourses();
+                        break;
+                    case "fill requirement":
+                        fillCourses();
+                        break;
                     case "logout":
                         logout();
                         break;
@@ -70,6 +76,28 @@ public class ApplicationUI {
             }
         }
         scanner.close();
+    }
+
+    private void viewCourses() {
+        System.out.print("Enter a keyword to view: ");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        ArrayList<Course> courses = CourseList.getInstance().findCourses(input);
+        for(Course course : courses) {
+            System.out.print(course.getDesignator());
+            System.out.print(" ");
+            System.out.println(course.getNumber());
+        }
+    }
+
+    private void fillCourses() {
+        Student student = (Student)user;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter name of course: ");
+        String name = input.nextLine();
+        System.out.print("Enter number of course: ");
+        String number = input.nextLine();
+        student.fillCourse(CourseList.getInstance().getCourse(name, number));
     }
 
     private void selectApplicationArea() {
@@ -225,6 +253,8 @@ public class ApplicationUI {
         }
         System.out.println("View Semester Plan");
         System.out.println("Save Semester Plan to Text File");
+        System.out.println("View Courses");
+        System.out.println("Fill Requirement");
         System.out.println("Logout");
         System.out.print("Enter your choice: ");
     }
