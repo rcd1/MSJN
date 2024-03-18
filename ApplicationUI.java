@@ -51,7 +51,6 @@ public class ApplicationUI {
                         saveSemesterPlanToFile(user);
                         break;
                     case "logout":
-                        saveUserData();
                         logout();
                         break;
                     default:
@@ -167,10 +166,5 @@ public class ApplicationUI {
     
         application.saveSemesterPlanToFile(user, fileName);
         System.out.println("Semester plan saved to " + fileName + ".");
-    }
-
-    private void saveUserData() {
-        application.saveUserData(user);
-
     }
 }
