@@ -79,24 +79,40 @@ public class SemesterPlan {
     public int getHours() {
         return hours;
     }
-
-    public void saveSemesterPlanToFile(String fileName) {
-        try (FileWriter writer = new FileWriter(fileName)) {
-            if (courses.isEmpty()) {
-                writer.write("Semester Plan is empty.");
-            } else {
-                writer.write("Semester Plan\n");
-                for (int i = 0; i < courses.size(); i++) {
-                    Course course = courses.get(i);
-                    writer.write("Course " + (i + 1) + ":\n");
-                    writer.write("Course ID: " + course.getCourseID() + "\n");
-                    writer.write(course.getDesignator() + " " + course.getNumber());
-                    writer.write("Hours: " + course.getHours() + "\n");
+    
+    public void saveSemesterPlanToFile(User user, String fileName) {
+        StringBuilder sb = new StringBuilder();
+        
+        if (user instanceof Student) {
+            ArrayList<SemesterPlan> semesterPlans = ((Student) user).getSemesterPlans();
+            for (SemesterPlan semesterPlan : semesterPlans) {
+                sb.append("Semester Plan:\n");
+                ArrayList<Course> courses = semesterPlan.getCourses();
+                for (Course course : courses) {
+                    sb.append(course.getName()).append("\n");
                 }
-                writer.write("Total hours: " + calculateHours());
+                sb.append("========================================\n");
             }
-        } catch (IOException e) {
-            System.err.println("Error writing to file: " + e.getMessage());
+        } else if (user instanceof Advisor) {
+            ArrayList<Student> advisedStudents = ((Advisor) user).getStudents();
+            for (Student student : advisedStudents) {
+                ArrayList<SemesterPlan> semesterPlans = student.getSemesterPlans();
+                for (SemesterPlan semesterPlan : semesterPlans) {
+                    sb.append("Semester Plan for ").append(student.getFirstName()).append(" ").append(student.getLastName()).append(":\n");
+                    ArrayList<Course> courses = semesterPlan.getCourses();
+                    for (Course course : courses) {
+                        sb.append(course.getName()).append("\n");
+                    }
+                    sb.append("========================================\n");
+                }
+            }
         }
-    }
+    
+        try (FileWriter writer = new FileWriter(fileName)) {
+            writer.write(sb.toString());
+            System.out.println("Semester plan saved to " + fileName);
+        } catch (IOException e) {
+            System.out.println("Error saving semester plan to file: " + e.getMessage());
+        }
+    }    
 }

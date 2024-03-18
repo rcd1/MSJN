@@ -161,14 +161,14 @@ public class DegreeFacade {
         if (user instanceof Student) {
             ArrayList<SemesterPlan> semesterPlans = ((Student) user).getSemesterPlans();
             for (SemesterPlan semesterPlan : semesterPlans) {
-                semesterPlan.saveSemesterPlanToFile(fileName);
+                semesterPlan.saveSemesterPlanToFile(user, fileName);
             }
         } else if (user instanceof Advisor) {
             ArrayList<Student> advisedStudents = ((Advisor) user).getStudents();
             for (Student student : advisedStudents) {
             ArrayList<SemesterPlan> semesterPlans = student.getSemesterPlans();
                 for (SemesterPlan semesterPlan : semesterPlans) {
-                    semesterPlan.saveSemesterPlanToFile(fileName);
+                    semesterPlan.saveSemesterPlanToFile(user, fileName);
                 }
             }
         }      
