@@ -47,6 +47,11 @@ public enum Keyword {
         return title;
     }
 
+    public ApplicationID getKeyword() {
+        return appid;
+    }
+
     String title;
+    ApplicationID appid;
 
 }

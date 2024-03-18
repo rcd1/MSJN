@@ -2,7 +2,7 @@
  * An Enum representing the grades of the student 
  */
 public enum Grade {
-    CR("CR",4.0),
+    CR("CR",4.0), // Means bypassed by means of a placement test
     A("A",4.0),
     B_PLUS("B+",3.5),
     B("B",3.0),
@@ -12,7 +12,8 @@ public enum Grade {
     D("D",1.0),
     F("F",0.0),
     W("W", 0.0),
-    WF("WF", 0.0);
+    WF("WF", 0.0),
+    R("R", 0.0); // Means the course has been registered but not taken yet. Used for filling electives
 
     private final String letter;
     private final double pointValue;

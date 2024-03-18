@@ -5,19 +5,19 @@ public enum ApplicationID{
     /**
      * assigning a number to each application area 
      */
-    UNDECLARED("Undeclared",0, Keyword.AP0),
-    SCIENCE("Science",1, Keyword.AP1), 
-    MATH("Math",2, Keyword.AP2), 
-    DIGITALDESIGN("Digital Design", 3, Keyword.AP3),
-    ROBOTICS("Robotics", 4, Keyword.AP4),
-    SPEECH("Speech", 5, Keyword.AP5);
+    UNDECLARED("Undeclared",0, "AP0"),
+    SCIENCE("Science",1, "AP1"), 
+    MATH("Math",2, "AP2"), 
+    DIGITALDESIGN("Digital Design", 3, "AP3"),
+    ROBOTICS("Robotics", 4, "AP4"),
+    SPEECH("Speech", 5, "AP5");
 
     private int number;
     private String name;
-    private Keyword keyword;
+    private String keyword;
 
     //An mutator (setter) method for the number values.
-    ApplicationID(String name, int number, Keyword keyword) {
+    ApplicationID(String name, int number, String keyword) {
         this.name = name;
         this.number = number;
         this.keyword = keyword;
@@ -37,10 +37,14 @@ public enum ApplicationID{
         return name;
     }
 
+<<<<<<< HEAD
     /*
      * An accessor (getter) method for the keyword.
      */
     public Keyword getKeyword() {
+=======
+    public String getKeyword() {
+>>>>>>> a08fcb05758d39941913b2e7774abd9b356b5a37
         return keyword;
     }
     /**

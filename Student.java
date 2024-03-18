@@ -18,6 +18,7 @@ public class Student extends User {
     private boolean hasScholarship;
     private HashMap<Course, Grade> studentGrades;
     private ApplicationID applicationID;
+    private ArrayList<SemesterPlan> eightSemesterPlan; // Follows a pseudo singleton design pattern
 
     /*
      * In the User.java, there are 2 final String representing the UUIDs of a blank
@@ -143,7 +144,116 @@ public class Student extends User {
      * @return a new Array List of type Semester Plan
      */
     public ArrayList<SemesterPlan> generateEightSemesterPlan() {
-        return new ArrayList<SemesterPlan>();
+        ArrayList<SemesterPlan> eightSemesterPlan = new ArrayList<SemesterPlan>(8);
+        int offset = semesterPlans.size();
+        int planIndex = offset;
+        
+        // Copy already completed classes into new eight semester plan
+        for(int i = 0; i < semesterPlans.size(); i++) {
+            eightSemesterPlan.add(new SemesterPlan());
+            SemesterPlan semesterPlan = eightSemesterPlan.get(i);
+            for(Course course : semesterPlans.get(i).getCourses()) {
+                semesterPlan.primitiveAddCourse(course);
+            }
+        }
+
+        eightSemesterPlan.add(new SemesterPlan());
+
+        ArrayList<SemesterPlan> majorMapSkeleton = major.getRecommendedSemesterPlans();
+
+        HashMap<Course, Grade> availableFillerCourses = (HashMap<Course, Grade>)studentGrades.clone();
+        
+        int semesterHours = 0;
+
+        // Loop through the arrayList of semesters
+        for(int i = 0; i < majorMapSkeleton.size(); i++) {
+            ArrayList<Course> skeletonSemesterCourses = majorMapSkeleton.get(i).getCourses();
+            
+            // Loop through the arrayList of courses in the semester
+            for(int j = 0; j < skeletonSemesterCourses.size(); j++) {
+                // Determine what course to add, if any
+                Course tempCourse = skeletonSemesterCourses.get(j);
+                Course courseToAdd = tempCourse;
+                int semesterHoursToAdd = courseToAdd.getHours();
+                boolean addCourse = true;
+                
+                // Find course that might need to be added
+                // First, handle filler courses
+                if(tempCourse.getDesignator() == Designator.FILL) {
+                    semesterHoursToAdd = 3;
+                    // Get courses that could fill this
+                    Keyword searchKeyword = tempCourse.getKeywords().get(0);
+                    if(searchKeyword == Keyword.AP0 && applicationID != ApplicationID.UNDECLARED) {
+                        searchKeyword = Keyword.valueOf(applicationID.getKeyword());
+                    }
+
+                    ArrayList<Course> potentialCourses = CourseList.getInstance().findCourses(searchKeyword.toString());
+                    
+                    // Check if one of the potential courses has been taken, and if it has, then add that course. Otherwise, add the filler
+                    outerLoop: 
+                    for(Course potentialCourse : potentialCourses) {
+                        for(Course studentCourse : availableFillerCourses.keySet()) {
+                            Grade studentGrade = availableFillerCourses.get(studentCourse);
+                            if(studentGrade != null && (potentialCourse.equals(studentCourse) &&
+                            (studentGrade.getPointValue() >= Grade.C.getPointValue() || studentGrade == Grade.R))) {
+                                courseToAdd = studentCourse;
+                                semesterHoursToAdd = courseToAdd.getHours();
+                                availableFillerCourses.remove(studentCourse);
+                                addCourse = studentGrade == Grade.R; // If the course hasn't been completed, but has been determined, add it.
+                                break outerLoop;
+                            }
+                        }
+                    }                    
+                } else { // Handle non-filler courses
+                    semesterHoursToAdd = courseToAdd.getHours();
+                    Grade grade = studentGrades.get(tempCourse);
+                    if(grade != null && grade.getPointValue() >= Grade.C.getPointValue()) {
+                        addCourse = false;
+                        availableFillerCourses.remove(courseToAdd);
+                    }
+                }
+
+                
+                if(addCourse) {
+                    eightSemesterPlan.get(planIndex).primitiveAddCourse(courseToAdd);
+                    semesterHours += semesterHoursToAdd;
+                }
+
+
+                if(semesterHours >= 15 && eightSemesterPlan.size() < 8) {
+                    eightSemesterPlan.add(new SemesterPlan());
+                    semesterHours = 0;
+                    planIndex++;
+                }
+            }
+        }
+        return eightSemesterPlan;
+    }
+
+    public boolean fillCourse(Course fillerCourse) {
+        ArrayList<SemesterPlan> eightSemesterPlan = this.generateEightSemesterPlan();
+        Keyword applicationAreaKeyword = Keyword.valueOf(this.applicationID.getKeyword());
+
+        for(SemesterPlan semesterPlan : eightSemesterPlan) {
+            for(Course loopCourse : semesterPlan.getCourses()) {
+                if(loopCourse.getDesignator() == Designator.FILL) {
+                    Keyword loopCourseKeyword = loopCourse.getKeywords().get(0);
+                    if(!(loopCourseKeyword == Keyword.AP0 && applicationAreaKeyword == Keyword.AP0)) {
+                        Keyword comparisonKeyword;
+                        if(loopCourseKeyword == Keyword.AP0) {
+                            comparisonKeyword = applicationAreaKeyword;
+                        } else {
+                            comparisonKeyword = loopCourse.getKeywords().get(0);
+                        }
+                        if(fillerCourse.getKeywords().contains(comparisonKeyword) && this.studentGrades.get(fillerCourse) == null) {
+                            this.studentGrades.put(fillerCourse, Grade.R);
+                            return true;
+                        }
+                    } 
+                }
+            }
+        }
+        return false;
     }
 
 
@@ -198,6 +308,10 @@ public class Student extends User {
 
     public ApplicationID getApplicationID() {
         return applicationID;
+    }
+
+    public void setApplicationID(ApplicationID applicationID) {
+        this.applicationID = applicationID;
     }
 
     public HashMap<Course, Grade> getStudentGrades() {

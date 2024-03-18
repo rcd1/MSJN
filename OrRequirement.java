@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 /**
  * A Class representing a Degree requirement 
  * where one set of courses out of all the possible courses will satisfy
@@ -19,8 +20,13 @@ public class OrRequirement extends RequirementSet {
 
     @Override
     public boolean SatisfiesRequirement(Student student) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'SatisfiesRequirement'");
+        HashMap<Course, Grade> grades = student.getStudentGrades();
+        for(Course course : requiredCourses) {
+            Grade grade = grades.get(course);
+            if(grade != null && grade.getPointValue() >= requiredGrade.getPointValue()) {
+                return true;
+            }
+        }
+        return false;
     }
-    
 }
