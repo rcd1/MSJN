@@ -101,8 +101,29 @@ public class Student extends User {
 
     public void displaySemesterPlan() {
         if (!semesterPlans.isEmpty()) {
-            SemesterPlan lastSemesterPlan = semesterPlans.get(semesterPlans.size() - 1);
-            lastSemesterPlan.displaySemesterPlan();
+            ArrayList<SemesterPlan> semesterPlans = this.generateEightSemesterPlan();
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < semesterPlans.size(); i++) {
+                if(i + 1 == 6) {
+                    sb.append("(Current)");
+                    sb.append('\n');
+                }
+                sb.append("Semester: ");
+                sb.append(i + 1);
+                sb.append('\n');
+                ArrayList<Course> courses = semesterPlans.get(i).getCourses();
+                for(int j = 0; j < courses.size(); j++) {
+                    if(i + 1 < 6) {
+                        sb.append(studentGrades.get(courses.get(j)).getLetter());
+                        sb.append(": ");
+                    }
+                    sb.append(courses.get(j).getName());
+                    sb.append('\n');
+                }
+                sb.append("========================================");
+                sb.append('\n');
+            }
+            System.out.print(sb.toString());
         } else {
             System.out.println("No semester plans available");
         }
