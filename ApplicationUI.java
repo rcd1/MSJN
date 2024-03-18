@@ -98,7 +98,8 @@ public class ApplicationUI {
                     student.setApplicationID(ApplicationID.SPEECH);
                     return;
                 case "digital design":
-                student.setApplicationID(ApplicationID.DIGITALDESIGN);
+                    student.setApplicationID(ApplicationID.DIGITALDESIGN);
+                    break;
                 default:
                     System.out.println("Invalid option.");
                     break;
