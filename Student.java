@@ -184,7 +184,7 @@ public class Student extends User {
                     // Get courses that could fill this
                     Keyword searchKeyword = tempCourse.getKeywords().get(0);
                     if(searchKeyword == Keyword.AP0 && applicationID != ApplicationID.UNDECLARED) {
-                        searchKeyword = Keyword.valueOf(applicationID.getKeyword());
+                        searchKeyword = Keyword.valueOf(applicationID.getKeyword().toString());
                     }
 
                     ArrayList<Course> potentialCourses = CourseList.getInstance().findCourses(searchKeyword.toString());
@@ -232,7 +232,7 @@ public class Student extends User {
 
     public boolean fillCourse(Course fillerCourse) {
         ArrayList<SemesterPlan> eightSemesterPlan = this.generateEightSemesterPlan();
-        Keyword applicationAreaKeyword = Keyword.valueOf(this.applicationID.getKeyword());
+        Keyword applicationAreaKeyword = Keyword.valueOf(this.applicationID.getKeyword().toString());
 
         for(SemesterPlan semesterPlan : eightSemesterPlan) {
             for(Course loopCourse : semesterPlan.getCourses()) {
@@ -316,5 +316,34 @@ public class Student extends User {
 
     public HashMap<Course, Grade> getStudentGrades() {
         return studentGrades;
+    }
+
+    public void displayProgress() {
+        int requirementsProgress = 0;
+        int total = major.getMajorRequirements().size();
+        ArrayList<String> completedRequirements = new ArrayList<>();
+        ArrayList<String> incompleteRequirements = new ArrayList<>();
+        for (MajorRequirement majorRequirement : major.getMajorRequirements()) {
+            if (majorRequirement.SatisfiesRequirement(this)) {
+                requirementsProgress++;
+                completedRequirements.add(majorRequirement.getTitle());
+            } else {
+                incompleteRequirements.add(majorRequirement.getTitle());
+            }
+        }
+        System.out.println("Total Requirements Met: " + requirementsProgress + "/" + total);
+        System.out.println("Completed: ");
+        for (String string : completedRequirements) {
+            System.out.println(string);
+        }
+        System.out.println("Courses taken: ");
+        for (Course course : studentGrades.keySet()) {
+            System.out.println(course.getDesignator() + " " + course.getNumber());
+        }
+        System.out.println("Selected Application Area: " + applicationID.getName());
+    }
+
+    public void addNote(String newNote) {
+        notes.add(newNote);
     }
 }

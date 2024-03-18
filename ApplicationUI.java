@@ -22,7 +22,9 @@ public class ApplicationUI {
             if (user == null) {
                 displayMainMenu();
                 String option = getUserOption().toLowerCase();
+                clear();
                 switch (option) {
+
                     case "login":
                         login();
                         break;
@@ -33,9 +35,6 @@ public class ApplicationUI {
                         running = false;
                         application.exit();
                         break;
-                    case "Scenarios":
-                        displayScenarios();
-                        break;
                     default:
                         System.out.println("Invalid option.");
                         break;
@@ -43,6 +42,7 @@ public class ApplicationUI {
             } else {
                 displayLoggedInMenu();
                 String option = getUserOption().toLowerCase();
+                clear();
                 switch (option) {
                     case "view semester plan":
                         displaySemesterPlan(user);
@@ -53,6 +53,9 @@ public class ApplicationUI {
                     case "logout":
                         logout();
                         break;
+                    case "manage your students":
+                        manageYourStudents();
+                        break;
                     default:
                         System.out.println("Invalid option.");
                         break;
@@ -60,6 +63,107 @@ public class ApplicationUI {
             }
         }
         scanner.close();
+    }
+
+    private void clear() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    private void manageYourStudents() {
+        while (true) {
+            Advisor advisor = (Advisor) user;
+            displayManageStudentOptions(advisor);
+            String option = getUserOption().toLowerCase();
+            clear();
+            switch (option) {
+                case "add a student":
+                    addStudentToAdvisorList();
+                    break;
+                case "select a student":
+                    selectStudentToView();
+                    break;
+                case "go back":
+                    return;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
+            }
+        }
+    }
+
+    private void selectStudentToView() {
+        Advisor advisor = (Advisor) user;
+        System.out.println("Your Students");
+        advisor.displayStudents();
+        System.out.println(
+                "Which student would you like to view? (Enter a number 1 to " + advisor.getStudents().size() + ")");
+        int studentIndex = getAdvisorStudentIndex(advisor);
+        Student selectedStudent = advisor.getStudents().get(studentIndex);
+        while (true) {
+            System.out.println("What would you like to do?: ");
+            System.out.println("View Student profile");
+            System.out.println("Add a note");
+            System.out.println("go back");
+            String option = getUserOption().toLowerCase();
+            clear();
+            switch (option) {
+                case "view student profile":
+                    application.viewStudentProgress(selectedStudent);
+                    break;
+                case "add a note":
+                    addStudentNote(selectedStudent);
+                    break;
+                case "go back":
+                    return;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
+            }
+        }
+        // application.viewStudentProgress(advisor.getStudents().get(studentIndex));
+
+    }
+
+    private void addStudentNote(Student selectedStudent) {
+        System.out.println("Please enter your note to " + selectedStudent.getFirstName() + " "
+                + selectedStudent.getLastName());
+        String newNote = scanner.nextLine();
+        application.addNote(selectedStudent, newNote);
+    }
+
+    private int getAdvisorStudentIndex(Advisor advisor) {
+        while (true) {
+            try {
+                int index = Integer.parseInt(scanner.nextLine());
+
+                if (index < 1 || index > advisor.getStudents().size()) {
+                    System.out.println("Enter a number 1 to " + advisor.getStudents().size());
+                    continue;
+                }
+                return index - 1;
+
+            } catch (Exception e) {
+                System.out.println("Enter a number 1 to " + advisor.getStudents().size());
+            }
+
+        }
+    }
+
+    private void addStudentToAdvisorList() {
+        System.out.println("Enter the student's first name: ");
+        String firstName = getUserOption().toLowerCase();
+        System.out.println("Enter the student's last name: ");
+        String lastName = getUserOption().toLowerCase();
+        application.addStudentToAdvisorList((Advisor) user, firstName, lastName);
+
+    }
+
+    private void displayManageStudentOptions(Advisor advisor) {
+        System.out.println("Would you like to:");
+        System.out.println("Add a student");
+        System.out.println("Select a student");
+        System.out.println("Go Back");
     }
 
     // Display details
@@ -73,6 +177,9 @@ public class ApplicationUI {
 
     private void displayLoggedInMenu() {
         System.out.println("Logged in as " + user.getFirstName() + " " + user.getLastName());
+        if (user instanceof Advisor) {
+            System.out.println("Manage Your Students");
+        }
         System.out.println("View Semester Plan");
         System.out.println("Save Semester Plan to Text File");
         System.out.println("Logout");
@@ -81,6 +188,14 @@ public class ApplicationUI {
 
     private String getUserOption() {
         return scanner.nextLine();
+    }
+
+    private void saveSemesterPlanToFile(User user) {
+        System.out.println("Enter the file name to save the semester plan:");
+        String fileName = scanner.nextLine();
+
+        application.saveSemesterPlanToFile(user, fileName);
+        System.out.println("Semester plan saved to " + fileName + ".");
     }
 
     // Login
@@ -158,13 +273,5 @@ public class ApplicationUI {
                 System.out.println("Invalid choice.");
             }
         }
-    }
-
-    private void saveSemesterPlanToFile(User user) {
-        System.out.println("Enter the file name to save the semester plan:");
-        String fileName = scanner.nextLine();
-    
-        application.saveSemesterPlanToFile(user, fileName);
-        System.out.println("Semester plan saved to " + fileName + ".");
     }
 }

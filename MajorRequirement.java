@@ -6,7 +6,7 @@ public class MajorRequirement implements Requirement {
     private String title;
     private int minHours;
     private int maxHours;
-    private ArrayList<RequirementSet> acceptableCourseSets; 
+    private ArrayList<RequirementSet> acceptableCourseSets;
 
     /**
      * A setter of the Major Requirement 
@@ -22,11 +22,12 @@ public class MajorRequirement implements Requirement {
         this.acceptableCourseSets = acceptableCourseSets;
     }
 
-    
-
     @Override
     public boolean SatisfiesRequirement(Student student) {
-        return true;
+        for (RequirementSet requirementSet : acceptableCourseSets) {
+            if (requirementSet.SatisfiesRequirement(student)) return true;
+        }
+        return false;
     }
 
 
@@ -64,5 +65,5 @@ public class MajorRequirement implements Requirement {
     public ArrayList<RequirementSet> getAcceptableCourseSets() {
         return acceptableCourseSets;
     }
-    
+
 }

@@ -143,4 +143,15 @@ public class UserList {
     public void logout() {
         DataWriter.saveUsers();
     }
+
+
+    public Student findStudentByName(String firstName, String lastName) {
+        for (Student student : students) {
+            if (student.firstName.toLowerCase().equals(firstName) && student.lastName.toLowerCase().equals(lastName)) {
+                return student;
+            }
+        }
+        System.out.println("UserList unable to find student with name " + firstName + " " + lastName);
+        return null;
+    }
 }
