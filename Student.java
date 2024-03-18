@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
@@ -96,6 +98,41 @@ public class Student extends User {
         if (!semesterPlans.isEmpty()) {
             SemesterPlan lastSemesterPlan = semesterPlans.get(semesterPlans.size() - 1);
             lastSemesterPlan.removeCourse(course);
+        }
+    }
+
+    public void saveSemesterPlanToFile(String fileName) {
+        if (!semesterPlans.isEmpty()) {
+            ArrayList<SemesterPlan> semesterPlans = this.generateEightSemesterPlan();
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < semesterPlans.size(); i++) {
+                if(i + 1 == 6) {
+                    sb.append("(Current)");
+                    sb.append('\n');
+                }
+                sb.append("Semester: ");
+                sb.append(i + 1);
+                sb.append('\n');
+                ArrayList<Course> courses = semesterPlans.get(i).getCourses();
+                for(int j = 0; j < courses.size(); j++) {
+                    if(i + 1 < 6) {
+                        sb.append(studentGrades.get(courses.get(j)).getLetter());
+                        sb.append(": ");
+                    }
+                    sb.append(courses.get(j).getName());
+                    sb.append('\n');
+                }
+                sb.append("========================================");
+                sb.append('\n');
+            }
+            try (FileWriter writer = new FileWriter(fileName)) {
+                writer.write(sb.toString());
+                System.out.println("Semester plan saved to " + fileName);
+            } catch (IOException e) {
+                System.out.println("Error saving semester plan to file: " + e.getMessage());
+            }
+        } else {
+            System.out.println("No semester plans available");
         }
     }
 
