@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.UUID;
-
+/**
+ * The attributes of Major 
+ */
 public class Major {
     private UUID majorid;
     private String majorName;
@@ -8,7 +10,6 @@ public class Major {
     private ArrayList<SemesterPlan> recommendedSemesterPlans;
 
     
-
     public Major(UUID majorid) {
         this.majorName = "";
         this.majorid = majorid;

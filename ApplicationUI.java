@@ -51,7 +51,6 @@ public class ApplicationUI {
                         saveSemesterPlanToFile(user);
                         break;
                     case "logout":
-                        saveUserData();
                         logout();
                         break;
                     case "manage your students":
@@ -274,10 +273,5 @@ public class ApplicationUI {
                 System.out.println("Invalid choice.");
             }
         }
-    }
-
-    private void saveUserData() {
-        application.saveUserData(user);
-
     }
 }

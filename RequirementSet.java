@@ -18,6 +18,12 @@ public abstract class RequirementSet implements Requirement {
         this.requiredGrade = requiredGrade;
     }
 
+    /**
+     * The method for the Requirement Set
+     * @param title the title of the student 
+     * @param requiredCourses the courses required for the student's degree
+     * @param requiredGrade the grade required for the student's degree
+     */
     public RequirementSet(String title, ArrayList<Course> requiredCourses, Grade requiredGrade) {
         this.title = title;
         this.requiredCourses = requiredCourses;
@@ -41,16 +47,19 @@ public abstract class RequirementSet implements Requirement {
         this.title = title;
     }
 
+    /**
+     * gets the required course for the Required Courses for the Required Course
+     * @return Required Courses
+     */
     public ArrayList<Course> getRequiredCourses() {
         return requiredCourses;
     }
 
+     /**
+     * gets the required grade for the Required Courses for the Required Course
+     * @return Required Grade
+     */
     public Grade getRequiredGrade() {
         return requiredGrade;
-    }
-
-    
-    
-    
-    
+    } 
 }

@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
+/**
+ * Attributes of Student 
+ * Student extends User
+ */
 public class Student extends User {
     private Major major;
     private int year;
@@ -135,6 +139,10 @@ public class Student extends User {
         return returnGrade[1];
     }
 
+    /**
+     * 
+     * @return a new Array List of type Semester Plan
+     */
     public ArrayList<SemesterPlan> generateEightSemesterPlan() {
         ArrayList<SemesterPlan> eightSemesterPlan = new ArrayList<SemesterPlan>(8);
         int offset = semesterPlans.size();
@@ -176,7 +184,7 @@ public class Student extends User {
                     // Get courses that could fill this
                     Keyword searchKeyword = tempCourse.getKeywords().get(0);
                     if(searchKeyword == Keyword.AP0 && applicationID != ApplicationID.UNDECLARED) {
-                        searchKeyword = Keyword.valueOf(applicationID.getKeyword());
+                        searchKeyword = Keyword.valueOf(applicationID.getKeyword().toString());
                     }
 
                     ArrayList<Course> potentialCourses = CourseList.getInstance().findCourses(searchKeyword.toString());
@@ -224,7 +232,7 @@ public class Student extends User {
 
     public boolean fillCourse(Course fillerCourse) {
         ArrayList<SemesterPlan> eightSemesterPlan = this.generateEightSemesterPlan();
-        Keyword applicationAreaKeyword = Keyword.valueOf(this.applicationID.getKeyword());
+        Keyword applicationAreaKeyword = Keyword.valueOf(this.applicationID.getKeyword().toString());
 
         for(SemesterPlan semesterPlan : eightSemesterPlan) {
             for(Course loopCourse : semesterPlan.getCourses()) {
@@ -248,6 +256,7 @@ public class Student extends User {
         return false;
     }
 
+
     public String toString() {
         return super.toString();
 
@@ -258,6 +267,9 @@ public class Student extends User {
         this.advisor = realOne;
     }
 
+    /*=
+     * Getters for major,Year, GPA, SemesterPlans, LegalGuardians, Advisor, Notes, Honors, Scholarships, Applicarion ID, and Student Grades
+     */
     public Major getMajor() {
         return major;
     }

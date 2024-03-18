@@ -1,11 +1,18 @@
 import java.util.ArrayList;
 import java.util.UUID;
 
+/**
+ * Attributes of the UserList
+ * It has an array list of students and advisors
+ */
 public class UserList {
     private static UserList userList;
     private static ArrayList<Student> students;
     private static ArrayList<Advisor> advisors;
 
+    /**
+     * Method for when the user list is access. It will either load/reload students or advisors
+     */
     public UserList() {
         userList = this;
         students = DataLoader.getStudents();
@@ -15,11 +22,21 @@ public class UserList {
     }
 
 
+    /**
+     * A method that gets an instance of the User List 
+     * @return User List 
+     */
     public static UserList getInstance() {
         if (userList == null) userList = new UserList();
         return userList;
     } 
 
+    /**
+     * An array use to compared the users email and password typed in to the actual one saved in the User List for them to login
+     * @param email the email that will be compared to the acutal email
+     * @param password the password that will be compared to the actual password
+     * @return the user if the email and password matches
+     */
     public User getUser(String email, String password) {
         for (Student student : students) {
             if (student.getEmail().equals(email) && student.getPassword().equals(password)) {
@@ -65,11 +82,19 @@ public class UserList {
     }
 
     
+    /**
+     * gets the students from an array list of type Student
+     * @return students
+     */
     public static ArrayList<Student> getStudents() {
         return students;
     }
 
 
+    /**
+     * gets the advisors from an array list of type Advisor
+     * @return students
+     */
     public static ArrayList<Advisor> getAdvisors() {
         return advisors;
     }
@@ -112,6 +137,9 @@ public class UserList {
         return null;
     }
 
+    /**
+     * The data writer will save the users information after they logout
+     */
     public void logout() {
         DataWriter.saveUsers();
     }
