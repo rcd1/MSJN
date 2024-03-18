@@ -81,7 +81,7 @@ public class ApplicationUI {
                 case "add a student":
                     addStudentToAdvisorList();
                     break;
-                case "view student profile":
+                case "select a student":
                     selectStudentToView();
                     break;
                 case "go back":
@@ -100,8 +100,37 @@ public class ApplicationUI {
         System.out.println(
                 "Which student would you like to view? (Enter a number 1 to " + advisor.getStudents().size() + ")");
         int studentIndex = getAdvisorStudentIndex(advisor);
-        application.viewStudentProgress(advisor.getStudents().get(studentIndex));
+        Student selectedStudent = advisor.getStudents().get(studentIndex);
+        while (true) {
+            System.out.println("What would you like to do?: ");
+            System.out.println("View Student profile");
+            System.out.println("Add a note");
+            System.out.println("go back");
+            String option = getUserOption().toLowerCase();
+            clear();
+            switch (option) {
+                case "view student profile":
+                    application.viewStudentProgress(selectedStudent);
+                    break;
+                case "add a note":
+                    addStudentNote(selectedStudent);
+                    break;
+                case "go back":
+                    return;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
+            }
+        }
+        // application.viewStudentProgress(advisor.getStudents().get(studentIndex));
 
+    }
+
+    private void addStudentNote(Student selectedStudent) {
+        System.out.println("Please enter your note to " + selectedStudent.getFirstName() + " "
+                + selectedStudent.getLastName());
+        String newNote = scanner.nextLine();
+        application.addNote(selectedStudent, newNote);
     }
 
     private int getAdvisorStudentIndex(Advisor advisor) {
@@ -134,7 +163,7 @@ public class ApplicationUI {
     private void displayManageStudentOptions(Advisor advisor) {
         System.out.println("Would you like to:");
         System.out.println("Add a student");
-        System.out.println("View Student Profile");
+        System.out.println("Select a student");
         System.out.println("Go Back");
     }
 

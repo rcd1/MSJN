@@ -307,11 +307,31 @@ public class Student extends User {
     }
 
     public void displayProgress() {
+        int requirementsProgress = 0;
+        int total = major.getMajorRequirements().size();
+        ArrayList<String> completedRequirements = new ArrayList<>();
+        ArrayList<String> incompleteRequirements = new ArrayList<>();
         for (MajorRequirement majorRequirement : major.getMajorRequirements()) {
             if (majorRequirement.SatisfiesRequirement(this)) {
-                
+                requirementsProgress++;
+                completedRequirements.add(majorRequirement.getTitle());
+            } else {
+                incompleteRequirements.add(majorRequirement.getTitle());
             }
         }
-        System.out.println();
+        System.out.println("Total Requirements Met: " + requirementsProgress + "/" + total);
+        System.out.println("Completed: ");
+        for (String string : completedRequirements) {
+            System.out.println(string);
+        }
+        System.out.println("Courses taken: ");
+        for (Course course : studentGrades.keySet()) {
+            System.out.println(course.getDesignator() + " " + course.getNumber());
+        }
+        System.out.println("Selected Application Area: " + applicationID.getName());
+    }
+
+    public void addNote(String newNote) {
+        notes.add(newNote);
     }
 }

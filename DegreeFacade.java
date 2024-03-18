@@ -185,4 +185,8 @@ public class DegreeFacade {
             System.err.println("Error saving user data: " + e.getMessage());
         }
     }
+
+    public void addNote(Student student, String newNote) {
+        student.addNote(newNote);
+    }
 }
