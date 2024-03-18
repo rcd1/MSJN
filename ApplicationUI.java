@@ -180,6 +180,7 @@ public class ApplicationUI {
             clear();
             switch (option) {
                 case "view student profile":
+                    System.out.println(selectedStudent.getApplicationID().getName());
                     selectedStudent.displaySemesterPlan();
                     // application.viewStudentProgress(selectedStudent);
                     break;
@@ -253,12 +254,12 @@ public class ApplicationUI {
             System.out.println("Manage Your Students");
         } else if (user instanceof Student) {
             System.out.println("View your progress");
+            System.out.println("View Semester Plan");
+            System.out.println("Save Semester Plan to Text File");
             System.out.println("Choose Application Area");
             System.out.println("View Courses");
             System.out.println("Fill Requirement");
         }
-        System.out.println("View Semester Plan");
-        System.out.println("Save Semester Plan to Text File");
         System.out.println("Logout");
         System.out.print("Enter your choice: ");
     }
