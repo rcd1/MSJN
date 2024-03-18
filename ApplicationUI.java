@@ -252,10 +252,10 @@ public class ApplicationUI {
         System.out.println("Logged in as " + user.getFirstName() + " " + user.getLastName());
         if (user instanceof Advisor) {
             System.out.println("Manage Your Students");
-            System.out.println("View Semester Plan");
-            System.out.println("Save Semester Plan to Text File");
         } else if (user instanceof Student) {
             System.out.println("View your progress");
+            System.out.println("View Semester Plan");
+            System.out.println("Save Semester Plan to Text File");
             System.out.println("Choose Application Area");
             System.out.println("View Courses");
             System.out.println("Fill Requirement");
