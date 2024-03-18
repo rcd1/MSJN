@@ -53,6 +53,7 @@ public class Advisor extends User {
      * @return true
      */
     public boolean addStudent(Student student) {
+        student.setStudentAdvisor(this);
         return students.add(student);
     }
 
