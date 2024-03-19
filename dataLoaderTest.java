@@ -1,4 +1,10 @@
+import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.Test;
 
 public class dataLoaderTest {
     public static void main(String[] args) {
