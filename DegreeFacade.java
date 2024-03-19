@@ -41,6 +41,9 @@ public class DegreeFacade {
      */
     public void logout() {
         user = null;
+        courseList.logout();
+        userList.logout();
+        majorList.logout();
     }
 
     /*
