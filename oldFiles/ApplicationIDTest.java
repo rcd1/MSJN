@@ -15,20 +15,16 @@ import org.junit.jupiter.api.Test;
 
 import msjn.*;
 
-class KeywordTest {
+class ApplicationIDTest {
 
 
-public static enum KeywordType{
-    Honors,
-    VSR,
-    GSS,
-    AP1,
-    CRW,
-    AP2,
-    SPCHC,
-    CSCME,
-    SCI,
-    AP5;
+public static enum ApplicationIDType{
+   UNDECLARED,
+   SCIENCE,
+   MATH,
+   DIGITALDESIGN,
+   ROBOTICS,
+   SPEECH;
 
 }
 
@@ -52,9 +48,9 @@ public static enum KeywordType{
         //runs after each test 
     }
 
-    // private final String KeywordType;
+    // private final String ApplicationIDType;
 
-    // private KeywordType(String s) {
+    // private ApplicationIDType(String s) {
     //     designatorType = s;
     // }
 
@@ -68,7 +64,7 @@ public static enum KeywordType{
 
     @Test
         public void testAdd(){
-            assertEquals(KeywordType.CSCME, KeywordType.CSCME);
+            assertEquals(ApplicationIDType.MATH, ApplicationIDType.MATH);
         }
 }
 
@@ -81,3 +77,4 @@ public static enum KeywordType{
 
  //Tests was successful
  //was moved from MSJN to oldfiles
+
