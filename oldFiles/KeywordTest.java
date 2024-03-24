@@ -1,4 +1,4 @@
-package msjn; //was originally package msjn during testing, but I don't like having errors
+package oldFiles; //was originally package msjn during testing, but I don't like having errors
 
 /*
  * Stacey's test
