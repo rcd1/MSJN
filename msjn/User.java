@@ -94,7 +94,7 @@ public abstract class User {
      * @param email User's email
      * @return true if this User contains these values, false otherwise
      */
-    protected boolean checkCredentials(String firstName, String lastName, String email) {
+    public boolean checkCredentials(String firstName, String lastName, String email) {
         return this.firstName.equalsIgnoreCase(firstName) && this.lastName.equalsIgnoreCase(lastName) && this.email.equalsIgnoreCase(email);
     }
 
