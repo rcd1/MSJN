@@ -1,14 +1,13 @@
-package oldFiles; //was originally package msjn during testing, but I don't like having errors
+package msjn; //was originally package msjn during testing, but I don't like having errors
 
 /*
  * Stacey's test
+ * reusing my Designator test code
  */
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,17 +15,22 @@ import org.junit.jupiter.api.Test;
 
 import msjn.*;
 
-class DesignatorTest {
+class KeywordTest {
 
 
-public static enum DesignatorType{
-    ACCT,
-    CHEM,
-    PEDU,
-    IBUS,
-    RETL,
-    NURS,
-    CSCE;
+public static enum KeywordType{
+    Honors,
+    VSR,
+    GSS,
+    AP1,
+    CRW,
+    AP2,
+    SPCHC,
+    CSCME,
+    SCI,
+    AP5;
+
+}
 
     @BeforeClass
     public void oneTimeSetup() {
@@ -48,9 +52,6 @@ public static enum DesignatorType{
         //runs after each test 
     }
 
-}
-
-
     // private final String designatorType;
 
     // private designatorType(String s) {
@@ -67,15 +68,16 @@ public static enum DesignatorType{
 
     @Test
         public void testAdd(){
-            assertEquals(DesignatorType.ACCT, DesignatorType.ACCT);
+            assertEquals(KeywordType.CSCME, KeywordType.CSCME);
         }
 }
 
 
 /**
  * Resources:
- * How to test ENUMS using JUNIT by Stack Overflow
+ * How to test ENUMs using JUNIT by Stack Overflow
+ * Professor Plante's Calculator Example
  */
 
- //Test (testAdd()) was successful
+ //Tests was successful
  //was moved from MSJN to oldfiles
