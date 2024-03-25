@@ -24,7 +24,12 @@ class MajorTest{
         major = new Major(majorId, majorName, majorRequirements, recommendedSemesterPlans);
     }
 
-    @Test //successful. majorName needed to be change to null
+    @AfterEach
+    public void tearDown(){
+
+    }
+
+    @Test //successful. Needed to turn MajorName String to null
     public void testConstruction() {
         assertEquals(majorId, major.getMajorid());
         assertEquals(majorName, major.getMajorName());
