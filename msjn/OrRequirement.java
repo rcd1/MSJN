@@ -21,6 +21,9 @@ public class OrRequirement extends RequirementSet {
 
     @Override
     public boolean SatisfiesRequirement(Student student) {
+        if(requiredCourses.size() == 0) {
+            return true;
+        }
         HashMap<Course, Grade> grades = student.getStudentGrades();
         for(Course course : requiredCourses) {
             Grade grade = grades.get(course);
