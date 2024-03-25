@@ -18,15 +18,13 @@ class MajorTest{
 
     @BeforeEach
     void setUp() {
-
-        UUID majorID = UUID.randomUUID();
         String majorName = null;
         majorRequirements = new ArrayList<>();
         recommendedSemesterPlans = new ArrayList<>();
         major = new Major(majorId, majorName, majorRequirements, recommendedSemesterPlans);
     }
 
-    @Test
+    @Test //successful. majorName needed to be change to null
     public void testConstruction() {
         assertEquals(majorId, major.getMajorid());
         assertEquals(majorName, major.getMajorName());
@@ -34,7 +32,7 @@ class MajorTest{
         assertEquals(recommendedSemesterPlans, major.getRecommendedSemesterPlans());
     }
 
-    @Test //Succesfull
+    @Test //Succesfull, returned CIS as false though. 
     public void testCheckMajors() {
         assertTrue(major.checkMajor("Computer Science"));
         assertFalse(major.checkMajor("Blah"));
