@@ -20,7 +20,7 @@ class MajorTest{
     void setUp() {
 
         UUID majorID = UUID.randomUUID();
-        String majorName = "Computer Science";
+        String majorName = null;
         majorRequirements = new ArrayList<>();
         recommendedSemesterPlans = new ArrayList<>();
         major = new Major(majorId, majorName, majorRequirements, recommendedSemesterPlans);
