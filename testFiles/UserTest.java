@@ -9,6 +9,17 @@ import org.junit.jupiter.api.Test;
 
 import msjn.*;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.UUID;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import msjn.*;
+
 public class UserTest {
     private User user;
 
