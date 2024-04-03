@@ -267,5 +267,10 @@ public class Course {
         }
         return false;
     }
+
+    public static Object getInstance() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getInstance'");
+    }
     
 }
